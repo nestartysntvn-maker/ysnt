@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Mockup trang mua hàng · Yến Sào Nha Trang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16282C;--ink2:#51656A;--sea:#0E5E66;--sea50:#E7F0F0;--red:#C4161C;--red50:#FBECEC;--line:#D8E2E1;--paper:#fff;--gold:#9C7A1E;--bg:#F3F6F6}
+*{box-sizing:border-box}html,body{margin:0}
+html,body{overflow-x:hidden}body{font-family:"Be Vietnam Pro",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg);font-size:15px;line-height:1.5}
+.app{max-width:480px;margin:0 auto;min-height:100vh;background:var(--paper);position:relative;padding-bottom:88px}
+a{color:inherit}button{font:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.top{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line);padding:calc(10px + env(safe-area-inset-top)) 16px 10px;display:flex;align-items:center;gap:10px}
+.brand{font-weight:700;font-size:16px;letter-spacing:-.01em;line-height:1.15;text-decoration:none;flex:1}
+.brand small{display:block;font-weight:400;font-size:12px;color:var(--ink2)}
+.icon-btn{border:1px solid var(--line);background:var(--paper);border-radius:12px;height:40px;min-width:40px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;gap:6px;text-decoration:none;font-weight:600}
+.badge{background:var(--red);color:#fff;border-radius:10px;font-size:12px;min-width:20px;height:20px;padding:0 6px;display:inline-flex;align-items:center;justify-content:center}
+.ref{margin:12px 16px 0;padding:10px 12px;border-radius:12px;background:var(--sea50);color:var(--sea);font-size:13px}
+.search{margin:12px 16px 0;display:flex;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.search input{flex:1;border:0;padding:12px;font:inherit;min-width:0}
+.hero{margin:14px 16px 0;border-radius:18px;background:var(--sea);color:#fff;padding:20px 18px;display:grid;grid-template-columns:minmax(0,1fr) 104px;gap:12px;align-items:center}
+.hero h1{font-size:26px;line-height:1.12;margin:0 0 8px;letter-spacing:-.02em;font-weight:700}
+.hero p{margin:0 0 14px;font-size:14px;opacity:.88}
+.hero img{width:104px;height:104px;object-fit:cover;border-radius:14px;background:#fff}
+.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:6px}
+.btn-red{background:var(--red);color:#fff}.btn-line{background:var(--paper);border:1.5px solid var(--sea);color:var(--sea)}.btn-white{background:#fff;color:var(--sea)}
+.sec{padding:22px 16px 0}.sec h2{font-size:18px;margin:0 0 4px;letter-spacing:-.01em}.sec .sub{margin:0 0 12px;color:var(--ink2);font-size:13px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 16px 4px;margin:0 -16px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:8px 14px;font-size:14px;white-space:nowrap}
+.chip[aria-pressed=true]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.card{text-decoration:none;display:block}
+.card .ph{aspect-ratio:1;border-radius:14px;background:var(--sea50);overflow:hidden;position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block}
+.card .nm{font-size:14px;font-weight:500;margin:8px 0 2px;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card .pr{font-weight:700;color:var(--red)}.card .vc{font-size:12px;color:var(--ink2)}
+.tag{position:absolute;left:8px;top:8px;background:#fff;color:var(--gold);font-size:11px;font-weight:600;border-radius:8px;padding:3px 7px}
+.out{position:absolute;inset:auto 8px 8px 8px;background:rgba(22,40,44,.82);color:#fff;font-size:12px;text-align:center;border-radius:8px;padding:4px}
+</style>
+<style>
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-bottom:12px}
+.tier{border:1px solid var(--line);border-radius:14px;background:var(--paper);padding:10px 8px;text-align:left}
+.tier b{display:block;font-size:14px}.tier span{font-size:12px;color:var(--ink2)}
+.tier[aria-pressed=true]{border-color:var(--sea);background:var(--sea50);box-shadow:inset 0 0 0 1px var(--sea)}
+.visit{margin:22px 16px 0;border:1px solid var(--line);border-radius:18px;padding:16px;display:grid;gap:6px}
+.visit h3{margin:0;font-size:16px}.visit p{margin:0;color:var(--ink2);font-size:14px}
+.pd-img{aspect-ratio:1;background:var(--sea50)}.pd-img img{width:100%;height:100%;object-fit:cover;display:block}
+.pd{padding:16px}.pd h1{font-size:21px;line-height:1.25;margin:0 0 6px;letter-spacing:-.01em}
+.pd .brandline{font-size:13px;color:var(--ink2);margin-bottom:10px}
+.price{font-size:26px;font-weight:700;color:var(--red);letter-spacing:-.01em}
+.pergram{font-size:13px;color:var(--ink2);margin:2px 0 0}
+.opt{margin-top:18px}.opt h3{font-size:14px;font-weight:600;margin:0 0 8px}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.o{border:1.5px solid var(--line);background:var(--paper);border-radius:12px;padding:9px 12px;font-size:14px;text-align:left;line-height:1.25}
+.o small{display:block;font-size:12px;color:var(--ink2)}
+.o[aria-pressed=true]{border-color:var(--sea);background:var(--sea50);color:var(--sea);font-weight:600}
+.o:disabled{opacity:.45;text-decoration:line-through;cursor:not-allowed}
+.qty{display:inline-flex;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.qty button{width:40px;height:40px;border:0;background:var(--paper);font-size:18px}.qty span{width:40px;display:grid;place-items:center;font-weight:600}
+.facts{margin-top:18px;border-top:1px solid var(--line)}
+.facts div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.facts span{color:var(--ink2)}
+.bar{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:100%;max-width:480px;background:var(--paper);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:10px;z-index:6}
+.bar .btn{flex:1}
+.row{display:grid;grid-template-columns:72px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
+.row img{width:72px;height:72px;border-radius:12px;object-fit:cover;background:var(--sea50)}
+.row .t{font-weight:500;font-size:14px;line-height:1.3}.row .v{font-size:13px;color:var(--ink2)}
+.row .l{display:flex;justify-content:space-between;align-items:center;margin-top:6px}
+.sum div{display:flex;justify-content:space-between;padding:6px 0}.sum .tot{font-weight:700;font-size:18px;border-top:1px solid var(--line);padding-top:12px;margin-top:6px}
+.field{display:grid;gap:6px;margin-bottom:12px}.field label{font-size:13px;font-weight:600}
+.field input,.field textarea{border:1px solid var(--line);border-radius:12px;padding:12px;font:inherit;width:100%}
+.err{color:var(--red);font-size:13px;display:none}.field.bad .err{display:block}.field.bad input{border-color:var(--red)}
+.pay{display:grid;gap:8px}.pay label{border:1.5px solid var(--line);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start}
+.pay label:has(input:checked){border-color:var(--sea);background:var(--sea50)}
+.pay small{display:block;color:var(--ink2);font-size:12px}
+.empty{padding:48px 16px;text-align:center;color:var(--ink2)}
+.done{padding:40px 20px;text-align:center}.done h1{font-size:22px;margin:0 0 8px}
+.mock{position:fixed;right:10px;bottom:96px;z-index:9;background:var(--ink);color:#fff;border-radius:12px;font-size:12px;padding:8px 10px;opacity:.9}
+@media (min-width:520px){.app{box-shadow:0 0 0 1px var(--line)}}
+@media (prefers-reduced-motion:no-preference){.o,.chip,.tier{transition:background .15s,border-color .15s}}
+</style>
+</head>
+<body>
+<div class="app" id="app"></div>
+<div class="mock">Bản mockup · dữ liệu thật ysnt.vn · chưa đặt hàng thật</div>
+<script>
+const DATA = [{"name": "Bộ Phúc Lộc An Khang", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__4__5bc864efc18047e088c8cc97f485bc4d.png", "slug": "bo-phuc-loc-an-khang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-001", "p": 950000, "ok": false}]}, {"name": "Bộ Quà Tặng An Khang", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_khang__2__9738fa2ea0a14b32a5bcdabe61f9ce8e.png", "slug": "bo-qua-tang-an-khang", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AK-01", "p": 3350000, "ok": true}]}, {"name": "Bộ Quà Tặng An Phúc", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_ph_c__1__517615e75409421b860fbffe3cf20a91.png", "slug": "bo-qua-tang-an-phuc", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AP-01", "p": 1500000, "ok": true}]}, {"name": "Bộ Quà Tặng An Viên", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_vi_n_9e8480421cab46f69b9e3aaf56d5240c.png", "slug": "bo-qua-tang-an-vien", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AV-01", "p": 1350000, "ok": true}]}, {"name": "Bộ Quà Tặng Thịnh Vượng An Gia", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__3__ec1958df96284501a0b9163e2384db74.png", "slug": "bo-qua-tang-thinh-vuong-an-gia", "v": [{"n": "Hộp", "sku": "QT-BAG2025", "p": 750000, "ok": true}]}, {"name": "Bộ Thượng Hạng An Nhiên (YSNT 50g)", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__2__902585266c6b4a1ba51ca62ea5cae3af.png", "slug": "bo-thuong-hang-an-nhien-ysnt-50g", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-002", "p": 3650000, "ok": false}]}, {"name": "Khay Mứt Tết - Xuân Như Ý", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_0ec1686eda074370b0e28dbf5598ab97.png", "slug": "khay-mut-tet-xuan-nhu-y", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-003", "p": 750000, "ok": true}]}, {"name": "Bột Tổ Yến", "cat": "Bột tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/b_t_g_o_l_t_234cc987aeaf4743b0a04f462d47e9dd.png", "slug": "bot-to-yen", "v": [{"n": "Gạo Lứt", "sku": "YSNT-BOT-001", "p": 140000, "ok": true}, {"n": "Mè Đen", "sku": "YSNT-BOT-002", "p": 140000, "ok": true}, {"n": "Ngũ Cốc", "sku": "YSNT-BOT-003", "p": 140000, "ok": true}]}, {"name": "Chè Tổ Yến", "cat": "Chè tổ yến", "brand": "Nestizen", "img": "https://cdn.hstatic.net/products/200000968607/che_to_yen_-_duong_nhan_d94089247f73477baaaf9138b5bf0e27.png", "slug": "che-to-yen", "v": [{"n": "Dưỡng Nhan", "sku": "YSNT-CHE-001", "p": 69000, "ok": true}, {"n": "Sâm Bổ Lượng", "sku": "YSNT-CHE-002", "p": 69000, "ok": true}]}, {"name": "Combo Bột Tổ Yến & Cà Phê Tổ Yến | Combo 4 hộp - CTCP Yến Sào Nha Trang", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_1_779b5da837a240e3bcf1d5c8b3a785b6.png", "slug": "combo-bot-to-yen-ca-phe-to-yen-combo-4-hop-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-001", "p": 540000, "ok": true}]}, {"name": "Combo Dưỡng Lành Bồi Bổ Sức Khoẻ - Phục Hồi Năng Lượng", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_l_nh__1__99b5f756b08c4e8b9c183493fd13dd00.png", "slug": "combo-duong-lanh-boi-bo-suc-khoe-phuc-hoi-nang-luong", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-002", "p": 849000, "ok": true}]}, {"name": "Combo Siêu Tiện Lợi - Dành cho người bận rộn", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/si_u_ti_n_l_i_f731c692ccd447fa97cde407668dc8ec.png", "slug": "combo-sieu-tien-loi-danh-cho-nguoi-ban-ron", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-003", "p": 159000, "ok": false}]}, {"name": "Combo Tổ Yến Tinh Chế & Súp Tổ Yến | Combo 7 Sản Phẩm - CTCP Yến Sào Nha Trang", "cat": "Combo", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_6_59ef7b4588b84c8a9dbe7ba87231fb54.png", "slug": "combo-to-yen-tinh-che-sup-to-yen-combo-7-san-pham-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-004", "p": 1564000, "ok": true}]}, {"name": "Combo Độc Quyền | Tổ Yến Ăn Liền - Cà Phê Tổ Yến - Súp Tổ Yến - Sữa Chua Khô", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/2__1__89078eb2b83f498fae0bbc32cdb4ba58.png", "slug": "combo-doc-quyen-to-yen-an-lien-ca-phe-to-yen-sup-to-yen-sua-chua-kho", "v": [{"n": "Combo", "sku": "YSNT-CBO-005", "p": 747000, "ok": true}]}, {"name": "Cà Phê Tổ Yến", "cat": "Cà phê tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_6ee59f9ee1ba4bd28941a58538312c72.png", "slug": "ca-phe-to-yen", "v": [{"n": "2 in 1", "sku": "YSNT-CAF-001", "p": 120000, "ok": true}, {"n": "4 in 1", "sku": "TP-CFY-H0200-CF-03", "p": 120000, "ok": true}]}, {"name": "Hydra Dew Cream - Kem Dưỡng Ẩm", "cat": "Khác", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng_b10bafd1e15e46aea5cedd156a5aa20b.png", "slug": "hydra-dew-cream-kem-duong-am", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-KHA-001", "p": 495000, "ok": true}]}, {"name": "Mặt Nạ Sinh Học Bio-Cellulose", "cat": "Mặt nạ yến", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__59cbbcdf035c4ed3ba22602d7406a6a4.png", "slug": "mat-na-sinh-hoc-bio-cellulose", "v": [{"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "sku": "YSNT-MNA-001", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "sku": "YSNT-MNA-002", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "sku": "YSNT-MNA-003", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-004", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-005", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-006", "p": 345000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Euromax", "cat": "Nước uống đóng chai", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/euromax_1098ad657d5b44f19ce81dfb00a97555.png", "slug": "nuoc-uong-dong-chai-euromax", "v": [{"n": "Thùng", "sku": "TP-NCY-T0024-EU-01", "p": 100000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Nest Art Life (Tính kiềm)", "cat": "Nước uống đóng chai", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/nest_art_life_1ea51ff39032483cb5984fc50c03d66f.png", "slug": "nuoc-uong-dong-chai-nest-art-life-tinh-kiem", "v": [{"n": "Thùng", "sku": "TP-NCY-T0024-NA-01", "p": 130000, "ok": true}]}, {"name": "Nước Yến Thật", "cat": "Nước yến thật", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/n__c_y_n_lon__h_p_06__a954442f34a54b1e842427eda4995b8e.png", "slug": "nuoc-yen-that", "v": [{"n": "Mật Ong – Lốc 6 lon", "sku": "YSNT-NYT-001", "p": 75000, "ok": true}, {"n": "Nấm Linh Chi – Lốc 6 lon", "sku": "YSNT-NYT-002", "p": 75000, "ok": true}, {"n": "Xáo Tam Phân – Lốc 6 lon", "sku": "YSNT-NYT-003", "p": 75000, "ok": true}, {"n": "Mật Ong – Thùng 30 lon", "sku": "YSNT-NYT-004", "p": 299000, "ok": true}, {"n": "Nấm Linh Chi – Thùng 30 lon", "sku": "YSNT-NYT-005", "p": 299000, "ok": true}, {"n": "Xáo Tam Phân – Thùng 30 lon", "sku": "YSNT-NYT-006", "p": 299000, "ok": true}]}, {"name": "Súp Tổ Yến", "cat": "Súp tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__22d275f681ee405483cac14f7bf4c5b0.png", "slug": "sup-to-yen", "v": [{"n": "Cá Hồi", "sku": "YSNT-SUP-001", "p": 69000, "ok": true}, {"n": "Gà Hầm Táo Đỏ", "sku": "YSNT-SUP-002", "p": 69000, "ok": true}, {"n": "Hải Sản", "sku": "TP-SOY-H0001-HS-01", "p": 69000, "ok": true}, {"n": "Nấm Rau Củ (Súp Chay)", "sku": "YSNT-SUP-003", "p": 69000, "ok": true}, {"n": "Thịt Bò", "sku": "YSNT-SUP-004", "p": 69000, "ok": true}, {"n": "Tôm Cua", "sku": "YSNT-SUP-005", "p": 69000, "ok": true}]}, {"name": "Sữa Chua Tổ Yến Sấy Khô", "cat": "Sữa chua sấy khô", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__3__6588d7afe5ab43c1bdeb105b83f121ad.png", "slug": "sua-chua-to-yen-say-kho", "v": [{"n": "Chanh Dây – 16g", "sku": "YSNT-SCK-001", "p": 55000, "ok": true}, {"n": "Dưa Lưới – 16g", "sku": "TP-SCY-H0005-DL-01", "p": 55000, "ok": true}, {"n": "Nguyên Vị – 16g", "sku": "YSNT-SCK-002", "p": 55000, "ok": true}, {"n": "Phô Mai – 16g", "sku": "YSNT-SCK-003", "p": 55000, "ok": true}, {"n": "Việt Quất – 16g", "sku": "YSNT-SCK-004", "p": 55000, "ok": true}, {"n": "Ổi Hồng – 16g", "sku": "SCK-VOH", "p": 55000, "ok": true}, {"n": "Chanh Dây – 96g", "sku": "YSNT-SCK-005", "p": 320000, "ok": true}, {"n": "Dưa Lưới – 96g", "sku": "YSNT-SCK-006", "p": 320000, "ok": true}, {"n": "Nguyên Vị – 96g", "sku": "TP-SCY-H0012-NV-01", "p": 320000, "ok": true}, {"n": "Phô Mai – 96g", "sku": "YSNT-SCK-007", "p": 320000, "ok": true}, {"n": "Việt Quất – 96g", "sku": "YSNT-SCK-008", "p": 320000, "ok": true}, {"n": "Ổi Hồng – 96g", "sku": "YSNT-SCK-009", "p": 320000, "ok": true}]}, {"name": "Tinh Chất Yến", "cat": "Tinh chất yến", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/collagen_fb66857373424c8fa7dba6289c0ccdd9.png", "slug": "tinh-chat-yen", "v": [{"n": "Collagen (Hộp 10 gói)", "sku": "TP-TIG-H0010-CO-01", "p": 690000, "ok": false}, {"n": "Nấm Linh Chi (Hộp 10 gói)", "sku": "TP-TIG-H0010-LC-01", "p": 690000, "ok": false}, {"n": "Đông Trùng Hạ Thảo (Hộp 10 gói)", "sku": "TP-TIG-H0010-DT01", "p": 690000, "ok": false}, {"n": "Hộp 30 gói", "sku": "TP-TIG-H0030-MX-01", "p": 1950000, "ok": false}]}, {"name": "Tổ Yến Chưng Sẵn", "cat": "Tổ yến chưng sẵn", "brand": "Nestizen", "img": "https://cdn.hstatic.net/products/200000968607/tytcs_70ml_nhan_sam_aaf2b17a30954c11ba391b9b7fa8d4b0.png", "slug": "to-yen-chung-san", "v": [{"n": "Nhân Sâm – 70ml", "sku": "YSNT-CHS-001", "p": 55000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 70ml", "sku": "YSNT-CHS-002", "p": 55000, "ok": true}, {"n": "Đường Isomalt – 70ml", "sku": "YSNT-CHS-003", "p": 55000, "ok": true}, {"n": "Đường Phèn – 70ml", "sku": "YSNT-CHS-004", "p": 55000, "ok": true}, {"n": "Nhân Sâm – 420ml", "sku": "YSNT-CHS-005", "p": 385000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 420ml", "sku": "YSNT-CHS-006", "p": 385000, "ok": true}, {"n": "Đường Isomalt – 420ml", "sku": "YSNT-CHS-007", "p": 385000, "ok": true}, {"n": "Đường Phèn – 420ml", "sku": "YSNT-CHS-008", "p": 385000, "ok": true}]}, {"name": "Tổ Yến Chưng Sẵn – Hộp 8", "cat": "Tổ yến chưng sẵn", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_isomalt__2__00403cc7a27e4a20b8f5108566bb5117.png", "slug": "to-yen-chung-san-hop-8", "v": [{"n": "Đường Isomalt", "sku": "TP-LOG-H0008-IS-01", "p": 880000, "ok": true}, {"n": "Đường Organic", "sku": "TP-LOG-H0008-OR-01", "p": 880000, "ok": true}, {"n": "Dừa Ninh Đa", "sku": "TP-LOL-H0008-ND-01", "p": 990000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ", "cat": "Tổ yến nguyên tổ", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_nguy_n_t__0cf993a1b4af4693b8205dbb96e474b8.png", "slug": "to-yen-nguyen-to", "v": [{"n": "Hộp 100g", "sku": "TP-NTP-H0100-NT-01", "p": 7250000, "ok": true}, {"n": "Hộp 500g", "sku": "TP-NTP-B0500-NT-01", "p": 36250000, "ok": true}, {"n": "Hộp 1000g", "sku": "TP-NTP-B1000-NT-01", "p": 72500000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ Hồng Huyết", "cat": "Tổ yến nguyên tổ", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_h_ng_huy_t_782e1a7b23824eadbad323e6b8b48233.png", "slug": "to-yen-nguyen-to-hong-huyet", "v": [{"n": "Hộp 100g", "sku": "TP-NTP-H0100-HU-01", "p": 9700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế - Limited", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__5__9c6373080ec84fbc9cfaeb6893841562.png", "slug": "to-yen-tinh-che-limited", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-TCH-001", "p": 9200000, "ok": false}]}, {"name": "Tổ Yến Tinh Chế Nest Art", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_truy_n_th_ng__50g__100g__a3bca5896fe54d228e0a961d812f5ae7.png", "slug": "to-yen-tinh-che-nest-art", "v": [{"n": "Hộp 50g", "sku": "TP-TCP-H0050-NA-01", "p": 3400000, "ok": true}, {"n": "Hộp 100g", "sku": "TP-TCP-H0100-NA-01", "p": 6700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Rút Lông Định Hình 100g", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_rldh_ebaa019e446740068ab8b70636270226.jpg", "slug": "to-yen-tinh-che-rut-long-dinh-hinh-100g", "v": [{"n": "Hộp", "sku": "TP-TCP-H0100-NA-02", "p": 7250000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Yến Sào Nha Trang", "cat": "Tổ yến tinh chế", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ysnt_10g_cbbbd68a847e4712a95c839096e0fab8.png", "slug": "to-yen-tinh-che-yen-sao-nha-trang", "v": [{"n": "Hộp 10g", "sku": "TP-TCG-H0010-YS-02", "p": 580000, "ok": true}, {"n": "Hộp 15g", "sku": "TP-TCG-H0015-YS-03", "p": 860000, "ok": true}, {"n": "Hộp 20g", "sku": "TP-TCG-H0020-YS-04", "p": 1150000, "ok": true}, {"n": "Hộp 30g", "sku": "TP-TCG-H0030-YS-01", "p": 1700000, "ok": true}, {"n": "Hộp 50g", "sku": "TP-TCG-H0050-YS-01", "p": 2750000, "ok": true}, {"n": "Hộp 100g", "sku": "YTC-YSNT100gr", "p": 5450000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền", "cat": "Tổ yến ăn liền", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/65__fucoidan_343fb1e4a20f4673bf54aec8138fe2e9.png", "slug": "to-yen-an-lien", "v": [{"n": "Fucoidan – 11g", "sku": "TP-ALG-H0001-FD-02", "p": 255000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 11g", "sku": "TP-ALG-H0001-HI-01", "p": 255000, "ok": true}, {"n": "Lá Dứa & Collagen – 11g", "sku": "TP-ALG-H0001-LC-01", "p": 255000, "ok": true}, {"n": "Nhân Sâm – 11g", "sku": "TP-ALG-H0001-NS-02", "p": 255000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 11g", "sku": "TP-ALG-H0001-NT-02", "p": 255000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 11g", "sku": "TP-ALG-H0001-DT-02", "p": 255000, "ok": true}, {"n": "Nguyên Chất – 11g", "sku": "TP-ALG-H0001-NC-01", "p": 265000, "ok": true}, {"n": "Fucoidan – 110g", "sku": "TP-ALG-H0010-FD-02", "p": 2550000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 110g", "sku": "TP-ALG-H0010-HI-01", "p": 2550000, "ok": true}, {"n": "Lá Dứa & Collagen – 110g", "sku": "TP-ALG-H0010-LC-01", "p": 2550000, "ok": true}, {"n": "Nhân Sâm – 110g", "sku": "TP-ALG-H0010-NS-03", "p": 2550000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 110g", "sku": "TP-ALG-H0010-NT-02", "p": 2550000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 110g", "sku": "TP-ALG-H0010-DT-02", "p": 2550000, "ok": true}, {"n": "Nguyên Chất – 110g", "sku": "TP-ALG-H0010-NC-01", "p": 2650000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền Platinum", "cat": "Tổ yến ăn liền", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/85__fucoidan_b0c35142c72a409b985b7093f3299ecd.png", "slug": "to-yen-an-lien-platinum", "v": [{"n": "Fucoidan – 9g", "sku": "TP-ALP-H0001-FU-01", "p": 285000, "ok": true}, {"n": "Lá Dứa – 9g", "sku": "TP-ALP-H0001-LD-01", "p": 285000, "ok": true}, {"n": "Nguyên Vị – 9g", "sku": "TP-ALP-H0001-NV-01", "p": 285000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền – Bánh Rau Củ", "cat": "Tổ yến ăn liền", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/brc__h_p_5__0001ef652ac04eb18dcc493902f2334f.png", "slug": "to-yen-an-lien-banh-rau-cu", "v": [{"n": "Hộp 5 gói", "sku": "TP-BRC-H0005-RC-01", "p": 70000, "ok": true}, {"n": "Hộp 30 gói", "sku": "TP-BRC-H0030-RC-01", "p": 385000, "ok": true}]}], CATS = ["Bộ quà tặng", "Bột tổ yến", "Chè tổ yến", "Combo", "Cà phê tổ yến", "Khác", "Mặt nạ yến", "Nước uống đóng chai", "Nước yến thật", "Súp tổ yến", "Sữa chua sấy khô", "Tinh chất yến", "Tổ yến chưng sẵn", "Tổ yến nguyên tổ", "Tổ yến tinh chế", "Tổ yến ăn liền"];
+const $ = s => document.querySelector(s);
+const vnd = n => n.toLocaleString('vi-VN') + 'đ';
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const bySlug = Object.fromEntries(DATA.map(p => [p.slug, p]));
+const minP = p => Math.min(...p.v.map(v => v.p));
+const store = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch {} } };
+let cart = store.get('ysnt_cart', []);
+const qs = new URLSearchParams(location.search);
+if (qs.get('ref')) store.set('ysnt_ref', qs.get('ref').toUpperCase().slice(0, 32));
+const REF = store.get('ysnt_ref', '');
+const saveCart = () => { store.set('ysnt_cart', cart); };
+const cartCount = () => cart.reduce((s, i) => s + i.q, 0);
+const DIM1 = { 'Tổ yến ăn liền': 'Vị', 'Tổ yến chưng sẵn': 'Vị', 'Sữa chua sấy khô': 'Vị', 'Nước yến thật': 'Vị', 'Súp tổ yến': 'Vị', 'Bột tổ yến': 'Vị', 'Chè tổ yến': 'Vị', 'Mặt nạ yến': 'Loại' };
+const GRAM_CATS = ['Tổ yến tinh chế', 'Tổ yến nguyên tổ'];
+const grams = (p, v) => { if (!GRAM_CATS.includes(p.cat)) return 0; const m = v.n.match(/(\d+)\s*g\b/i); return m ? +m[1] : 0; };
+
+function hdr(back) {
+  return `<header class="top">
+    ${back ? `<a class="icon-btn" href="${back}" aria-label="Quay lại">‹</a>` : ''}
+    <a class="brand" href="#/">Yến Sào Nha Trang<small>Tổ yến từ nhà yến Nha Trang</small></a>
+    <a class="icon-btn" href="#/cart" aria-label="Giỏ hàng">Giỏ <span class="badge">${cartCount()}</span></a>
+  </header>${REF ? `<div class="ref">Bạn đang mua qua mã giới thiệu <b>${esc(REF)}</b>. Đơn hàng sẽ ghi nhận cho người giới thiệu.</div>` : ''}`;
+}
+function card(p, v) {
+  const one = v || p.v.reduce((a, b) => (a.p <= b.p ? a : b));
+  const allOut = p.v.every(x => !x.ok);
+  return `<a class="card" href="#/p/${p.slug}${v ? '/' + p.v.indexOf(v) : ''}">
+    <div class="ph">${p.img ? `<img loading="lazy" src="${esc(p.img)}" alt="">` : ''}${p.brand === 'Nest Art' ? '<span class="tag">Nest Art</span>' : ''}${allOut ? '<span class="out">Tạm hết hàng</span>' : ''}</div>
+    <div class="nm">${esc(p.name)}</div>
+    <div class="pr">${!v && p.v.length > 1 ? 'từ ' : ''}${vnd(one.p)}</div>
+    <div class="vc">${v ? esc(v.n) : p.v.length > 1 ? p.v.length + ' lựa chọn' : esc(one.n === 'Tiêu chuẩn' ? '' : one.n)}</div></a>`;
+}
+</script>
+<script>
+const TIERS = [
+  { k: 'thu', t: 'Mua thử', s: 'dưới 350.000đ', f: v => v.p <= 350000 },
+  { k: 've', t: 'Quà mang về', s: '700.000đ – 1,2 triệu', f: v => v.p >= 700000 && v.p <= 1200000 },
+  { k: 'bieu', t: 'Quà biếu', s: '2 – 4 triệu', f: v => v.p >= 2000000 && v.p <= 4000000 },
+];
+let tierSel = 've', catSel = -1, searchQ = '';
+function tierItems(k) {
+  const T = TIERS.find(x => x.k === k), out = [];
+  for (const p of DATA) { const v = p.v.filter(x => x.ok && T.f(x)).sort((a, b) => a.p - b.p)[0]; if (v) out.push([p, v]); }
+  return out.slice(0, 6);
+}
+function home() {
+  const hero = bySlug['to-yen-an-lien'];
+  const best = ['to-yen-an-lien', 'to-yen-tinh-che-yen-sao-nha-trang', 'to-yen-chung-san', 'sua-chua-to-yen-say-kho'].map(s => bySlug[s]).filter(Boolean);
+  return hdr() + `
+  <form class="search" onsubmit="event.preventDefault();searchQ=this.q.value.trim();catSel=-1;location.hash='#/c'">
+    <input name="q" placeholder="Tìm tổ yến, súp, quà tặng…" aria-label="Tìm sản phẩm"><button class="btn btn-line" style="border:0;border-radius:0">Tìm</button></form>
+  <section class="hero">
+    <div><h1>Tổ yến ăn liền đầu tiên tại Việt Nam</h1><p>Chưng xong trong 5 phút, làm từ tổ yến Nha Trang nguyên chất.</p>
+    <a class="btn btn-white" href="#/p/to-yen-an-lien">Chọn vị</a></div>
+    ${hero && hero.img ? `<img src="${esc(hero.img)}" alt="Tổ yến ăn liền">` : ''}
+  </section>
+  <section class="sec"><h2>Danh mục</h2><div class="chips">${CATS.map((c, i) => `<a class="chip" href="#/c/${i}">${esc(c)}</a>`).join('')}</div></section>
+  <section class="sec"><h2>Quà mang về từ Nha Trang</h2><p class="sub">Chọn theo mức quà bạn muốn tặng.</p>
+    <div class="tiers" role="group" aria-label="Mức giá quà">${TIERS.map(T => `<button class="tier" aria-pressed="${T.k === tierSel}" onclick="tierSel='${T.k}';render()"><b>${T.t}</b><span>${T.s}</span></button>`).join('')}</div>
+    <div class="grid">${tierItems(tierSel).map(([p, v]) => card(p, v)).join('')}</div></section>
+  <section class="sec"><h2>Được mua nhiều</h2><div class="grid">${best.map(p => card(p)).join('')}</div></section>
+  <section class="visit"><h3>Ghé nhà yến ngay trung tâm Nha Trang</h3>
+    <p>01 Nguyễn Thiện Thuật. Xem chim yến làm tổ, thử yến chưng, mua quà mang về trong ngày.</p>
+    <a class="btn btn-line" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=01+Nguy%E1%BB%85n+Thi%E1%BB%87n+Thu%E1%BA%ADt+Nha+Trang">Chỉ đường</a></section>`;
+}
+function category(i) {
+  catSel = i;
+  let list = DATA;
+  if (i >= 0) list = list.filter(p => p.cat === CATS[i]);
+  if (searchQ) { const q = searchQ.toLowerCase(); list = list.filter(p => (p.name + ' ' + p.v.map(v => v.n).join(' ')).toLowerCase().includes(q)); }
+  return hdr('#/') + `<section class="sec" style="padding-top:14px">
+    <div class="chips"><button class="chip" aria-pressed="${i < 0}" onclick="searchQ='';location.hash='#/c'">Tất cả</button>${CATS.map((c, k) => `<a class="chip" aria-pressed="${k === i}" href="#/c/${k}">${esc(c)}</a>`).join('')}</div>
+    <h2 style="margin-top:14px">${i >= 0 ? esc(CATS[i]) : searchQ ? 'Kết quả cho “' + esc(searchQ) + '”' : 'Tất cả sản phẩm'}</h2>
+    <p class="sub">${list.length} sản phẩm</p>
+    ${list.length ? `<div class="grid">${list.map(p => card(p)).join('')}</div>` : `<div class="empty">Không có sản phẩm khớp “${esc(searchQ)}”. Thử từ khác, ví dụ “súp” hoặc “quà”.</div>`}</section>`;
+}
+</script>
+<script>
+let pdQty = 1, pdSel = {};
+function product(slug, vi) {
+  const p = bySlug[slug]; if (!p) return hdr('#/') + '<div class="empty">Không tìm thấy sản phẩm này.</div>';
+  const parts = p.v.map(v => v.n.split(' – '));
+  const two = p.v.length > 1 && parts.every(x => x.length === 2);
+  if (pdSel.slug !== slug) { pdQty = 1; const start = vi != null && p.v[vi] ? vi : Math.max(0, p.v.findIndex(v => v.ok)); pdSel = { slug, i: start }; }
+  const cur = p.v[pdSel.i], cp = parts[pdSel.i];
+  let opts = '';
+  if (two) {
+    const A = [...new Set(parts.map(x => x[0]))], B = [...new Set(parts.map(x => x[1]))];
+    const pick = (a, b) => p.v.findIndex(v => v.n === a + ' – ' + b);
+    opts = `<div class="opt"><h3>${DIM1[p.cat] || 'Loại'}</h3><div class="opts">${A.map(a => { let k = pick(a, cp[1]); if (k < 0) k = parts.findIndex(x => x[0] === a); return `<button class="o" aria-pressed="${a === cp[0]}" onclick="pdSel.i=${k};render()">${esc(a)}</button>`; }).join('')}</div></div>
+      <div class="opt"><h3>Quy cách</h3><div class="opts">${B.map(b => { const k = pick(cp[0], b); const v = p.v[k]; return `<button class="o" ${k < 0 || !v.ok ? 'disabled' : ''} aria-pressed="${b === cp[1]}" onclick="pdSel.i=${k};render()">${esc(b)}<small>${k >= 0 ? vnd(v.p) : 'Không có'}</small></button>`; }).join('')}</div></div>`;
+  } else if (p.v.length > 1) {
+    opts = `<div class="opt"><h3>${DIM1[p.cat] || 'Quy cách'}</h3><div class="opts">${p.v.map((v, k) => { const g = grams(p, v); return `<button class="o" ${v.ok ? '' : 'disabled'} aria-pressed="${k === pdSel.i}" onclick="pdSel.i=${k};render()">${esc(v.n)}<small>${vnd(v.p)}${g ? ' · ' + vnd(Math.round(v.p / g)) + '/g' : ''}</small></button>`; }).join('')}</div></div>`;
+  }
+  const g = grams(p, cur);
+  return hdr(catSel >= 0 ? '#/c/' + catSel : '#/') + `
+  <div class="pd-img">${p.img ? `<img src="${esc(p.img)}" alt="${esc(p.name)}">` : ''}</div>
+  <div class="pd">
+    <h1>${esc(p.name)}</h1>
+    <div class="brandline">${esc(p.brand || '')} · ${esc(p.cat)}</div>
+    <div class="price">${vnd(cur.p)}</div>
+    ${g ? `<p class="pergram">Khoảng ${vnd(Math.round(cur.p / g))} cho mỗi gram yến. So giữa các quy cách để chọn hộp lợi nhất.</p>` : ''}
+    ${!cur.ok ? '<p class="pergram" style="color:var(--red)">Quy cách này đang tạm hết hàng.</p>' : ''}
+    ${opts}
+    <div class="opt"><h3>Số lượng</h3><div class="qty"><button aria-label="Bớt" onclick="pdQty=Math.max(1,pdQty-1);render()">−</button><span>${pdQty}</span><button aria-label="Thêm" onclick="pdQty=Math.min(99,pdQty+1);render()">+</button></div></div>
+    <div class="facts">
+      <div><span>Mã sản phẩm</span><b>${esc(cur.sku)}</b></div>
+      <div><span>Giao hàng</span><b>Toàn quốc, phí báo khi xác nhận đơn</b></div>
+      <div><span>Mua tại chỗ</span><b>01 Nguyễn Thiện Thuật, Nha Trang</b></div>
+    </div>
+  </div>
+  <div class="bar"><button class="btn btn-line" ${cur.ok ? '' : 'disabled'} onclick="addCart('${slug}',${pdSel.i},pdQty,false)">Thêm vào giỏ</button><button class="btn btn-red" ${cur.ok ? '' : 'disabled'} onclick="addCart('${slug}',${pdSel.i},pdQty,true)">Mua ngay · ${vnd(cur.p * pdQty)}</button></div>`;
+}
+function addCart(slug, i, q, go) {
+  const it = cart.find(x => x.s === slug && x.i === i);
+  if (it) it.q = Math.min(99, it.q + q); else cart.push({ s: slug, i, q });
+  saveCart();
+  if (go) location.hash = '#/cart'; else { render(); toast('Đã thêm vào giỏ'); }
+}
+function toast(t) { const d = document.createElement('div'); d.textContent = t; d.setAttribute('role', 'status'); d.style.cssText = 'position:fixed;left:50%;top:70px;transform:translateX(-50%);background:#16282C;color:#fff;padding:10px 16px;border-radius:12px;z-index:20;font-size:14px'; document.body.appendChild(d); setTimeout(() => d.remove(), 1600); }
+</script>
+<script>
+let codeInput = store.get('ysnt_code', REF);
+const lines = () => cart.map(it => { const p = bySlug[it.s]; const v = p && p.v[it.i]; return p && v ? { it, p, v, total: v.p * it.q } : null; }).filter(Boolean);
+const staffCode = c => /^NV/i.test(c || '');
+function totals() {
+  const sub = lines().reduce((s, l) => s + l.total, 0);
+  const disc = staffCode(codeInput) ? Math.round(sub * 0.05) : 0;
+  return { sub, disc, total: sub - disc };
+}
+function cartPage() {
+  const L = lines();
+  if (!L.length) return hdr('#/') + `<div class="empty"><p>Giỏ hàng đang trống.</p><a class="btn btn-red" href="#/">Xem sản phẩm</a></div>`;
+  const T = totals();
+  return hdr('#/') + `<section class="sec" style="padding-top:14px"><h2>Giỏ hàng</h2>
+    ${L.map((l, k) => `<div class="row">${l.p.img ? `<img src="${esc(l.p.img)}" alt="">` : '<span></span>'}<div>
+      <div class="t">${esc(l.p.name)}</div><div class="v">${esc(l.v.n)}</div>
+      <div class="l"><div class="qty"><button aria-label="Bớt" onclick="chg(${k},-1)">−</button><span>${l.it.q}</span><button aria-label="Thêm" onclick="chg(${k},1)">+</button></div><b>${vnd(l.total)}</b></div></div></div>`).join('')}
+    <div class="field" style="margin-top:16px"><label for="code">Mã giới thiệu</label>
+      <input id="code" value="${esc(codeInput)}" placeholder="Nếu có, ví dụ mã của nhân viên hoặc hướng dẫn viên" oninput="codeInput=this.value.trim().toUpperCase();store.set('ysnt_code',codeInput)" onchange="render()"></div>
+    <p class="sub">Mockup: mã bắt đầu bằng NV là mã nhân viên, khách được giảm 5%. Mã hướng dẫn viên không giảm giá, chỉ ghi nhận người giới thiệu.</p>
+    <div class="sum"><div><span>Tạm tính</span><b>${vnd(T.sub)}</b></div>
+      ${T.disc ? `<div><span>Giảm 5% theo mã nhân viên</span><b>−${vnd(T.disc)}</b></div>` : ''}
+      <div><span>Phí giao hàng</span><span>Báo khi xác nhận đơn</span></div>
+      <div class="tot"><span>Tổng tiền hàng</span><span>${vnd(T.total)}</span></div></div></section>
+    <div class="bar"><a class="btn btn-red" href="#/checkout">Đặt hàng · ${vnd(T.total)}</a></div>`;
+}
+function chg(k, d) { const it = lines()[k].it; it.q += d; if (it.q <= 0) cart = cart.filter(x => x !== it); saveCart(); render(); }
+function checkout() {
+  if (!lines().length) { location.hash = '#/cart'; return ''; }
+  const T = totals();
+  return hdr('#/cart') + `<form class="sec" style="padding-top:14px" novalidate onsubmit="event.preventDefault();placeOrder(this)"><h2>Thông tin giao hàng</h2><p class="sub">Nhân viên gọi xác nhận đơn và báo phí giao hàng trước khi gửi.</p>
+    <div class="field"><label for="f1">Họ tên người nhận</label><input id="f1" name="name" autocomplete="name"><span class="err">Nhập họ tên người nhận.</span></div>
+    <div class="field"><label for="f2">Số điện thoại</label><input id="f2" name="phone" inputmode="tel" autocomplete="tel"><span class="err">Số điện thoại gồm 10 chữ số, bắt đầu bằng 0.</span></div>
+    <div class="field"><label for="f3">Địa chỉ nhận hàng</label><input id="f3" name="addr" autocomplete="street-address"><span class="err">Nhập địa chỉ nhận hàng.</span></div>
+    <div class="field"><label for="f4">Ghi chú</label><textarea id="f4" name="note" rows="2" placeholder="Ví dụ: giao giờ hành chính, gói quà"></textarea></div>
+    <h2 style="margin-top:8px">Thanh toán</h2>
+    <div class="pay">
+      <label><input type="radio" name="pay" value="cod" checked><span>Trả tiền khi nhận hàng<small>Kiểm tra hàng rồi mới trả tiền</small></span></label>
+      <label><input type="radio" name="pay" value="bank"><span>Chuyển khoản ngân hàng<small>Hiện mã QR sau khi đặt</small></span></label>
+      <label><input type="radio" name="pay" value="vnpay"><span>VNPay, MoMo<small>Thẻ ATM, thẻ quốc tế, ví điện tử</small></span></label>
+    </div>
+    <div class="sum" style="margin-top:16px"><div><span>${lines().length} sản phẩm</span><b>${vnd(T.sub)}</b></div>${T.disc ? `<div><span>Giảm theo mã nhân viên</span><b>−${vnd(T.disc)}</b></div>` : ''}<div class="tot"><span>Tổng tiền hàng</span><span>${vnd(T.total)}</span></div></div>
+    <div class="bar"><button class="btn btn-red" type="submit">Xác nhận đặt hàng</button></div></form>`;
+}
+</script>
+<script>
+function placeOrder(f) {
+  const rules = { name: v => v.length >= 2, phone: v => /^0\d{9}$/.test(v.replace(/[\s.]/g, '')), addr: v => v.length >= 6 };
+  let ok = true, first = null;
+  for (const [k, test] of Object.entries(rules)) {
+    const el = f.elements[k], good = test(el.value.trim());
+    el.closest('.field').classList.toggle('bad', !good);
+    el.oninput = () => el.closest('.field').classList.remove('bad');
+    if (!good) { ok = false; first = first || el; }
+  }
+  if (!ok) { first.focus(); return; }
+  const T = totals(), code = 'YS' + Date.now().toString().slice(-6);
+  store.set('ysnt_last', { code, total: T.total, pay: f.elements.pay.value, name: f.elements.name.value.trim(), ref: codeInput });
+  cart = []; saveCart(); location.hash = '#/done';
+}
+function done() {
+  const o = store.get('ysnt_last', null); if (!o) { location.hash = '#/'; return ''; }
+  const payText = { cod: 'Trả tiền khi nhận hàng', bank: 'Chuyển khoản ngân hàng', vnpay: 'VNPay, MoMo' }[o.pay];
+  return hdr() + `<div class="done"><h1>Đã nhận đơn ${esc(o.code)}</h1>
+    <p>Cảm ơn ${esc(o.name)}. Nhân viên sẽ gọi xác nhận đơn và báo phí giao hàng trong giờ làm việc.</p>
+    <div class="sum" style="text-align:left;margin:18px 0"><div><span>Tổng tiền hàng</span><b>${vnd(o.total)}</b></div><div><span>Thanh toán</span><span>${payText}</span></div>${o.ref ? `<div><span>Mã giới thiệu</span><span>${esc(o.ref)}</span></div>` : ''}</div>
+    <p class="sub">Đây là bản mockup, đơn này không được gửi đi.</p>
+    <a class="btn btn-line" href="#/">Tiếp tục xem sản phẩm</a></div>`;
+}
+function render() {
+  const h = location.hash.replace(/^#\/?/, '').split('/');
+  let html;
+  if (h[0] === 'p') html = product(h[1], h[2] != null ? +h[2] : null);
+  else if (h[0] === 'c') { if (h[1] == null) catSel = -1; else searchQ = ''; html = category(h[1] != null ? +h[1] : -1); }
+  else if (h[0] === 'cart') html = cartPage();
+  else if (h[0] === 'checkout') html = checkout();
+  else if (h[0] === 'done') html = done();
+  else html = home();
+  if (html) $('#app').innerHTML = html;
+}
+let lastHash = location.hash;
+addEventListener('hashchange', () => { if (!location.hash.startsWith('#/p/' + (pdSel.slug || '~'))) pdSel = {}; render(); if (location.hash !== lastHash) scrollTo(0, 0); lastHash = location.hash; });
+render();
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1F2B2E;--ink2:#5A686B;--sea:#0B4F55;--sea50:#E9F0EF;--red:#B3121B;--red50:#F9E9E9;--line:#DCE3E2;--nest:#F4E7C4;--bg:#E9EEED}
+.brand{display:flex;align-items:center;gap:10px}
+.seal{width:34px;height:34px;border-radius:8px;background:var(--red);color:#fff;display:grid;place-items:center;font-family:Fraunces,Lora,serif;font-weight:700;font-size:15px;flex:none;transform:rotate(-4deg)}
+.brand{min-width:0}.brand .txt{line-height:1.15;min-width:0}.brand .txt b{font-size:15px;white-space:nowrap}.top .icon-btn{padding:0 9px}@media (max-width:420px){.brand .txt small{display:none}}.brand .txt small{display:block;font-weight:400;font-size:12px;color:var(--ink2)}
+.ask{padding:26px 18px 8px}
+.ask p.k{margin:0 0 10px;color:var(--ink2);font-size:13px}
+.say{font-family:Fraunces,Lora,serif;font-size:30px;line-height:1.28;letter-spacing:-.015em;margin:0;font-weight:400}
+.say button{font:inherit;color:var(--sea);background:none;border:0;padding:0 2px;border-bottom:3px solid var(--sea);font-weight:600;cursor:pointer;line-height:1.1}
+.say button[aria-expanded=true]{background:var(--sea50)}
+.sheet{margin:14px 0 0;display:flex;flex-wrap:wrap;gap:8px}
+.sheet button{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:8px 14px;font-size:14px}
+.sheet button[aria-pressed=true]{border-color:var(--sea);background:var(--sea);color:#fff}
+.picks{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding:14px 18px 6px;scrollbar-width:none}.picks::-webkit-scrollbar{display:none}
+.pick{flex:0 0 76%;scroll-snap-align:start;text-decoration:none;border-radius:20px;background:#fff;border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.pick .ph{aspect-ratio:4/3;background:var(--nest)}.pick img{width:100%;height:100%;object-fit:cover;display:block}
+.pick .bd{padding:12px 14px 14px;display:grid;gap:4px}
+.pick .why{font-size:13px;color:var(--sea);font-weight:600}
+.pick .nm{font-weight:600;line-height:1.3}.pick .vn{font-size:13px;color:var(--ink2)}.pick .pr{font-weight:700;color:var(--red);font-size:17px}
+.count{padding:0 18px;color:var(--ink2);font-size:13px}
+.proof{margin:26px 18px 0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.proof div{padding:14px 6px;text-align:center;font-size:12px;color:var(--ink2)}.proof b{display:block;font-family:Fraunces,Lora,serif;font-size:20px;color:var(--ink);font-weight:600}
+.proof div+div{border-left:1px solid var(--line)}
+.shelf{padding:26px 18px 0}.shelf h2{font-family:Fraunces,Lora,serif;font-weight:600;font-size:22px;margin:0 0 10px;letter-spacing:-.01em}
+.shelf a.line{display:flex;justify-content:space-between;align-items:baseline;padding:13px 0;border-bottom:1px solid var(--line);text-decoration:none}
+.shelf a.line span{color:var(--ink2);font-size:13px}
+.place{margin:26px 18px 0;border-radius:20px;background:var(--sea);color:#fff;padding:20px}
+.place h3{font-family:Fraunces,Lora,serif;font-weight:600;font-size:21px;margin:0 0 6px;line-height:1.25}.place p{margin:0 0 14px;opacity:.88;font-size:14px}
+.card .ph,.pd-img{background:var(--nest)}
+.pd h1{font-family:Fraunces,Lora,serif;font-weight:600;font-size:25px;letter-spacing:-.01em}
+.gram{margin-top:16px;border:1px solid var(--line);border-radius:16px;padding:14px}
+.gram h3{margin:0 0 2px;font-size:14px}.gram p{margin:0 0 10px;font-size:12px;color:var(--ink2)}
+.gbar{display:grid;grid-template-columns:62px minmax(0,1fr) 78px;align-items:center;gap:8px;font-size:12px;padding:3px 0;background:none;border:0;width:100%;text-align:left}
+.gbar i{display:block;height:10px;border-radius:5px;background:var(--line)}.gbar i b{display:block;height:100%;border-radius:5px;background:var(--sea);opacity:.35}
+.gbar[aria-pressed=true]{font-weight:700}.gbar[aria-pressed=true] i b{opacity:1}
+.gbar em{font-style:normal;text-align:right}
+</style>
+<script>
+const WHO = [
+  { k: 'bome', t: 'bố mẹ', cats: ['Tổ yến tinh chế', 'Tổ yến chưng sẵn', 'Tổ yến ăn liền', 'Bộ quà tặng'] },
+  { k: 'mebau', t: 'mẹ bầu', cats: ['Tổ yến chưng sẵn', 'Tổ yến tinh chế', 'Tổ yến ăn liền'] },
+  { k: 'be', t: 'bé nhà mình', cats: ['Sữa chua sấy khô', 'Tổ yến ăn liền', 'Tổ yến chưng sẵn'] },
+  { k: 'doitac', t: 'đối tác, sếp', cats: ['Bộ quà tặng', 'Tổ yến tinh chế', 'Tổ yến nguyên tổ'] },
+  { k: 'minh', t: 'chính mình', cats: ['Tổ yến ăn liền', 'Súp tổ yến', 'Nước yến thật', 'Cà phê tổ yến', 'Tổ yến chưng sẵn'] },
+  { k: 'dulich', t: 'làm quà du lịch', cats: ['Bộ quà tặng', 'Sữa chua sấy khô', 'Tổ yến chưng sẵn', 'Súp tổ yến', 'Tổ yến ăn liền'] },
+];
+const BUDGET = [
+  { k: 'nho', t: 'dưới 300 nghìn', lo: 0, hi: 300000, at: 250000 },
+  { k: 'tr1', t: 'khoảng 1 triệu', lo: 500000, hi: 1500000, at: 1000000 },
+  { k: 'tr3', t: '2 đến 5 triệu', lo: 2000000, hi: 5000000, at: 3000000 },
+  { k: 'lon', t: 'trên 5 triệu', lo: 5000000, hi: 1e12, at: 7000000 },
+];
+const WHY = { 'Tổ yến tinh chế': 'Đã làm sạch, chỉ việc chưng', 'Tổ yến nguyên tổ': 'Tổ nguyên, hộp sang để biếu', 'Tổ yến ăn liền': '5 phút là có chén yến', 'Tổ yến chưng sẵn': 'Mở nắp là dùng được', 'Sữa chua sấy khô': 'Viên nhỏ, bé cầm ăn được', 'Súp tổ yến': 'Bữa sáng nhanh, pha là ăn', 'Nước yến thật': 'Uống liền, mang theo tiện', 'Cà phê tổ yến': 'Pha như cà phê gói', 'Bộ quà tặng': 'Đóng hộp sẵn, hợp để biếu' };
+let who = store.get('ysnt_who', 'bome'), budget = store.get('ysnt_budget', 'tr1'), openPart = '';
+function suggest() {
+  const W = WHO.find(x => x.k === who), B = BUDGET.find(x => x.k === budget), out = [];
+  W.cats.forEach((c, rank) => DATA.filter(p => p.cat === c).forEach(p => {
+    const vs = p.v.filter(v => v.ok && v.p >= B.lo && v.p <= B.hi).sort((a, b) => Math.abs(a.p - B.at) - Math.abs(b.p - B.at));
+    if (vs.length) out.push({ p, v: vs[0], rank });
+  }));
+  out.sort((a, b) => a.rank - b.rank || b.v.p - a.v.p);
+  const seen = new Set(); return out.filter(x => (seen.has(x.p.cat) && out.length > 4 ? false : (seen.add(x.p.cat), true))).slice(0, 6);
+}
+</script>
+<script>
+function hdr(back) {
+  return `<header class="top">
+    ${back ? `<a class="icon-btn" href="${back}" aria-label="Quay lại">‹</a>` : ''}
+    <a class="brand" href="#/"><span class="seal" aria-hidden="true">Yến</span><span class="txt"><b>Yến Sào Nha Trang</b><small>Từ nhà yến Khánh Hòa</small></span></a>
+    <span style="flex:1"></span>
+    <a class="icon-btn" href="#/c" aria-label="Tìm và xem tất cả">Tìm</a>
+    <a class="icon-btn" href="#/cart" aria-label="Giỏ hàng">Giỏ <span class="badge">${cartCount()}</span></a>
+  </header>${REF ? `<div class="ref">Bạn đang mua qua mã giới thiệu <b>${esc(REF)}</b>. Đơn hàng sẽ ghi nhận cho người giới thiệu.</div>` : ''}`;
+}
+function setWho(k) { who = k; openPart = ''; store.set('ysnt_who', k); render(); }
+function setBudget(k) { budget = k; openPart = ''; store.set('ysnt_budget', k); render(); }
+home = function () {
+  const W = WHO.find(x => x.k === who), B = BUDGET.find(x => x.k === budget), S = suggest();
+  const sheet = openPart === 'who' ? WHO.map(x => `<button aria-pressed="${x.k === who}" onclick="setWho('${x.k}')">${x.t}</button>`).join('')
+    : openPart === 'budget' ? BUDGET.map(x => `<button aria-pressed="${x.k === budget}" onclick="setBudget('${x.k}')">${x.t}</button>`).join('') : '';
+  const cats = CATS.map((c, i) => { const ps = DATA.filter(p => p.cat === c); const lo = Math.min(...ps.flatMap(p => p.v.map(v => v.p))); return `<a class="line" href="#/c/${i}"><b>${esc(c)}</b><span>${ps.length} sản phẩm · từ ${vnd(lo)}</span></a>`; }).join('');
+  return hdr() + `
+  <section class="ask" aria-label="Gợi ý theo người nhận">
+    <p class="k">Chạm vào chữ gạch dưới để đổi</p>
+    <p class="say">Tôi muốn mua yến cho <button aria-expanded="${openPart === 'who'}" onclick="openPart=openPart==='who'?'':'who';render()">${W.t}</button>, <button aria-expanded="${openPart === 'budget'}" onclick="openPart=openPart==='budget'?'':'budget';render()">${B.t}</button>.</p>
+    ${sheet ? `<div class="sheet" role="group">${sheet}</div>` : ''}
+  </section>
+  <p class="count">${S.length ? `${S.length} gợi ý hợp nhất` : ''}</p>
+  ${S.length ? `<div class="picks">${S.map(({ p, v }) => `<a class="pick" href="#/p/${p.slug}/${p.v.indexOf(v)}">
+      <div class="ph">${p.img ? `<img loading="lazy" src="${esc(p.img)}" alt="">` : ''}</div>
+      <div class="bd"><span class="why">${esc(WHY[p.cat] || 'Hợp với lựa chọn của bạn')}</span><span class="nm">${esc(p.name)}</span><span class="vn">${esc(v.n === 'Tiêu chuẩn' ? p.cat : v.n)}</span><span class="pr">${vnd(v.p)}</span></div></a>`).join('')}</div>`
+    : `<div class="empty">Chưa có món cho ${esc(W.t)} ở mức ${esc(B.t)}. <button class="btn btn-line" onclick="openPart='budget';render()">Đổi mức giá</button></div>`}
+  <div class="proof"><div><b>Hơn 10 năm</b>làm yến sào</div><div><b>2,2 ha</b>nhà máy tại Khánh Hòa</div><div><b>FDA, USDA</b>chứng nhận xuất khẩu</div></div>
+  <section class="shelf"><h2>Cả kệ hàng</h2>${cats}</section>
+  <section class="place"><h3>Ghé nhà yến ngay trung tâm Nha Trang</h3><p>01 Nguyễn Thiện Thuật. Xem chim yến làm tổ, thử yến chưng, mua quà mang về trong ngày.</p>
+    <a class="btn btn-white" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=01+Nguy%E1%BB%85n+Thi%E1%BB%87n+Thu%E1%BA%ADt+Nha+Trang">Chỉ đường</a></section>`;
+};
+const categoryV1 = category;
+category = function (i) {
+  const form = `<form class="search" style="margin:0 0 12px" onsubmit="event.preventDefault();searchQ=this.q.value.trim();if(location.hash==='#/c')render();else location.hash='#/c'"><input name="q" value="${esc(searchQ)}" placeholder="Tìm tổ yến, súp, quà tặng…" aria-label="Tìm sản phẩm"><button class="btn btn-line" style="border:0;border-radius:0">Tìm</button></form>`;
+  return categoryV1(i).replace('<section class="sec" style="padding-top:14px">', '<section class="sec" style="padding-top:14px">' + form);
+};
+const productV1 = product;
+product = function (slug, vi) {
+  let html = productV1(slug, vi);
+  const p = bySlug[slug]; if (!p) return html;
+  const G = p.v.map((v, k) => ({ v, k, g: grams(p, v) })).filter(x => x.g && x.v.ok);
+  if (false && G.length > 1) {
+    const per = G.map(x => x.v.p / x.g), mx = Math.max(...per), mn = Math.min(...per);
+    const chart = `<div class="gram"><h3>Giá mỗi gram theo từng hộp</h3><p>Hộp lớn rẻ hơn ${Math.round((1 - mn / mx) * 100)}% mỗi gram so với hộp nhỏ nhất. Chạm để chọn hộp.</p>
+      ${G.map((x, i) => `<button class="gbar" aria-pressed="${x.k === pdSel.i}" onclick="pdSel.i=${x.k};render()"><span>${esc(x.v.n)}</span><i><b style="width:${Math.round(per[i] / mx * 100)}%"></b></i><em>${vnd(Math.round(per[i]))}/g</em></button>`).join('')}</div>`;
+    html = html.replace('<div class="opt"><h3>Số lượng', chart + '<div class="opt"><h3>Số lượng');
+  }
+  return html;
+};
+document.title = 'Mockup trang mua hàng (bản 2) · Yến Sào Nha Trang';
+document.querySelector('.mock').textContent = 'Bản 2 · dữ liệu thật ysnt.vn · chưa đặt hàng thật';
+render();
+</script>
+
+</body>
+</html>

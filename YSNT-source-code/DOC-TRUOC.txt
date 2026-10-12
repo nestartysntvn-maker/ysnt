@@ -1,0 +1,23 @@
+MÃ NGUỒN WEB + TRANG QUẢN TRỊ YẾN SÀO NHA TRANG (nhaviettesting.go365.vn)
+
+Phiên bản: commit e14001a, ngày 12/10/2026
+331 tệp: Laravel 13, Filament 5 (trang quản trị /admin), MySQL 8.
+
+KHÔNG có trong gói (cố ý):
+- .env: mật khẩu database, APP_KEY, khóa sàn/AI. Lấy riêng trên máy chủ, không gửi qua chat/email.
+- vendor/: thư viện, tải lại bằng composer install.
+- storage/: file tải lên, file nhập khách, log, cache (là dữ liệu, không phải mã nguồn).
+- Dữ liệu database: sao lưu riêng bằng mysqldump.
+- Lịch sử git (.git).
+
+CÀI LÊN MÁY MỚI (cho người kỹ thuật):
+1. PHP 8.3 trở lên (máy chủ đang chạy 8.5) với intl, mbstring, xml, zip, gd, iconv, pdo_mysql; Composer 2; MySQL 8 (utf8mb4).
+2. composer install --no-dev --optimize-autoloader
+3. Chép .env.example thành .env, sửa: APP_URL, APP_LOCALE=vi, DB_CONNECTION=mysql, DB_DATABASE, DB_USERNAME, DB_PASSWORD.
+4. APP_KEY: chuyển từ máy cũ thì GIỮ NGUYÊN APP_KEY cũ (cài đặt trong app_settings được mã hóa bằng khóa này).
+   Cài mới hoàn toàn thì chạy: php artisan key:generate
+5. php artisan migrate --force
+6. php artisan storage:link
+7. Chạy hàng đợi: php artisan queue:work (máy chủ hiện tại dùng dịch vụ ysnt-queue.service).
+
+Kịch bản chuyển máy chủ có sẵn: deploy/chuyen-may-chu.sh (mặc định chạy thử, thêm --chay-that mới chạy thật).

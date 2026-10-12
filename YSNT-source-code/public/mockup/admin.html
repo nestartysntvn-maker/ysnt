@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow"><title>Mockup quản trị · Yến Sào Nha Trang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#16282C;--ink2:#51656A;--sea:#0E5E66;--sea50:#E7F0F0;--red:#C4161C;--red50:#FBECEC;--amb:#8A5A00;--amb50:#FFF4DC;--line:#D8E2E1;--bg:#F3F6F6}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:"Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);background:var(--bg);font-size:14px;line-height:1.5}
+button,input,select{font:inherit}button{cursor:pointer}:focus-visible{outline:3px solid var(--sea);outline-offset:2px}
+.layout{display:grid;grid-template-columns:232px minmax(0,1fr);min-height:100vh}
+nav.side{background:var(--ink);color:#fff;padding:18px 12px;position:sticky;top:0;height:100vh}
+.side .logo{font-weight:700;font-size:16px;padding:0 10px 16px;line-height:1.2}.side .logo small{display:block;font-weight:400;opacity:.7;font-size:12px}
+.side a{display:flex;justify-content:space-between;align-items:center;color:#fff;text-decoration:none;padding:10px;border-radius:10px;opacity:.82}
+.side a[aria-current=page]{background:rgba(255,255,255,.12);opacity:1;font-weight:600}
+.cnt{background:var(--red);border-radius:9px;font-size:11px;padding:1px 7px;font-weight:600}
+main{padding:24px 28px 48px;min-width:0}
+h1{font-size:22px;margin:0 0 4px;letter-spacing:-.01em}.lead{color:var(--ink2);margin:0 0 18px}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:18px}
+.kpi{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px}.kpi b{display:block;font-size:26px;letter-spacing:-.02em}.kpi span{color:var(--ink2);font-size:13px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+.panel h2{font-size:16px;margin:0 0 10px}
+.todo{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:10px 0;border-top:1px solid var(--line)}.todo:first-of-type{border-top:0}
+.tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+.tools input,.tools select{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:#fff}.tools input{flex:1;min-width:200px}
+.btn{border:0;border-radius:10px;padding:9px 14px;font-weight:600;background:var(--sea);color:#fff;text-decoration:none;display:inline-flex;gap:6px;align-items:center}
+.btn.ghost{background:#fff;color:var(--sea);border:1.5px solid var(--sea)}.btn.red{background:var(--red)}
+.tbl{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.tbl th{text-align:left;font-size:12px;color:var(--ink2);font-weight:600;background:#FAFCFC;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}.tbl tr:last-child td{border-bottom:0}
+.tbl tr.click{cursor:pointer}.tbl tr.click:hover td{background:#FAFCFC}
+.num,.tbl th.num{text-align:right;white-space:nowrap}.th{width:44px;height:44px;border-radius:10px;object-fit:cover;background:var(--sea50);display:block}
+.pill{display:inline-block;border-radius:999px;padding:2px 9px;font-size:12px;font-weight:600;white-space:nowrap}
+.ok{background:var(--sea50);color:var(--sea)}.warn{background:var(--amb50);color:var(--amb)}.bad{background:var(--red50);color:var(--red)}
+.wrap{overflow-x:auto;border-radius:14px}
+.drawer{position:fixed;inset:0 0 0 auto;width:min(760px,100%);background:#fff;box-shadow:-12px 0 32px rgba(22,40,44,.18);z-index:10;overflow:auto;padding:22px}
+.shade{position:fixed;inset:0;background:rgba(22,40,44,.35);z-index:9}
+.form{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.f{display:grid;gap:4px}.f label{font-size:12px;font-weight:600;color:var(--ink2)}.f input,.f select{border:1px solid var(--line);border-radius:10px;padding:9px 10px;width:100%}
+.vt input{border:1px solid var(--line);border-radius:8px;padding:7px 8px;width:100%}.vt td{padding:6px 8px}
+.empty{text-align:center;padding:36px 16px;color:var(--ink2)}.empty b{display:block;color:var(--ink);font-size:16px;margin-bottom:4px}
+.mock{position:fixed;right:12px;bottom:12px;background:var(--ink);color:#fff;border-radius:10px;font-size:12px;padding:7px 10px;opacity:.9;z-index:20}
+@media (max-width:820px){.layout{grid-template-columns:1fr}nav.side{position:static;height:auto;display:flex;gap:4px;overflow-x:auto;padding:10px}.side .logo{display:none}.side a{white-space:nowrap}main{padding:16px}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.form{grid-template-columns:1fr}}
+</style></head><body>
+<div class="layout"><nav class="side" id="nav"></nav><main id="main"></main></div>
+<div class="mock">Mockup quản trị · dữ liệu thật · chưa lưu vào database</div>
+<script>
+const P = [{"name": "Bộ Phúc Lộc An Khang", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__4__5bc864efc18047e088c8cc97f485bc4d.png", "slug": "bo-phuc-loc-an-khang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-001", "p": 950000, "ok": false, "gen": true, "old": ""}]}, {"name": "Bộ Quà Tặng An Khang", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_khang__2__9738fa2ea0a14b32a5bcdabe61f9ce8e.png", "slug": "bo-qua-tang-an-khang", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AK-01", "p": 3350000, "ok": true, "gen": false, "old": ""}]}, {"name": "Bộ Quà Tặng An Phúc", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_ph_c__1__517615e75409421b860fbffe3cf20a91.png", "slug": "bo-qua-tang-an-phuc", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AP-01", "p": 1500000, "ok": true, "gen": false, "old": ""}]}, {"name": "Bộ Quà Tặng An Viên", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/an_vi_n_9e8480421cab46f69b9e3aaf56d5240c.png", "slug": "bo-qua-tang-an-vien", "v": [{"n": "Hộp", "sku": "TP-BQT-H2025-AV-01", "p": 1350000, "ok": true, "gen": false, "old": ""}]}, {"name": "Bộ Quà Tặng Thịnh Vượng An Gia", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__3__ec1958df96284501a0b9163e2384db74.png", "slug": "bo-qua-tang-thinh-vuong-an-gia", "v": [{"n": "Hộp", "sku": "QT-BAG2025", "p": 750000, "ok": true, "gen": false, "old": ""}]}, {"name": "Bộ Thượng Hạng An Nhiên (YSNT 50g)", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__2__902585266c6b4a1ba51ca62ea5cae3af.png", "slug": "bo-thuong-hang-an-nhien-ysnt-50g", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-002", "p": 3650000, "ok": false, "gen": true, "old": ""}]}, {"name": "Khay Mứt Tết - Xuân Như Ý", "cat": "Bộ quà tặng", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_0ec1686eda074370b0e28dbf5598ab97.png", "slug": "khay-mut-tet-xuan-nhu-y", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-QUA-003", "p": 750000, "ok": true, "gen": true, "old": ""}]}, {"name": "Bột Tổ Yến", "cat": "Bột tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/b_t_g_o_l_t_234cc987aeaf4743b0a04f462d47e9dd.png", "slug": "bot-to-yen", "v": [{"n": "Gạo Lứt", "sku": "YSNT-BOT-001", "p": 140000, "ok": true, "gen": true, "old": ""}, {"n": "Mè Đen", "sku": "YSNT-BOT-002", "p": 140000, "ok": true, "gen": true, "old": ""}, {"n": "Ngũ Cốc", "sku": "YSNT-BOT-003", "p": 140000, "ok": true, "gen": true, "old": ""}]}, {"name": "Chè Tổ Yến", "cat": "Chè tổ yến", "brand": "Nestizen", "img": "https://cdn.hstatic.net/products/200000968607/che_to_yen_-_duong_nhan_d94089247f73477baaaf9138b5bf0e27.png", "slug": "che-to-yen", "v": [{"n": "Dưỡng Nhan", "sku": "YSNT-CHE-001", "p": 69000, "ok": true, "gen": true, "old": ""}, {"n": "Sâm Bổ Lượng", "sku": "YSNT-CHE-002", "p": 69000, "ok": true, "gen": true, "old": ""}]}, {"name": "Combo Bột Tổ Yến & Cà Phê Tổ Yến | Combo 4 hộp - CTCP Yến Sào Nha Trang", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_1_779b5da837a240e3bcf1d5c8b3a785b6.png", "slug": "combo-bot-to-yen-ca-phe-to-yen-combo-4-hop-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-001", "p": 540000, "ok": true, "gen": true, "old": ""}]}, {"name": "Combo Dưỡng Lành Bồi Bổ Sức Khoẻ - Phục Hồi Năng Lượng", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_l_nh__1__99b5f756b08c4e8b9c183493fd13dd00.png", "slug": "combo-duong-lanh-boi-bo-suc-khoe-phuc-hoi-nang-luong", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-002", "p": 849000, "ok": true, "gen": true, "old": ""}]}, {"name": "Combo Siêu Tiện Lợi - Dành cho người bận rộn", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/si_u_ti_n_l_i_f731c692ccd447fa97cde407668dc8ec.png", "slug": "combo-sieu-tien-loi-danh-cho-nguoi-ban-ron", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-003", "p": 159000, "ok": false, "gen": true, "old": ""}]}, {"name": "Combo Tổ Yến Tinh Chế & Súp Tổ Yến | Combo 7 Sản Phẩm - CTCP Yến Sào Nha Trang", "cat": "Combo", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_6_59ef7b4588b84c8a9dbe7ba87231fb54.png", "slug": "combo-to-yen-tinh-che-sup-to-yen-combo-7-san-pham-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-CBO-004", "p": 1564000, "ok": true, "gen": true, "old": ""}]}, {"name": "Combo Độc Quyền | Tổ Yến Ăn Liền - Cà Phê Tổ Yến - Súp Tổ Yến - Sữa Chua Khô", "cat": "Combo", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/2__1__89078eb2b83f498fae0bbc32cdb4ba58.png", "slug": "combo-doc-quyen-to-yen-an-lien-ca-phe-to-yen-sup-to-yen-sua-chua-kho", "v": [{"n": "Combo", "sku": "YSNT-CBO-005", "p": 747000, "ok": true, "gen": true, "old": ""}]}, {"name": "Cà Phê Tổ Yến", "cat": "Cà phê tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_6ee59f9ee1ba4bd28941a58538312c72.png", "slug": "ca-phe-to-yen", "v": [{"n": "2 in 1", "sku": "YSNT-CAF-001", "p": 120000, "ok": true, "gen": true, "old": ""}, {"n": "4 in 1", "sku": "TP-CFY-H0200-CF-03", "p": 120000, "ok": true, "gen": false, "old": ""}]}, {"name": "Hydra Dew Cream - Kem Dưỡng Ẩm", "cat": "Khác", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng_b10bafd1e15e46aea5cedd156a5aa20b.png", "slug": "hydra-dew-cream-kem-duong-am", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-KHA-001", "p": 495000, "ok": true, "gen": true, "old": ""}]}, {"name": "Mặt Nạ Sinh Học Bio-Cellulose", "cat": "Mặt nạ yến", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__59cbbcdf035c4ed3ba22602d7406a6a4.png", "slug": "mat-na-sinh-hoc-bio-cellulose", "v": [{"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "sku": "YSNT-MNA-001", "p": 79000, "ok": true, "gen": true, "old": ""}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "sku": "YSNT-MNA-002", "p": 79000, "ok": true, "gen": true, "old": ""}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "sku": "YSNT-MNA-003", "p": 79000, "ok": true, "gen": true, "old": ""}, {"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-004", "p": 345000, "ok": true, "gen": true, "old": ""}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-005", "p": 345000, "ok": true, "gen": true, "old": ""}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-006", "p": 345000, "ok": true, "gen": true, "old": ""}]}, {"name": "Nước Uống Đóng Chai - Euromax", "cat": "Nước uống đóng chai", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/euromax_1098ad657d5b44f19ce81dfb00a97555.png", "slug": "nuoc-uong-dong-chai-euromax", "v": [{"n": "Thùng", "sku": "TP-NCY-T0024-EU-01", "p": 100000, "ok": true, "gen": false, "old": ""}]}, {"name": "Nước Uống Đóng Chai - Nest Art Life (Tính kiềm)", "cat": "Nước uống đóng chai", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/nest_art_life_1ea51ff39032483cb5984fc50c03d66f.png", "slug": "nuoc-uong-dong-chai-nest-art-life-tinh-kiem", "v": [{"n": "Thùng", "sku": "TP-NCY-T0024-NA-01", "p": 130000, "ok": true, "gen": false, "old": ""}]}, {"name": "Nước Yến Thật", "cat": "Nước yến thật", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/n__c_y_n_lon__h_p_06__a954442f34a54b1e842427eda4995b8e.png", "slug": "nuoc-yen-that", "v": [{"n": "Mật Ong – Lốc 6 lon", "sku": "YSNT-NYT-001", "p": 75000, "ok": true, "gen": true, "old": ""}, {"n": "Nấm Linh Chi – Lốc 6 lon", "sku": "YSNT-NYT-002", "p": 75000, "ok": true, "gen": true, "old": ""}, {"n": "Xáo Tam Phân – Lốc 6 lon", "sku": "YSNT-NYT-003", "p": 75000, "ok": true, "gen": true, "old": ""}, {"n": "Mật Ong – Thùng 30 lon", "sku": "YSNT-NYT-004", "p": 299000, "ok": true, "gen": true, "old": ""}, {"n": "Nấm Linh Chi – Thùng 30 lon", "sku": "YSNT-NYT-005", "p": 299000, "ok": true, "gen": true, "old": ""}, {"n": "Xáo Tam Phân – Thùng 30 lon", "sku": "YSNT-NYT-006", "p": 299000, "ok": true, "gen": true, "old": ""}]}, {"name": "Súp Tổ Yến", "cat": "Súp tổ yến", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__22d275f681ee405483cac14f7bf4c5b0.png", "slug": "sup-to-yen", "v": [{"n": "Cá Hồi", "sku": "YSNT-SUP-001", "p": 69000, "ok": true, "gen": true, "old": "TP-SOY-H0001-HS-01"}, {"n": "Gà Hầm Táo Đỏ", "sku": "YSNT-SUP-002", "p": 69000, "ok": true, "gen": true, "old": "TP-SOY-H0001-HS-01"}, {"n": "Hải Sản", "sku": "TP-SOY-H0001-HS-01", "p": 69000, "ok": true, "gen": false, "old": "TP-SOY-H0001-HS-01"}, {"n": "Nấm Rau Củ (Súp Chay)", "sku": "YSNT-SUP-003", "p": 69000, "ok": true, "gen": true, "old": "TP-SOY-H0001-HS-01"}, {"n": "Thịt Bò", "sku": "YSNT-SUP-004", "p": 69000, "ok": true, "gen": true, "old": "TP-SOY-H0001-HS-01"}, {"n": "Tôm Cua", "sku": "YSNT-SUP-005", "p": 69000, "ok": true, "gen": true, "old": "TP-SOY-H0001-HS-01"}]}, {"name": "Sữa Chua Tổ Yến Sấy Khô", "cat": "Sữa chua sấy khô", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__3__6588d7afe5ab43c1bdeb105b83f121ad.png", "slug": "sua-chua-to-yen-say-kho", "v": [{"n": "Chanh Dây – 16g", "sku": "YSNT-SCK-001", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Dưa Lưới – 16g", "sku": "TP-SCY-H0005-DL-01", "p": 55000, "ok": true, "gen": false, "old": ""}, {"n": "Nguyên Vị – 16g", "sku": "YSNT-SCK-002", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Phô Mai – 16g", "sku": "YSNT-SCK-003", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Việt Quất – 16g", "sku": "YSNT-SCK-004", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Ổi Hồng – 16g", "sku": "SCK-VOH", "p": 55000, "ok": true, "gen": false, "old": ""}, {"n": "Chanh Dây – 96g", "sku": "YSNT-SCK-005", "p": 320000, "ok": true, "gen": true, "old": ""}, {"n": "Dưa Lưới – 96g", "sku": "YSNT-SCK-006", "p": 320000, "ok": true, "gen": true, "old": "TP-SCY-H0005-DL-01"}, {"n": "Nguyên Vị – 96g", "sku": "TP-SCY-H0012-NV-01", "p": 320000, "ok": true, "gen": false, "old": ""}, {"n": "Phô Mai – 96g", "sku": "YSNT-SCK-007", "p": 320000, "ok": true, "gen": true, "old": ""}, {"n": "Việt Quất – 96g", "sku": "YSNT-SCK-008", "p": 320000, "ok": true, "gen": true, "old": ""}, {"n": "Ổi Hồng – 96g", "sku": "YSNT-SCK-009", "p": 320000, "ok": true, "gen": true, "old": "SCK-VOH"}]}, {"name": "Tinh Chất Yến", "cat": "Tinh chất yến", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/collagen_fb66857373424c8fa7dba6289c0ccdd9.png", "slug": "tinh-chat-yen", "v": [{"n": "Collagen (Hộp 10 gói)", "sku": "TP-TIG-H0010-CO-01", "p": 690000, "ok": false, "gen": false, "old": ""}, {"n": "Nấm Linh Chi (Hộp 10 gói)", "sku": "TP-TIG-H0010-LC-01", "p": 690000, "ok": false, "gen": false, "old": ""}, {"n": "Đông Trùng Hạ Thảo (Hộp 10 gói)", "sku": "TP-TIG-H0010-DT01", "p": 690000, "ok": false, "gen": false, "old": ""}, {"n": "Hộp 30 gói", "sku": "TP-TIG-H0030-MX-01", "p": 1950000, "ok": false, "gen": false, "old": ""}]}, {"name": "Tổ Yến Chưng Sẵn", "cat": "Tổ yến chưng sẵn", "brand": "Nestizen", "img": "https://cdn.hstatic.net/products/200000968607/tytcs_70ml_nhan_sam_aaf2b17a30954c11ba391b9b7fa8d4b0.png", "slug": "to-yen-chung-san", "v": [{"n": "Nhân Sâm – 70ml", "sku": "YSNT-CHS-001", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Đông Trùng Hạ Thảo – 70ml", "sku": "YSNT-CHS-002", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Đường Isomalt – 70ml", "sku": "YSNT-CHS-003", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Đường Phèn – 70ml", "sku": "YSNT-CHS-004", "p": 55000, "ok": true, "gen": true, "old": ""}, {"n": "Nhân Sâm – 420ml", "sku": "YSNT-CHS-005", "p": 385000, "ok": true, "gen": true, "old": ""}, {"n": "Đông Trùng Hạ Thảo – 420ml", "sku": "YSNT-CHS-006", "p": 385000, "ok": true, "gen": true, "old": ""}, {"n": "Đường Isomalt – 420ml", "sku": "YSNT-CHS-007", "p": 385000, "ok": true, "gen": true, "old": ""}, {"n": "Đường Phèn – 420ml", "sku": "YSNT-CHS-008", "p": 385000, "ok": true, "gen": true, "old": ""}]}, {"name": "Tổ Yến Chưng Sẵn – Hộp 8", "cat": "Tổ yến chưng sẵn", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_isomalt__2__00403cc7a27e4a20b8f5108566bb5117.png", "slug": "to-yen-chung-san-hop-8", "v": [{"n": "Đường Isomalt", "sku": "TP-LOG-H0008-IS-01", "p": 880000, "ok": true, "gen": false, "old": ""}, {"n": "Đường Organic", "sku": "TP-LOG-H0008-OR-01", "p": 880000, "ok": true, "gen": false, "old": ""}, {"n": "Dừa Ninh Đa", "sku": "TP-LOL-H0008-ND-01", "p": 990000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Nguyên Tổ", "cat": "Tổ yến nguyên tổ", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_nguy_n_t__0cf993a1b4af4693b8205dbb96e474b8.png", "slug": "to-yen-nguyen-to", "v": [{"n": "Hộp 100g", "sku": "TP-NTP-H0100-NT-01", "p": 7250000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 500g", "sku": "TP-NTP-B0500-NT-01", "p": 36250000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 1000g", "sku": "TP-NTP-B1000-NT-01", "p": 72500000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Nguyên Tổ Hồng Huyết", "cat": "Tổ yến nguyên tổ", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_h_ng_huy_t_782e1a7b23824eadbad323e6b8b48233.png", "slug": "to-yen-nguyen-to-hong-huyet", "v": [{"n": "Hộp 100g", "sku": "TP-NTP-H0100-HU-01", "p": 9700000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Tinh Chế - Limited", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__5__9c6373080ec84fbc9cfaeb6893841562.png", "slug": "to-yen-tinh-che-limited", "v": [{"n": "Tiêu chuẩn", "sku": "YSNT-TCH-001", "p": 9200000, "ok": false, "gen": true, "old": ""}]}, {"name": "Tổ Yến Tinh Chế Nest Art", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_truy_n_th_ng__50g__100g__a3bca5896fe54d228e0a961d812f5ae7.png", "slug": "to-yen-tinh-che-nest-art", "v": [{"n": "Hộp 50g", "sku": "TP-TCP-H0050-NA-01", "p": 3400000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 100g", "sku": "TP-TCP-H0100-NA-01", "p": 6700000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Tinh Chế Rút Lông Định Hình 100g", "cat": "Tổ yến tinh chế", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/na_rldh_ebaa019e446740068ab8b70636270226.jpg", "slug": "to-yen-tinh-che-rut-long-dinh-hinh-100g", "v": [{"n": "Hộp", "sku": "TP-TCP-H0100-NA-02", "p": 7250000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Tinh Chế Yến Sào Nha Trang", "cat": "Tổ yến tinh chế", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/ysnt_10g_cbbbd68a847e4712a95c839096e0fab8.png", "slug": "to-yen-tinh-che-yen-sao-nha-trang", "v": [{"n": "Hộp 10g", "sku": "TP-TCG-H0010-YS-02", "p": 580000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 15g", "sku": "TP-TCG-H0015-YS-03", "p": 860000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 20g", "sku": "TP-TCG-H0020-YS-04", "p": 1150000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 30g", "sku": "TP-TCG-H0030-YS-01", "p": 1700000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 50g", "sku": "TP-TCG-H0050-YS-01", "p": 2750000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 100g", "sku": "YTC-YSNT100gr", "p": 5450000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Ăn Liền", "cat": "Tổ yến ăn liền", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/65__fucoidan_343fb1e4a20f4673bf54aec8138fe2e9.png", "slug": "to-yen-an-lien", "v": [{"n": "Fucoidan – 11g", "sku": "TP-ALG-H0001-FD-02", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Hạt Sen & Đường Isomalt – 11g", "sku": "TP-ALG-H0001-HI-01", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Lá Dứa & Collagen – 11g", "sku": "TP-ALG-H0001-LC-01", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Nhân Sâm – 11g", "sku": "TP-ALG-H0001-NS-02", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Nhụy Hoa Nghệ Tây – 11g", "sku": "TP-ALG-H0001-NT-02", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Đông Trùng Hạ Thảo – 11g", "sku": "TP-ALG-H0001-DT-02", "p": 255000, "ok": true, "gen": false, "old": ""}, {"n": "Nguyên Chất – 11g", "sku": "TP-ALG-H0001-NC-01", "p": 265000, "ok": true, "gen": false, "old": ""}, {"n": "Fucoidan – 110g", "sku": "TP-ALG-H0010-FD-02", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Hạt Sen & Đường Isomalt – 110g", "sku": "TP-ALG-H0010-HI-01", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Lá Dứa & Collagen – 110g", "sku": "TP-ALG-H0010-LC-01", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Nhân Sâm – 110g", "sku": "TP-ALG-H0010-NS-03", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Nhụy Hoa Nghệ Tây – 110g", "sku": "TP-ALG-H0010-NT-02", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Đông Trùng Hạ Thảo – 110g", "sku": "TP-ALG-H0010-DT-02", "p": 2550000, "ok": true, "gen": false, "old": ""}, {"n": "Nguyên Chất – 110g", "sku": "TP-ALG-H0010-NC-01", "p": 2650000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Ăn Liền Platinum", "cat": "Tổ yến ăn liền", "brand": "Nest Art", "img": "https://cdn.hstatic.net/products/200000968607/85__fucoidan_b0c35142c72a409b985b7093f3299ecd.png", "slug": "to-yen-an-lien-platinum", "v": [{"n": "Fucoidan – 9g", "sku": "TP-ALP-H0001-FU-01", "p": 285000, "ok": true, "gen": false, "old": ""}, {"n": "Lá Dứa – 9g", "sku": "TP-ALP-H0001-LD-01", "p": 285000, "ok": true, "gen": false, "old": ""}, {"n": "Nguyên Vị – 9g", "sku": "TP-ALP-H0001-NV-01", "p": 285000, "ok": true, "gen": false, "old": ""}]}, {"name": "Tổ Yến Ăn Liền – Bánh Rau Củ", "cat": "Tổ yến ăn liền", "brand": "Yến Sào Nha Trang", "img": "https://cdn.hstatic.net/products/200000968607/brc__h_p_5__0001ef652ac04eb18dcc493902f2334f.png", "slug": "to-yen-an-lien-banh-rau-cu", "v": [{"n": "Hộp 5 gói", "sku": "TP-BRC-H0005-RC-01", "p": 70000, "ok": true, "gen": false, "old": ""}, {"n": "Hộp 30 gói", "sku": "TP-BRC-H0030-RC-01", "p": 385000, "ok": true, "gen": false, "old": ""}]}], ISS = [{"p": "Súp Tổ Yến", "v": "Gà Hầm Táo Đỏ", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng với Súp Tổ Yến / Cá Hồi — đã cấp mã mới"}, {"p": "Súp Tổ Yến", "v": "Hải Sản", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng với Súp Tổ Yến / Cá Hồi — đã cấp mã mới"}, {"p": "Súp Tổ Yến", "v": "Nấm Rau Củ (Súp Chay)", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng với Súp Tổ Yến / Cá Hồi — đã cấp mã mới"}, {"p": "Súp Tổ Yến", "v": "Thịt Bò", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng với Súp Tổ Yến / Cá Hồi — đã cấp mã mới"}, {"p": "Súp Tổ Yến", "v": "Tôm Cua", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng với Súp Tổ Yến / Cá Hồi — đã cấp mã mới"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Dưa Lưới – 96g", "sku": "TP-SCY-H0005-DL-01", "t": "SKU trùng với Sữa Chua Tổ Yến Sấy Khô / Dưa Lưới – 16g — đã cấp mã mới"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Ổi Hồng – 96g", "sku": "SCK-VOH", "t": "SKU trùng với Sữa Chua Tổ Yến Sấy Khô / Ổi Hồng – 16g — đã cấp mã mới"}, {"p": "Súp Tổ Yến", "v": "Cá Hồi", "sku": "TP-SOY-H0001-HS-01", "t": "SKU trùng — mã HS trả về cho vị Hải Sản, dòng này cấp mã mới"}, {"p": "Bộ Phúc Lộc An Khang", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-QUA-001"}, {"p": "Bộ Thượng Hạng An Nhiên (YSNT 50g)", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-QUA-002"}, {"p": "Khay Mứt Tết - Xuân Như Ý", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-QUA-003"}, {"p": "Bột Tổ Yến", "v": "Gạo Lứt", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-BOT-001"}, {"p": "Bột Tổ Yến", "v": "Mè Đen", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-BOT-002"}, {"p": "Bột Tổ Yến", "v": "Ngũ Cốc", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-BOT-003"}, {"p": "Chè Tổ Yến", "v": "Dưỡng Nhan", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHE-001"}, {"p": "Chè Tổ Yến", "v": "Sâm Bổ Lượng", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHE-002"}, {"p": "Combo Bột Tổ Yến & Cà Phê Tổ Yến | Combo 4 hộp - CTCP Yến Sào Nha Trang", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CBO-001"}, {"p": "Combo Dưỡng Lành Bồi Bổ Sức Khoẻ - Phục Hồi Năng Lượng", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CBO-002"}, {"p": "Combo Siêu Tiện Lợi - Dành cho người bận rộn", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CBO-003"}, {"p": "Combo Tổ Yến Tinh Chế & Súp Tổ Yến | Combo 7 Sản Phẩm - CTCP Yến Sào Nha Trang", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CBO-004"}, {"p": "Combo Độc Quyền | Tổ Yến Ăn Liền - Cà Phê Tổ Yến - Súp Tổ Yến - Sữa Chua Khô", "v": "Combo", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CBO-005"}, {"p": "Cà Phê Tổ Yến", "v": "2 in 1", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CAF-001"}, {"p": "Hydra Dew Cream - Kem Dưỡng Ẩm", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-KHA-001"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-001"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "sku": "YSNT-MNA-001", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-002"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "sku": "YSNT-MNA-002", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-003"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "sku": "YSNT-MNA-003", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-004"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-004", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-005"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-005", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-MNA-006"}, {"p": "Mặt Nạ Sinh Học Bio-Cellulose", "v": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "sku": "YSNT-MNA-006", "t": "Quy cách lấy từ mô tả trên ysnt.vn: 79.000đ = 1 miếng 30g, 345.000đ = hộp 5 miếng"}, {"p": "Nước Yến Thật", "v": "Mật Ong – Lốc 6 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-001"}, {"p": "Nước Yến Thật", "v": "Nấm Linh Chi – Lốc 6 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-002"}, {"p": "Nước Yến Thật", "v": "Xáo Tam Phân – Lốc 6 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-003"}, {"p": "Nước Yến Thật", "v": "Mật Ong – Thùng 30 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-004"}, {"p": "Nước Yến Thật", "v": "Nấm Linh Chi – Thùng 30 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-005"}, {"p": "Nước Yến Thật", "v": "Xáo Tam Phân – Thùng 30 lon", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-NYT-006"}, {"p": "Súp Tổ Yến", "v": "Cá Hồi", "sku": "TP-SOY-H0001-HS-01", "t": "Mã mới YSNT-SUP-001"}, {"p": "Súp Tổ Yến", "v": "Gà Hầm Táo Đỏ", "sku": "TP-SOY-H0001-HS-01", "t": "Mã mới YSNT-SUP-002"}, {"p": "Súp Tổ Yến", "v": "Nấm Rau Củ (Súp Chay)", "sku": "TP-SOY-H0001-HS-01", "t": "Mã mới YSNT-SUP-003"}, {"p": "Súp Tổ Yến", "v": "Thịt Bò", "sku": "TP-SOY-H0001-HS-01", "t": "Mã mới YSNT-SUP-004"}, {"p": "Súp Tổ Yến", "v": "Tôm Cua", "sku": "TP-SOY-H0001-HS-01", "t": "Mã mới YSNT-SUP-005"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Chanh Dây – 16g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-001"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Nguyên Vị – 16g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-002"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Phô Mai – 16g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-003"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Việt Quất – 16g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-004"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Chanh Dây – 96g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-005"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Dưa Lưới – 96g", "sku": "TP-SCY-H0005-DL-01", "t": "Mã mới YSNT-SCK-006"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Phô Mai – 96g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-007"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Việt Quất – 96g", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-SCK-008"}, {"p": "Sữa Chua Tổ Yến Sấy Khô", "v": "Ổi Hồng – 96g", "sku": "SCK-VOH", "t": "Mã mới YSNT-SCK-009"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Nhân Sâm – 70ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-001"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đông Trùng Hạ Thảo – 70ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-002"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đường Isomalt – 70ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-003"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đường Phèn – 70ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-004"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Nhân Sâm – 420ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-005"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đông Trùng Hạ Thảo – 420ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-006"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đường Isomalt – 420ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-007"}, {"p": "Tổ Yến Chưng Sẵn", "v": "Đường Phèn – 420ml", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-CHS-008"}, {"p": "Tổ Yến Nguyên Tổ", "v": "Hộp 100g", "sku": "TP-NTP-H0100-NT-01", "t": "Trên ysnt.vn đang xếp nhầm vào nhóm tinh chế"}, {"p": "Tổ Yến Tinh Chế - Limited", "v": "Tiêu chuẩn", "sku": "", "t": "Không có SKU gốc — mã tự tạo YSNT-TCH-001"}, {"p": "Tổ Yến Ăn Liền", "v": "Hạt Sen & Đường Isomalt – 110g", "sku": "TP-ALG-H0010-HI-01", "t": "Tên cũ ghi 'Isomal', đã sửa thành 'Isomalt'"}, {"p": "Tổ Yến Ăn Liền", "v": "Lá Dứa & Collagen – 110g", "sku": "TP-ALG-H0010-LC-01", "t": "Tên cũ ghi 'Lá Lứa', đã sửa thành 'Lá Dứa'"}], POL = [{"type": "HDV, tài xế, công ty lữ hành", "rate": "20%", "bonus": "", "disc": "", "note": ""}, {"type": "Đối tác đưa khách đều", "rate": "25%", "bonus": "", "disc": "", "note": ""}, {"type": "Nhân viên nội bộ", "rate": "2%", "bonus": "3%", "disc": "5%", "note": "Ngưỡng tháng để lên 3%: chưa chốt"}, {"type": "KOC", "rate": "", "bonus": "", "disc": "", "note": "Chưa chốt"}, {"type": "Đại lý", "rate": "", "bonus": "", "disc": "", "note": "Chiết khấu sâu hơn 5% — mức cụ thể chưa chốt"}];
+const $ = s => document.querySelector(s);
+const vnd = n => n.toLocaleString('vi-VN') + 'đ';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const CATS = [...new Set(P.map(p => p.cat))];
+const VARS = P.flatMap(p => p.v.map(v => ({ p, v })));
+const outCount = VARS.filter(x => !x.v.ok).length, genCount = VARS.filter(x => x.v.gen).length;
+const unset = POL.filter(x => !x.rate || x.note).length;
+let ambs = [], q = '', cat = '', issueKind = '';
+const PAGES = [['', 'Tổng quan'], ['products', 'Sản phẩm'], ['issues', 'Dữ liệu cần kiểm tra', ISS.length], ['ambassadors', 'Đại sứ'], ['orders', 'Đơn hàng'], ['commission', 'Hoa hồng']];
+function nav(cur) {
+  $('#nav').innerHTML = `<div class="logo"><span>Yến Sào Nha Trang<small>Quản trị bán hàng</small></span></div>` +
+    PAGES.map(([k, t, n]) => `<a href="#/${k}" ${k === cur ? 'aria-current="page"' : ''}>${t}${n ? `<span class="cnt">${n}</span>` : ''}</a>`).join('');
+}
+function toast(t) { const d = document.createElement('div'); d.setAttribute('role', 'status'); d.textContent = t; d.style.cssText = 'position:fixed;left:50%;top:18px;transform:translateX(-50%);background:#16282C;color:#fff;padding:10px 16px;border-radius:10px;z-index:30'; document.body.appendChild(d); setTimeout(() => d.remove(), 1800); }
+function overview() {
+  return `<h1>Tổng quan</h1><p class="lead">Số liệu đọc từ database test, 30/09/2026.</p>
+  <div class="kpis">
+    <div class="kpi"><b>${P.length}</b><span>sản phẩm</span></div>
+    <div class="kpi"><b>${VARS.length}</b><span>quy cách</span></div>
+    <div class="kpi"><b>${outCount}</b><span>quy cách tạm hết hàng</span></div>
+    <div class="kpi"><b>0</b><span>đơn hàng hôm nay</span></div></div>
+  <div class="panel"><h2>Việc cần làm</h2>
+    <div class="todo"><span><b>${genCount} quy cách đang dùng mã SKU tạm</b> (dạng YSNT-…). Kho cấp mã chính thức rồi sửa trong từng sản phẩm.</span><a class="btn ghost" href="#/issues">Xem danh sách</a></div>
+    <div class="todo"><span><b>${unset} chính sách hoa hồng chưa chốt đủ</b>: KOC, đại lý, ngưỡng lên 3% của nhân viên.</span><a class="btn ghost" href="#/commission">Mở hoa hồng</a></div>
+    <div class="todo"><span><b>Chưa có đại sứ nào.</b> Thêm đại sứ đầu tiên để có link giới thiệu.</span><a class="btn ghost" href="#/ambassadors">Thêm đại sứ</a></div></div>
+  <div class="panel"><h2>Doanh thu theo kênh</h2><div class="empty"><b>Chưa có đơn hàng</b>Biểu đồ doanh thu theo kênh web, showroom, TikTok, Shopee, đại lý sẽ hiện ở đây khi có đơn đầu tiên.</div></div>`;
+}
+function products() {
+  let L = P;
+  if (cat) L = L.filter(p => p.cat === cat);
+  if (q) { const s = q.toLowerCase(); L = L.filter(p => (p.name + ' ' + p.v.map(v => v.n + ' ' + v.sku).join(' ')).toLowerCase().includes(s)); }
+  return `<h1>Sản phẩm</h1><p class="lead">${P.length} sản phẩm, ${VARS.length} quy cách. Bấm vào một dòng để sửa sản phẩm và các quy cách.</p>
+  <div class="tools"><input placeholder="Tìm theo tên, quy cách hoặc SKU" value="${esc(q)}" oninput="q=this.value;render(true)" aria-label="Tìm sản phẩm">
+    <select onchange="cat=this.value;render()" aria-label="Lọc nhóm"><option value="">Tất cả nhóm</option>${CATS.map(c => `<option ${c === cat ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select>
+    <button class="btn" onclick="toast('Mockup: form thêm sản phẩm giống form sửa')">Thêm sản phẩm</button></div>
+  <div class="wrap"><table class="tbl"><thead><tr><th></th><th>Sản phẩm</th><th>Nhóm</th><th class="num">Quy cách</th><th class="num">Giá</th><th>Tình trạng</th></tr></thead><tbody>
+  ${L.map(p => { const ps = p.v.map(v => v.p), out = p.v.filter(v => !v.ok).length, gen = p.v.filter(v => v.gen).length;
+    return `<tr class="click" onclick="openP('${p.slug}')"><td>${p.img ? `<img class="th" loading="lazy" src="${esc(p.img)}" alt="">` : ''}</td>
+      <td><b>${esc(p.name)}</b><br><span style="color:var(--ink2);font-size:12px">${esc(p.brand || '')}</span></td><td>${esc(p.cat)}</td><td class="num">${p.v.length}</td>
+      <td class="num">${Math.min(...ps) === Math.max(...ps) ? vnd(ps[0]) : vnd(Math.min(...ps)) + ' – ' + vnd(Math.max(...ps))}</td>
+      <td>${out === p.v.length ? '<span class="pill bad">Hết hàng</span>' : out ? `<span class="pill warn">Hết ${out} quy cách</span>` : '<span class="pill ok">Đang bán</span>'}${gen ? ` <span class="pill warn">${gen} mã tạm</span>` : ''}</td></tr>`; }).join('')}
+  </tbody></table></div>${L.length ? '' : `<div class="empty"><b>Không có sản phẩm khớp “${esc(q)}”</b>Thử tìm theo SKU hoặc bỏ lọc nhóm.</div>`}`;
+}
+</script>
+<script>
+let openSlug = '';
+function openP(slug) { openSlug = slug; render(); }
+function closeP() { openSlug = ''; render(); }
+function drawer() {
+  const p = P.find(x => x.slug === openSlug); if (!p) return '';
+  return `<div class="shade" onclick="closeP()"></div><aside class="drawer" role="dialog" aria-modal="true" aria-label="Sửa sản phẩm">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px"><h1 style="margin:0">Sửa sản phẩm</h1><button class="btn ghost" onclick="closeP()">Đóng</button></div>
+    <div class="form">
+      <div class="f" style="grid-column:1/-1"><label>Tên sản phẩm</label><input value="${esc(p.name)}"></div>
+      <div class="f"><label>Nhóm</label><select>${CATS.map(c => `<option ${c === p.cat ? 'selected' : ''}>${esc(c)}</option>`).join('')}</select></div>
+      <div class="f"><label>Nhãn hàng</label><select>${['Yến Sào Nha Trang', 'Nest Art', 'Nestizen'].map(b => `<option ${b === p.brand ? 'selected' : ''}>${b}</option>`).join('')}</select></div>
+      <div class="f"><label>Trạng thái</label><select><option selected>Đang bán</option><option>Ẩn khỏi web</option></select></div>
+    </div>
+    <h2 style="font-size:16px;margin:4px 0 8px">Quy cách (${p.v.length})</h2>
+    <div class="wrap"><table class="tbl vt"><thead><tr><th>Tên quy cách</th><th>SKU</th><th class="num">Giá niêm yết</th><th>Còn bán</th></tr></thead><tbody>
+    ${p.v.map(v => `<tr><td><input value="${esc(v.n)}" aria-label="Tên quy cách"></td>
+      <td><input value="${esc(v.sku)}" aria-label="SKU">${v.gen ? `<div style="margin-top:4px"><span class="pill warn">Mã tạm</span>${v.old ? ` <span style="font-size:12px;color:var(--ink2)">mã cũ trùng: ${esc(v.old)}</span>` : ''}</div>` : ''}</td>
+      <td><input value="${v.p.toLocaleString('vi-VN')}" style="text-align:right" inputmode="numeric" aria-label="Giá"></td>
+      <td><input type="checkbox" ${v.ok ? 'checked' : ''} aria-label="Còn bán" style="width:auto"></td></tr>`).join('')}
+    </tbody></table></div>
+    <div style="display:flex;gap:10px;margin-top:14px;flex-wrap:wrap"><button class="btn ghost" onclick="toast('Mockup: thêm một dòng quy cách mới')">Thêm quy cách</button><span style="flex:1"></span><button class="btn" onclick="toast('Mockup: bản thật sẽ lưu vào database');closeP()">Lưu thay đổi</button></div>
+  </aside>`;
+}
+function issues() {
+  const kind = t => t.startsWith('Không có SKU') ? 'Mã tự tạo' : t.startsWith('SKU trùng') || t.startsWith('Mã mới') ? 'SKU trùng' : 'Ghi chú dữ liệu';
+  const kinds = ['Mã tự tạo', 'SKU trùng', 'Ghi chú dữ liệu'];
+  const L = ISS.filter(x => !issueKind || kind(x.t) === issueKind);
+  return `<h1>Dữ liệu cần kiểm tra</h1><p class="lead">Ghi lại những gì đã sửa khi chuyển dữ liệu từ ysnt.vn. Kho và kế toán rà lại, sửa xong thì đánh dấu đã xong.</p>
+  <div class="tools"><select onchange="issueKind=this.value;render()" aria-label="Lọc loại"><option value="">Tất cả (${ISS.length})</option>${kinds.map(k => `<option value="${k}" ${k === issueKind ? 'selected' : ''}>${k} (${ISS.filter(x => kind(x.t) === k).length})</option>`).join('')}</select></div>
+  <div class="wrap"><table class="tbl"><thead><tr><th>Loại</th><th>Sản phẩm</th><th>Quy cách</th><th>SKU</th><th>Việc cần làm</th><th></th></tr></thead><tbody>
+  ${L.map(x => { const k = kind(x.t); return `<tr><td><span class="pill ${k === 'SKU trùng' ? 'bad' : k === 'Mã tự tạo' ? 'warn' : 'ok'}">${k}</span></td><td>${esc(x.p)}</td><td>${esc(x.v)}</td><td style="white-space:nowrap">${esc(x.sku)}</td><td>${esc(x.t)}</td><td><button class="btn ghost" onclick="this.textContent='Đã xong';this.disabled=true">Đánh dấu xong</button></td></tr>`; }).join('')}
+  </tbody></table></div>`;
+}
+function genCode(name, type) {
+  const pre = { guide: 'HDV', guide_regular: 'LH', staff: 'NV', koc: 'KOC', agent: 'DL' }[type] || 'DS';
+  const base = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'D').toUpperCase().split(/\s+/).filter(Boolean).pop() || 'X';
+  return pre + base.slice(0, 6) + String(ambs.length + 1).padStart(2, '0');
+}
+</script>
+<script>
+const TYPES = [['guide', 'HDV, tài xế, lữ hành'], ['guide_regular', 'Đối tác đưa khách đều'], ['staff', 'Nhân viên nội bộ'], ['koc', 'KOC'], ['agent', 'Đại lý']];
+function ambassadors() {
+  return `<h1>Đại sứ</h1><p class="lead">Mỗi đại sứ có một mã giới thiệu. Khách mua qua link hoặc mã đó, đơn tự ghi nhận và tính hoa hồng.</p>
+  <div class="panel"><h2>Thêm đại sứ</h2>
+    <form class="form" onsubmit="event.preventDefault();addAmb(this)" novalidate>
+      <div class="f"><label for="a1">Họ tên</label><input id="a1" name="n" autocomplete="off"></div>
+      <div class="f"><label for="a2">Số điện thoại</label><input id="a2" name="ph" inputmode="tel"></div>
+      <div class="f"><label for="a3">Loại</label><select id="a3" name="t">${TYPES.map(([k, t]) => `<option value="${k}">${t}</option>`).join('')}</select></div>
+      <div style="grid-column:1/-1;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn">Tạo mã giới thiệu</button><span id="aerr" style="color:var(--red);font-size:13px"></span></div>
+    </form></div>
+  ${ambs.length ? `<div class="wrap"><table class="tbl"><thead><tr><th>Đại sứ</th><th>Loại</th><th>Mã</th><th>Link giới thiệu</th><th class="num">Đơn</th><th class="num">Hoa hồng</th></tr></thead><tbody>
+    ${ambs.map(a => `<tr><td><b>${esc(a.n)}</b><br><span style="font-size:12px;color:var(--ink2)">${esc(a.ph)}</span></td><td>${esc(TYPES.find(x => x[0] === a.t)[1])}</td><td><b>${esc(a.code)}</b></td>
+      <td style="font-size:12px">nhaviettesting.go365.vn/?ref=${esc(a.code)} <button class="btn ghost" style="padding:4px 8px;font-size:12px" onclick="navigator.clipboard&&navigator.clipboard.writeText('https://nhaviettesting.go365.vn/?ref=${esc(a.code)}');toast('Đã chép link')">Chép</button></td>
+      <td class="num">0</td><td class="num">0đ</td></tr>`).join('')}</tbody></table></div>`
+    : `<div class="panel"><div class="empty"><b>Chưa có đại sứ nào</b>Tạo đại sứ đầu tiên ở form trên. Mã được tạo tự động theo loại và tên, ví dụ HDV cho hướng dẫn viên, NV cho nhân viên.</div></div>`}`;
+}
+function addAmb(f) {
+  const n = f.n.value.trim(), ph = f.ph.value.replace(/[\s.]/g, ''), t = f.t.value;
+  if (n.length < 2) { $('#aerr').textContent = 'Nhập họ tên đại sứ.'; f.n.focus(); return; }
+  if (!/^0\d{9}$/.test(ph)) { $('#aerr').textContent = 'Số điện thoại gồm 10 chữ số, bắt đầu bằng 0.'; f.ph.focus(); return; }
+  if (ambs.some(a => a.ph === ph)) { $('#aerr').textContent = 'Số điện thoại này đã là đại sứ.'; f.ph.focus(); return; }
+  ambs.push({ n, ph, t, code: genCode(n, t) }); render(); toast('Đã tạo mã giới thiệu');
+}
+function orders() {
+  const flow = ['Mới', 'Đã xác nhận', 'Đang giao', 'Hoàn thành'];
+  return `<h1>Đơn hàng</h1><p class="lead">Đơn từ mọi kênh nằm chung một danh sách: web, showroom, TikTok, Shopee, Lazada, đại lý.</p>
+  <div class="tools"><input placeholder="Tìm theo mã đơn, tên hoặc số điện thoại khách" aria-label="Tìm đơn"><select aria-label="Kênh"><option>Tất cả kênh</option><option>Web</option><option>Showroom</option><option>TikTok Shop</option><option>Shopee</option><option>Lazada</option><option>Đại lý</option></select><select aria-label="Trạng thái"><option>Mọi trạng thái</option>${flow.map(x => `<option>${x}</option>`).join('')}<option>Đã hủy</option></select></div>
+  <div class="panel"><div class="empty"><b>Chưa có đơn hàng</b>Đơn đầu tiên sẽ hiện ở đây khi khách đặt trên web hoặc khi đồng bộ đơn từ các sàn.</div></div>
+  <div class="panel"><h2>Đơn đi qua các bước</h2><p style="margin:0">${flow.join('  ›  ')}. Hoa hồng tạm tính khi đơn mới, được duyệt khi đơn hoàn thành, tự hủy nếu đơn bị hủy hoặc hoàn.</p></div>`;
+}
+function commission() {
+  return `<h1>Hoa hồng</h1><p class="lead">Mức nào chưa chốt thì để trống, hệ thống không tính cho loại đó đến khi có mức.</p>
+  <div class="wrap"><table class="tbl"><thead><tr><th>Loại đại sứ</th><th class="num">Hoa hồng</th><th class="num">Khi vượt ngưỡng</th><th class="num">Khách được giảm</th><th>Ghi chú</th></tr></thead><tbody>
+  ${POL.map(x => `<tr><td><b>${esc(x.type)}</b></td><td class="num">${x.rate ? esc(x.rate) : '<span class="pill warn">Chưa chốt</span>'}</td><td class="num">${esc(x.bonus) || '—'}</td><td class="num">${esc(x.disc) || '—'}</td><td>${x.note ? `<span class="pill warn">${esc(x.note)}</span>` : ''}</td></tr>`).join('')}
+  </tbody></table></div>
+  <div class="panel" style="margin-top:16px"><h2>Hoa hồng đầu mối</h2><p style="margin:0">Người giới thiệu đại sứ khác nhận thêm một phần trên đơn của đại sứ đó. Mức: <span class="pill warn">Chưa chốt</span></p></div>`;
+}
+function render(keepFocus) {
+  const k = location.hash.replace(/^#\/?/, '');
+  nav(k);
+  const pages = { '': overview, products, issues, ambassadors, orders, commission };
+  const a = document.activeElement, id = a && a.getAttribute('aria-label'), pos = a && a.selectionStart;
+  $('#main').innerHTML = (pages[k] || overview)() + drawer();
+  if (keepFocus && id) { const el = document.querySelector(`[aria-label="${id}"]`); if (el) { el.focus(); try { el.setSelectionRange(pos, pos); } catch {} } }
+}
+addEventListener('hashchange', () => { openSlug = ''; render(); scrollTo(0, 0); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && openSlug) closeP(); });
+render();
+</script>
+<style>
+.side .logo{display:flex;gap:10px;align-items:center}.side .logo::before{content:"Yến";width:32px;height:32px;border-radius:8px;background:var(--red);display:grid;place-items:center;font-family:Fraunces,Lora,serif;font-size:13px;transform:rotate(-4deg);flex:none}
+h1{font-family:Fraunces,Lora,serif;font-weight:600;font-size:26px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<!-- ===== Khách hàng: danh sách, thêm một khách, nhập danh sách từ Excel/CSV. Lớp thêm vào sau mockup quản trị, không sửa phần cũ. ===== -->
+<style id="kh-css">
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.tbl .sub{display:block;font-size:12px;color:var(--ink2);font-weight:400}
+.drawer.kh-wide{width:min(1000px,100%)}
+body:has(.drawer.kh-d) .mock{display:none}
+.kh-bar{position:sticky;bottom:0;z-index:2;background:#fff;margin:14px -22px 0;padding:12px 22px;border-top:1px solid var(--line)}
+.kh-list td:first-child b,.kh-list .sub,.kh-nw{white-space:nowrap}
+.kh-dk{display:contents}.kh-actions.kh-m{display:none}
+.kh-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}
+.kh-head h1{margin:0}
+.kh-steps{display:flex;gap:6px;list-style:none;margin:0 0 18px;padding:0;counter-reset:s;flex-wrap:wrap}
+.kh-steps li{counter-increment:s;display:flex;align-items:center;gap:8px;padding:5px 12px 5px 5px;border-radius:999px;background:var(--bg);color:var(--ink2);font-size:13px;font-weight:600}
+.kh-steps li::before{content:counter(s);width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1px solid var(--line);font-size:12px}
+.kh-steps li[aria-current="step"]{background:var(--sea50);color:var(--sea)}
+.kh-steps li[aria-current="step"]::before{background:var(--sea);border-color:var(--sea);color:#fff}
+.kh-steps li.done{color:var(--sea)}
+.kh-steps li.done::before{content:"✓";color:var(--sea);border-color:var(--sea)}
+.kh-drop{position:relative;display:grid;gap:4px;justify-items:center;text-align:center;border:2px dashed var(--line);border-radius:14px;padding:30px 16px;cursor:pointer;background:#FAFCFC}
+.kh-drop:hover,.kh-drop.over{border-color:var(--sea);background:var(--sea50)}
+.kh-drop:focus-within{outline:3px solid var(--sea);outline-offset:2px}
+.kh-drop b{font-size:16px}.kh-drop span{color:var(--ink2);font-size:13px}
+.kh-drop input{position:absolute;width:1px;height:1px;opacity:0}
+.kh-or{text-align:center;color:var(--ink2);font-size:13px;margin:16px 0 8px}
+#khp{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:13px;resize:vertical}
+.kh-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.kh-err{color:var(--red);font-size:13px;margin:10px 0 0}
+.kh-busy{color:var(--sea);font-size:13px;font-weight:600;margin:10px 0 0}
+.kh-tip{margin-top:18px}.kh-tip ul{margin:0;padding-left:18px;color:var(--ink2)}.kh-tip li{margin:3px 0}
+.kh-map select{border:1px solid var(--line);border-radius:8px;padding:7px 8px;width:100%;max-width:300px;background:#fff}
+.kh-ex{color:var(--ink2);font-size:13px;max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kh-sum{display:flex;gap:8px;flex-wrap:wrap;margin:2px 0 14px}
+.kh-chip{border:1px solid var(--line);background:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;color:var(--ink)}
+.kh-chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.kh-chip i{font-style:normal;margin-left:2px;font-variant-numeric:tabular-nums}
+.kh-opts{grid-template-columns:repeat(3,minmax(0,1fr))}
+.kh-scroll{max-height:44vh;overflow:auto;border:1px solid var(--line);border-radius:14px}
+.kh-scroll .tbl{border:0;border-radius:0}
+.kh-scroll thead th{position:sticky;top:0;z-index:1}
+.kh-fix{display:block;font-size:11.5px;color:var(--amb)}
+.kh-done{text-align:center;padding:28px 8px 8px}
+.kh-done h2{font-family:Fraunces,Lora,serif;font-size:26px;margin:0 0 8px}
+.kh-done .kh-actions{justify-content:center}
+.kh-note{color:var(--ink2);font-size:12.5px;margin:14px 0 0}
+.kh-clip{max-width:240px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.f input::placeholder{color:#93A3A6}
+@media (max-width:820px){.kh-opts{grid-template-columns:1fr}.side .logo{display:none}
+.kh-dk{display:none}.kh-actions.kh-m{display:flex;margin:0 0 12px}
+.kh-scroll{max-height:none;overflow:visible}.kh-scroll thead{display:none}.kh-scroll .tbl,.kh-scroll tbody{display:block}
+.kh-scroll tr{display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:8px;row-gap:4px;padding:10px 12px;border-bottom:1px solid var(--line)}.kh-scroll tr:last-child{border-bottom:0}
+.kh-scroll td{display:block;padding:0;border:0!important;white-space:normal!important}.kh-scroll td:first-child{grid-row:1/span 3;text-align:left;color:var(--ink2);font-size:12px;padding-top:2px}.kh-scroll td:nth-child(4){display:none}}
+</style>
+<script id="kh-js">
+const KH = (() => {
+  let custs = [], batches = [], seq = 0, cq = '', cg = '', imp = null, one = null;
+  const FIELDS = [['name', 'Họ tên', 1], ['phone', 'Số điện thoại', 1], ['email', 'Email'], ['addr', 'Địa chỉ'], ['dob', 'Ngày sinh'], ['group', 'Nhóm khách'], ['source', 'Nguồn'], ['note', 'Ghi chú']];
+  // Tên cột hay gặp (đã bỏ dấu). SYN: trùng nguyên tên cột. CON: tên cột có chứa cụm này.
+  const SYN = {
+    name: ['ho ten', 'ho va ten', 'ten', 'ten khach', 'ten khach hang', 'khach hang', 'ten kh', 'kh', 'name', 'full name', 'fullname', 'customer', 'customer name', 'nguoi mua'],
+    phone: ['so dien thoai', 'sdt', 'dien thoai', 'dt', 'so dt', 'phone', 'mobile', 'tel', 'phone number', 'zalo', 'sdt zalo', 'di dong', 'so di dong', 'lien he'],
+    email: ['email', 'e mail', 'mail', 'thu dien tu'],
+    addr: ['dia chi', 'address', 'dia chi giao hang', 'tinh', 'tinh thanh', 'tinh tp', 'khu vuc'],
+    dob: ['ngay sinh', 'sinh nhat', 'dob', 'birthday', 'nam sinh', 'ngay thang nam sinh'],
+    group: ['nhom', 'nhom khach', 'nhom khach hang', 'loai khach', 'loai khach hang', 'phan loai', 'group', 'loai'],
+    source: ['nguon', 'nguon khach', 'kenh', 'kenh ban', 'source', 'biet qua', 'den tu'],
+    note: ['ghi chu', 'note', 'notes', 'mo ta', 'luu y']
+  };
+  const CON = {
+    name: ['ho ten', 'ho va ten', 'ten khach', 'ten kh', 'full name', 'customer name'],
+    phone: ['so dien thoai', 'dien thoai', 'sdt', 'so dt', 'phone', 'mobile', 'di dong', 'zalo'],
+    email: ['email', 'e mail'],
+    addr: ['dia chi', 'address'],
+    dob: ['ngay sinh', 'sinh nhat', 'birthday', 'nam sinh'],
+    group: ['nhom', 'loai khach', 'phan loai'],
+    source: ['nguon', 'kenh'],
+    note: ['ghi chu', 'note', 'notes']
+  };
+  const GROUPS = ['Khách lẻ', 'Khách doanh nghiệp', 'Đại lý', 'Khách quốc tế'];
+  const SOURCES = ['Showroom', 'Web', 'TikTok Shop', 'Shopee', 'Hướng dẫn viên', 'Đại lý', 'Sự kiện, hội chợ', 'Danh sách cũ'];
+  // Đầu số di động cũ 11 số đổi sang 10 số (năm 2018)
+  const OLD = { '0162': '032', '0163': '033', '0164': '034', '0165': '035', '0166': '036', '0167': '037', '0168': '038', '0169': '039', '0120': '070', '0121': '079', '0122': '077', '0126': '076', '0128': '078', '0123': '083', '0124': '084', '0125': '085', '0127': '081', '0129': '082', '0186': '056', '0188': '058', '0199': '059' };
+  const XLSX_URL = 'https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js';
+  const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const fold = s => String(s ?? '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/gi, 'd').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+  const fmtTime = d => d.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
+  const csvCell = v => /[",;\r\n]/.test(String(v)) ? '"' + String(v).replace(/"/g, '""') + '"' : String(v);
+  const colName = i => (i >= 26 ? colName(Math.floor(i / 26) - 1) : '') + String.fromCharCode(65 + i % 26);
+  const n0 = n => n.toLocaleString('vi-VN');
+
+  // Số điện thoại Việt Nam: bỏ khoảng trắng, dấu chấm; +84 thành 0; thêm lại số 0 Excel làm mất; đổi đầu số cũ 11 số
+  function normPhone(raw) {
+    const orig = String(raw ?? '').trim();
+    if (!orig) return { v: '', err: 'Thiếu số điện thoại' };
+    const parts = orig.split(/\s*[\/,;|]\s*|\s+-\s+|\s+(?:hoặc|hoac|or)\s+/i).filter(Boolean);
+    let s = parts[0] || '';
+    const fix = [];
+    if (/^\d+(\.\d+)?e\+?\d+$/i.test(s)) s = String(Math.round(Number(s)));
+    const m = s.match(/\+?\d[\d\s.\-()]{6,}\d/);
+    if (m) s = m[0];
+    s = s.replace(/[^\d+]/g, '').replace(/(?!^)\+/g, '');
+    if (!s.replace(/\D/g, '')) return { v: orig, err: 'Thiếu số điện thoại' };
+    if (/^\+?84\d{9,11}$/.test(s)) { s = '0' + s.replace(/^\+?84/, '').replace(/^0/, ''); fix.push('đổi +84 thành 0'); }
+    else if (/^(?:[35789]\d{8}|[12]\d{9})$/.test(s)) { s = '0' + s; fix.push('thêm số 0 Excel làm mất'); }
+    if (/^01\d{9}$/.test(s) && OLD[s.slice(0, 4)]) { const o = s.slice(0, 4); s = OLD[o] + s.slice(4); fix.push(`đổi đầu số cũ ${o} thành ${OLD[o]}`); }
+    if (!/^(?:0[35789]\d{8}|02\d{9})$/.test(s)) return { v: orig, err: 'Số điện thoại sai: di động 10 số, máy bàn 11 số' };
+    const extra = parts.slice(1).filter(p => p.replace(/\D/g, '').length >= 8);
+    if (extra.length) fix.push('số thứ hai đưa vào ghi chú');
+    return { v: s, fix: fix.join(', '), extra };
+  }
+
+  function check() {
+    const seen = new Map(), byPhone = new Map(custs.map(c => [c.phone, c])), m = imp.map;
+    return imp.rows.map((r, i) => {
+      const get = f => m[f] >= 0 ? String(r[m[f]] ?? '').trim() : '';
+      const ph = normPhone(get('phone'));
+      const o = { line: imp.lines[i], raw: r, name: get('name').replace(/\s+/g, ' '), phone: ph.v, fix: ph.fix || '', email: get('email').toLowerCase(), addr: get('addr'), dob: get('dob'), group: get('group'), source: get('source'), note: get('note') };
+      if (ph.extra && ph.extra.length) o.note = [o.note, 'SĐT khác: ' + ph.extra.join(', ')].filter(Boolean).join(' · ');
+      if (o.email && !EMAIL.test(o.email)) { o.email = ''; o.fix = [o.fix, 'email sai nên để trống'].filter(Boolean).join(', '); }
+      if (o.name.length < 2) { o.st = 'err'; o.why = 'Thiếu họ tên'; }
+      else if (ph.err) { o.st = 'err'; o.why = ph.err; }
+      else if (seen.has(ph.v)) { o.st = 'dupf'; o.why = 'Trùng số với dòng ' + seen.get(ph.v) + ' trong file'; }
+      else if (byPhone.has(ph.v)) { o.st = 'dupc'; o.old = byPhone.get(ph.v); o.why = 'Đã có: ' + o.old.name; }
+      else o.st = 'new';
+      if (o.st !== 'err' && !seen.has(ph.v)) seen.set(ph.v, o.line);
+      return o;
+    });
+  }
+  const canFill = o => o.st === 'dupc' && ['email', 'addr', 'dob', 'note'].some(f => o[f] && !o.old[f]);
+
+  function autoMap(headers) {
+    const H = headers.map(fold), used = new Set(), m = {};
+    for (const [f] of FIELDS) { const i = H.findIndex((h, k) => !used.has(k) && SYN[f].includes(h)); m[f] = i; if (i >= 0) used.add(i); }
+    for (const [f] of FIELDS) if (m[f] < 0) {
+      const i = H.findIndex((h, k) => !used.has(k) && h && CON[f].some(s => (' ' + h + ' ').includes(' ' + s + ' ')));
+      m[f] = i; if (i >= 0) used.add(i);
+    }
+    return m;
+  }
+
+  // Không nhận ra tên cột thì đoán theo dữ liệu: cột nào phần lớn là số điện thoại, cột nào phần lớn là tên người
+  function guess(m, rows, w) {
+    const used = new Set(Object.values(m).filter(i => i >= 0)), sample = rows.slice(0, 200);
+    const share = (i, ok) => { const v = sample.map(r => r[i] || '').filter(Boolean); return v.length ? v.filter(ok).length / v.length : 0; };
+    const pick = (f, ok) => {
+      if (m[f] >= 0) return;
+      let best = -1, bs = .6;
+      for (let i = 0; i < w; i++) if (!used.has(i)) { const s = share(i, ok); if (s > bs) { bs = s; best = i; } }
+      m[f] = best; if (best >= 0) used.add(best);
+    };
+    pick('phone', c => !normPhone(c).err);
+    pick('email', c => EMAIL.test(c));
+    if (!(m.name >= 0)) { m.name = -1; for (let i = 0; i < w; i++) if (!used.has(i) && share(i, c => /\p{L}{2}/u.test(c) && !/[\d@]/.test(c) && c.length <= 60) > .6) { m.name = i; used.add(i); break; } }
+  }
+
+  function parseDelim(text, d) {
+    text = text.replace(/^\uFEFF/, '');
+    if (!d) { const first = text.split(/\r?\n/)[0] || ''; d = ['\t', ';', ','].map(x => [x, first.split(x).length]).sort((a, b) => b[1] - a[1])[0][0]; }
+    const rows = []; let row = [], cell = '', q = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (q) { if (ch === '"') { if (text[i + 1] === '"') { cell += '"'; i++; } else q = false; } else cell += ch; }
+      else if (ch === '"' && cell === '') q = true;
+      else if (ch === d) { row.push(cell); cell = ''; }
+      else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[i + 1] === '\n') i++; row.push(cell); rows.push(row); row = []; cell = ''; }
+      else cell += ch;
+    }
+    if (cell !== '' || row.length) { row.push(cell); rows.push(row); }
+    return rows;
+  }
+
+  // CSV có thể là UTF-8, UTF-16 (Excel “Unicode Text”) hoặc mã Windows tiếng Việt cũ
+  function decode(buf) {
+    const b = new Uint8Array(buf);
+    if (b[0] === 0xFF && b[1] === 0xFE) return new TextDecoder('utf-16le').decode(buf);
+    if (b[0] === 0xFE && b[1] === 0xFF) return new TextDecoder('utf-16be').decode(buf);
+    const t = new TextDecoder('utf-8').decode(buf);
+    return t.includes('\uFFFD') ? new TextDecoder('windows-1258').decode(buf) : t;
+  }
+
+  function loadXLSX() {
+    if (window.XLSX) return Promise.resolve();
+    return new Promise((ok, no) => {
+      const s = document.createElement('script');
+      s.src = XLSX_URL;
+      s.onload = () => window.XLSX ? ok() : fail();
+      s.onerror = fail;
+      function fail() { s.remove(); const e = new Error('Không tải được bộ đọc file Excel (cần có mạng). Có thể lưu file thành CSV rồi chọn lại, hoặc chép các ô trong Excel rồi dán vào ô bên dưới.'); e.kh = 1; no(e); }
+      document.head.appendChild(s);
+    });
+  }
+
+  function load(rows, fileName, sheet) {
+    const all = rows.map((r, i) => ({ r: (r || []).map(c => String(c ?? '').normalize('NFC').trim()), n: i + 1 })).filter(x => x.r.some(Boolean));
+    imp.busy = false;
+    if (!all.length) { imp.err = 'Không thấy dữ liệu trong file.'; render(); return; }
+    let h = all.slice(0, 10).findIndex(x => { const m = autoMap(x.r); return m.name >= 0 && m.phone >= 0; }), noHead = false;
+    if (h < 0) { noHead = all[0].r.some(c => !normPhone(c).err); h = noHead ? -1 : 0; }
+    const data = all.slice(h + 1);
+    if (!data.length) { imp.err = 'Chỉ thấy dòng tiêu đề, chưa có dòng khách nào bên dưới.'; render(); return; }
+    const w = all.reduce((a, x) => Math.max(a, x.r.length), 0);
+    imp.headers = Array.from({ length: w }, (_, i) => (h >= 0 && all[h].r[i]) || 'Cột ' + colName(i));
+    imp.rows = data.map(x => x.r); imp.lines = data.map(x => x.n);
+    imp.map = noHead ? Object.fromEntries(FIELDS.map(([f]) => [f, -1])) : autoMap(imp.headers);
+    guess(imp.map, imp.rows, w);
+    imp.fileName = fileName; imp.sheet = sheet || ''; imp.headRow = h >= 0 ? all[h].n : 0;
+    imp.err = ''; imp.view = 'all'; imp.step = 2; render();
+  }
+
+  function download(name, text) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob(['\uFEFF' + text], { type: 'text/csv;charset=utf-8' }));
+    a.download = name; document.body.appendChild(a); a.click();
+    setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+  }
+  async function saveSheet(name, aoa, widths) {
+    try {
+      await loadXLSX();
+      const ws = XLSX.utils.aoa_to_sheet(aoa); ws['!cols'] = widths.map(wch => ({ wch }));
+      const wb = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(wb, ws, 'Khách hàng');
+      XLSX.writeFile(wb, name + '.xlsx');
+    } catch (e) { download(name + '.csv', aoa.map(r => r.map(csvCell).join(',')).join('\r\n') + '\r\n'); }
+  }
+
+  const api = {
+    open() { one = null; imp = { step: 1, err: '', busy: false, pasted: '', fileName: '', sheet: '', headers: [], rows: [], lines: [], map: {}, dup: 'skip', src: '__file', grp: 'Khách lẻ', view: 'all', result: null }; render(); },
+    add() { imp = null; one = {}; render(); const el = document.getElementById('kn'); if (el) el.focus(); },
+    close() { imp = null; one = null; render(); },
+    isOpen: () => !!(imp || one),
+    reset() { imp = null; one = null; },
+    key: () => imp ? `i${imp.step}|${imp.view}` : one ? 'o|' : '',
+    async file(f) {
+      if (!f || !imp) return;
+      const ext = (f.name.split('.').pop() || '').toLowerCase();
+      imp.err = '';
+      try {
+        if (ext === 'csv' || ext === 'txt') load(parseDelim(decode(await f.arrayBuffer())), f.name);
+        else if (ext === 'xlsx' || ext === 'xls') {
+          imp.busy = true; render();
+          await loadXLSX();
+          const wb = XLSX.read(await f.arrayBuffer(), { type: 'array', dateNF: 'dd/mm/yyyy' });
+          const sheets = wb.SheetNames.map(n => [n, XLSX.utils.sheet_to_json(wb.Sheets[n], { header: 1, raw: false, defval: '' })]);
+          const pick = sheets.find(([, rows]) => rows.slice(0, 12).some(r => { const m = autoMap(r); return m.name >= 0 && m.phone >= 0; })) || sheets.find(([, rows]) => rows.length) || sheets[0];
+          load(pick ? pick[1] : [], f.name, sheets.length > 1 && pick ? pick[0] : '');
+        } else { imp.err = 'Chỉ nhận file .xlsx, .xls hoặc .csv.'; render(); }
+      } catch (e) {
+        if (!imp) return;
+        imp.busy = false;
+        imp.err = e.kh ? e.message : /password|encrypt/i.test(e.message || '') ? 'File đang đặt mật khẩu. Mở file, bỏ mật khẩu rồi chọn lại.' : 'Không đọc được file này. Mở bằng Excel, lưu lại dạng .xlsx rồi chọn lại.';
+        render();
+      }
+    },
+    paste() {
+      const t = (document.getElementById('khp') || {}).value || '';
+      imp.pasted = t;
+      if (!t.trim()) { imp.err = 'Chưa có dữ liệu trong ô dán.'; render(); return; }
+      load(parseDelim(t, t.includes('\t') ? '\t' : ''), 'Dữ liệu dán');
+    },
+    loadRows: (rows, name, sheet) => load(rows, name, sheet),
+    setMap(f, v) { imp.map[f] = +v; render(); },
+    opt(k, v) { imp[k] = v; render(); },
+    view(v) { imp.view = v; render(); },
+    step(n) { imp.step = n; imp.err = ''; render(); },
+    tpl() { saveSheet('mau-nhap-khach-hang', [FIELDS.map(f => f[1])], [26, 16, 28, 40, 12, 18, 16, 30]); },
+    errs() {
+      const L = check().filter(o => o.st === 'err');
+      saveSheet('dong-loi-khach-hang', [['Dòng', ...imp.headers, 'Lý do'], ...L.map(o => [String(o.line), ...imp.headers.map((_, i) => o.raw[i] ?? ''), o.why])], [6, ...imp.headers.map(() => 18), 44]);
+    },
+    commit() {
+      const L = check(), b = { id: batches.length + 1, file: imp.fileName, at: new Date(), added: [], filled: [], skipped: 0, errors: 0 };
+      for (const o of L) {
+        if (o.st === 'err') { b.errors++; continue; }
+        if (o.st === 'dupf') { b.skipped++; continue; }
+        if (o.st === 'dupc') {
+          if (imp.dup === 'fill' && canFill(o)) {
+            const before = { ...o.old };
+            for (const f of ['email', 'addr', 'dob', 'note']) if (o[f] && !o.old[f]) o.old[f] = o[f];
+            b.filled.push({ id: o.old.id, before });
+          } else b.skipped++;
+          continue;
+        }
+        const c = { id: ++seq, name: o.name, phone: o.phone, email: o.email, addr: o.addr, dob: o.dob, group: o.group || imp.grp, source: imp.src === '__file' ? (o.source || 'Danh sách cũ') : imp.src, note: o.note, batch: b.id };
+        custs.push(c); b.added.push(c.id);
+      }
+      batches.unshift(b); imp.result = b; imp.step = 4; render();
+    },
+    undo(id) {
+      const b = batches.find(x => x.id === id); if (!b || b.undone) return;
+      custs = custs.filter(c => !b.added.includes(c.id));
+      for (const f of b.filled) { const c = custs.find(x => x.id === f.id); if (c) Object.assign(c, f.before); }
+      b.undone = true; render(); toast('Đã hoàn tác lô ' + id);
+    },
+    save(f) {
+      const err = (msg, el) => { document.getElementById('kherr').textContent = msg; el.focus(); };
+      const name = f.n.value.trim().replace(/\s+/g, ' '), ph = normPhone(f.ph.value), email = f.em.value.trim().toLowerCase();
+      if (name.length < 2) return err('Nhập họ tên khách.', f.n);
+      if (ph.err) return err(ph.err + '.', f.ph);
+      const old = custs.find(c => c.phone === ph.v);
+      if (old) return err('Số này đã có trong danh sách: ' + old.name + '.', f.ph);
+      if (email && !EMAIL.test(email)) return err('Email chưa đúng.', f.em);
+      custs.unshift({ id: ++seq, name, phone: ph.v, email, addr: f.ad.value.trim(), dob: f.db.value.trim(), group: f.g.value, source: f.s.value, note: f.no.value.trim(), batch: 0 });
+      one = null; render(); toast('Đã thêm ' + name);
+    },
+    q(v) { cq = v; render(true); },
+    g(v) { cg = v; render(); },
+    count: () => custs.length,
+
+    page() {
+      const groups = [...new Set(custs.map(c => c.group).filter(Boolean))];
+      let L = custs;
+      if (cg) L = L.filter(c => c.group === cg);
+      if (cq) { const s = fold(cq), d = cq.replace(/\D/g, ''); L = L.filter(c => fold([c.name, c.phone, c.email, c.addr].join(' ')).includes(s) || (d.length >= 3 && c.phone.includes(d))); }
+      const live = batches.filter(b => !b.undone);
+      return `<h1>Khách hàng</h1><p class="lead">Khách lẻ, khách doanh nghiệp và đại lý nằm chung một danh sách. Nhập danh sách cũ từ file Excel: hệ thống tự sửa số điện thoại, báo trùng và báo lỗi trước khi lưu.</p>
+      ${custs.length ? `<div class="kpis">
+        <div class="kpi"><b>${n0(custs.length)}</b><span>khách hàng</span></div>
+        <div class="kpi"><b>${n0(custs.filter(c => /doanh nghiệp|đại lý/i.test(c.group)).length)}</b><span>doanh nghiệp, đại lý</span></div>
+        <div class="kpi"><b>${n0(custs.filter(c => c.email).length)}</b><span>khách có email</span></div>
+        <div class="kpi"><b>${live.length}</b><span>lô đã nhập</span></div></div>` : ''}
+      <div class="tools"><input placeholder="Tìm theo tên, số điện thoại, email, địa chỉ" value="${esc(cq)}" oninput="KH.q(this.value)" aria-label="Tìm khách hàng">
+        <select onchange="KH.g(this.value)" aria-label="Lọc nhóm khách"><option value="">Tất cả nhóm</option>${groups.map(g => `<option ${g === cg ? 'selected' : ''}>${esc(g)}</option>`).join('')}</select>
+        <button class="btn" onclick="KH.open()">Nhập danh sách</button><button class="btn ghost" onclick="KH.add()">Thêm một khách</button></div>
+      ${custs.length ? `<div class="wrap"><table class="tbl kh-list"><thead><tr><th>Khách hàng</th><th>Nhóm</th><th>Nguồn</th><th>Email</th><th>Địa chỉ</th><th>Ghi chú</th><th class="num">Lô nhập</th></tr></thead><tbody>
+        ${L.slice(0, 500).map(c => `<tr><td><b>${esc(c.name)}</b><span class="sub">${esc(c.phone)}</span>${c.dob ? `<span class="sub">Sinh ${esc(c.dob)}</span>` : ''}</td><td><span class="pill ok">${esc(c.group)}</span></td><td class="kh-nw">${esc(c.source)}</td><td>${esc(c.email)}</td><td><div class="kh-clip" title="${esc(c.addr)}">${esc(c.addr)}</div></td><td><div class="kh-clip" title="${esc(c.note)}">${esc(c.note)}</div></td><td class="num">${c.batch || 'Thêm tay'}</td></tr>`).join('')}
+        </tbody></table></div>${L.length > 500 ? `<p class="kh-note">Đang hiện 500 trên ${n0(L.length)} khách. Tìm hoặc lọc để xem khách khác.</p>` : ''}${L.length ? '' : `<div class="empty"><b>Không có khách khớp “${esc(cq)}”</b>Thử tìm theo số điện thoại hoặc bỏ lọc nhóm.</div>`}`
+      : `<div class="panel"><div class="empty"><b>Chưa có khách hàng nào</b>Bấm “Nhập danh sách” để đưa danh sách khách cũ từ file Excel hoặc CSV vào, hoặc “Thêm một khách” để nhập tay.</div></div>`}
+      ${batches.length ? `<div class="panel" style="margin-top:16px"><h2>Các lô đã nhập</h2><div class="wrap"><table class="tbl"><thead><tr><th>Lô</th><th>File</th><th>Lúc nhập</th><th class="num">Thêm mới</th><th class="num">Bổ sung</th><th class="num">Bỏ qua</th><th class="num">Lỗi</th><th></th></tr></thead><tbody>
+        ${batches.map(b => `<tr><td><b>${b.id}</b></td><td class="kh-nw">${esc(b.file)}</td><td class="kh-nw">${fmtTime(b.at)}</td><td class="num">${n0(b.added.length)}</td><td class="num">${b.filled.length}</td><td class="num">${b.skipped}</td><td class="num">${b.errors}</td><td>${b.undone ? '<span class="pill warn">Đã hoàn tác</span>' : `<button class="btn ghost" onclick="KH.undo(${b.id})">Hoàn tác</button>`}</td></tr>`).join('')}
+        </tbody></table></div></div>` : ''}`;
+    },
+
+    drawer() {
+      if (one) return `<div class="shade" onclick="KH.close()"></div><aside class="drawer kh-d" role="dialog" aria-modal="true" aria-label="Thêm khách hàng">
+        <div class="kh-head"><h1>Thêm khách hàng</h1><button class="btn ghost" onclick="KH.close()">Đóng</button></div>
+        <form class="form" onsubmit="event.preventDefault();KH.save(this)" novalidate>
+          <div class="f"><label for="kn">Họ tên</label><input id="kn" name="n" autocomplete="off"></div>
+          <div class="f"><label for="kp">Số điện thoại</label><input id="kp" name="ph" inputmode="tel" autocomplete="off"></div>
+          <div class="f"><label for="ke">Email</label><input id="ke" name="em" type="email" autocomplete="off"></div>
+          <div class="f"><label for="kg">Nhóm khách</label><select id="kg" name="g">${GROUPS.map(g => `<option>${g}</option>`).join('')}</select></div>
+          <div class="f"><label for="ks">Nguồn</label><select id="ks" name="s">${SOURCES.map(s => `<option>${s}</option>`).join('')}</select></div>
+          <div class="f"><label for="kd">Ngày sinh</label><input id="kd" name="db" placeholder="dd/mm/yyyy" autocomplete="off"></div>
+          <div class="f" style="grid-column:1/-1"><label for="ka">Địa chỉ</label><input id="ka" name="ad" autocomplete="off"></div>
+          <div class="f" style="grid-column:1/-1"><label for="ko">Ghi chú</label><input id="ko" name="no" autocomplete="off"></div>
+          <div style="grid-column:1/-1;display:flex;gap:10px;align-items:center;flex-wrap:wrap"><button class="btn">Thêm khách</button><span id="kherr" role="alert" style="color:var(--red);font-size:13px"></span></div>
+        </form></aside>`;
+      if (!imp) return '';
+      const S = imp.step, steps = ['Chọn file', 'Ghép cột', 'Kiểm tra', 'Xong'];
+      const head = `<div class="kh-head"><h1>Nhập danh sách khách hàng</h1><button class="btn ghost" onclick="KH.close()">Đóng</button></div>
+        <ol class="kh-steps">${steps.map((t, i) => `<li ${i + 1 === S ? 'aria-current="step"' : i + 1 < S ? 'class="done"' : ''}>${t}</li>`).join('')}</ol>`;
+      let body = '';
+      if (S === 1) {
+        body = `<label class="kh-drop" ondragover="event.preventDefault();this.classList.add('over')" ondragleave="this.classList.remove('over')" ondrop="event.preventDefault();this.classList.remove('over');KH.file(event.dataTransfer.files[0])">
+            <b>Chọn file Excel hoặc CSV</b><span>Kéo thả file vào đây hoặc bấm để chọn file .xlsx, .xls, .csv</span>
+            <input type="file" id="khf" accept=".xlsx,.xls,.csv" onchange="KH.file(this.files[0])"></label>
+          ${imp.busy ? '<p class="kh-busy" role="status">Đang đọc file…</p>' : ''}${imp.err ? `<p class="kh-err" role="alert">${esc(imp.err)}</p>` : ''}
+          <p class="kh-or">hoặc chép các ô trong Excel, Google Sheets (gồm cả dòng tiêu đề) rồi dán vào đây</p>
+          <textarea id="khp" rows="5" placeholder="Dán danh sách vào đây" aria-label="Dán danh sách khách">${esc(imp.pasted)}</textarea>
+          <div class="kh-actions"><button class="btn ghost" onclick="KH.tpl()">Tải file mẫu</button><span style="flex:1"></span><button class="btn" onclick="KH.paste()">Dùng dữ liệu đã dán</button></div>
+          <div class="panel kh-tip"><h2>File cần có gì</h2><ul>
+            <li>Bắt buộc có cột <b>Họ tên</b> và <b>Số điện thoại</b>. Tên cột viết kiểu nào cũng được (SĐT, Điện thoại, Tên khách…), hệ thống tự nhận. File có dòng tiêu đề lớn ở trên cùng cũng được.</li>
+            <li>Nếu có thì thêm: Email, Địa chỉ, Ngày sinh, Nhóm khách, Nguồn, Ghi chú.</li>
+            <li>Số điện thoại bị Excel làm mất số 0, ghi dạng +84, hoặc còn đầu số cũ 11 số (0168…, 0122…) đều được tự sửa.</li>
+            <li>Khách trùng số điện thoại không bị nhập hai lần. Chưa có gì được lưu cho đến khi bấm Nhập ở bước 3.</li></ul></div>`;
+      } else if (S === 2) {
+        const ok = imp.map.name >= 0 && imp.map.phone >= 0, first = imp.rows[0] || [];
+        const where = imp.headRow === 0 ? '. File không có dòng tiêu đề nên hệ thống đoán cột theo dữ liệu, xem lại trước khi đi tiếp.' : `${imp.headRow > 1 ? `, tiêu đề ở dòng ${imp.headRow}` : ''}. Hệ thống đã tự ghép theo tên cột, sửa lại nếu chưa đúng.`;
+        body = `<p class="lead"><b>${esc(imp.fileName)}</b>${imp.sheet ? ` (trang tính “${esc(imp.sheet)}”)` : ''}: ${n0(imp.rows.length)} dòng khách, ${imp.headers.length} cột${where}</p>
+          <div class="wrap"><table class="tbl kh-map"><thead><tr><th>Thông tin khách</th><th>Lấy từ cột trong file</th><th>Ví dụ ở dòng ${imp.lines[0]}</th></tr></thead><tbody>
+          ${FIELDS.map(([f, t, req]) => `<tr><td><b>${t}</b>${req ? ' <span class="pill bad">bắt buộc</span>' : ''}</td>
+            <td><select onchange="KH.setMap('${f}',this.value)" aria-label="Cột cho ${t}"><option value="-1">Không dùng</option>${imp.headers.map((h, i) => `<option value="${i}" ${imp.map[f] === i ? 'selected' : ''}>${esc(h)}</option>`).join('')}</select></td>
+            <td><div class="kh-ex">${imp.map[f] >= 0 ? esc(first[imp.map[f]] ?? '') : ''}</div></td></tr>`).join('')}
+          </tbody></table></div>
+          ${ok ? '' : '<p class="kh-err" role="alert">Chọn cột cho Họ tên và Số điện thoại để đi tiếp.</p>'}
+          <div class="kh-actions kh-bar"><button class="btn ghost" onclick="KH.step(1)">Chọn file khác</button><span style="flex:1"></span><button class="btn" onclick="KH.step(3)" ${ok ? '' : 'disabled'}>Kiểm tra dữ liệu</button></div>`;
+      } else if (S === 3) {
+        const L = check(), n = st => L.filter(o => o.st === st).length;
+        const nNew = n('new'), nDup = n('dupc') + n('dupf'), nErr = n('err'), nFix = L.filter(o => o.fix && o.st !== 'err').length, nFill = imp.dup === 'fill' ? L.filter(canFill).length : 0;
+        const V = imp.view === 'all' ? L : imp.view === 'dup' ? L.filter(o => o.st === 'dupc' || o.st === 'dupf') : imp.view === 'fix' ? L.filter(o => o.fix && o.st !== 'err') : L.filter(o => o.st === imp.view);
+        const chip = (v, t, c) => `<button class="kh-chip" id="khv-${v}" aria-pressed="${imp.view === v}" onclick="KH.view('${v}')">${t} <i>${n0(c)}</i></button>`;
+        const res = o => o.st === 'new' ? '<span class="pill ok">Thêm mới</span>'
+          : o.st === 'dupc' ? `<span class="pill warn">${imp.dup === 'fill' && canFill(o) ? 'Bổ sung ô trống' : 'Bỏ qua'}</span><span class="sub">${esc(o.why)}</span>`
+          : o.st === 'dupf' ? `<span class="pill warn">Bỏ qua</span><span class="sub">${esc(o.why)}</span>`
+          : `<span class="pill bad">Lỗi</span><span class="sub">${esc(o.why)}</span>`;
+        const back = `<button class="btn ghost" onclick="KH.step(2)">Quay lại ghép cột</button>${nErr ? `<button class="btn ghost" onclick="KH.errs()">Tải ${n0(nErr)} dòng lỗi để sửa</button>` : ''}`;
+        body = `<p class="lead">Chưa có gì được lưu. Xem kết quả kiểm tra, chọn cách xử lý rồi bấm Nhập.</p>
+          <div class="kh-sum" role="group" aria-label="Lọc kết quả">${chip('all', 'Tất cả', L.length)}${chip('new', 'Thêm mới', nNew)}${chip('dup', 'Trùng số điện thoại', nDup)}${chip('err', 'Lỗi', nErr)}${nFix ? chip('fix', 'Đã tự sửa', nFix) : ''}</div>
+          <div class="form kh-opts">
+            <div class="f"><label for="khdup">Khách đã có trong danh sách</label><select id="khdup" onchange="KH.opt('dup',this.value)"><option value="skip" ${imp.dup === 'skip' ? 'selected' : ''}>Bỏ qua, giữ thông tin cũ</option><option value="fill" ${imp.dup === 'fill' ? 'selected' : ''}>Bổ sung các ô còn trống</option></select></div>
+            <div class="f"><label for="khsrc">Nguồn khách cho cả lô</label><select id="khsrc" onchange="KH.opt('src',this.value)"><option value="__file" ${imp.src === '__file' ? 'selected' : ''}>${imp.map.source >= 0 ? 'Theo cột Nguồn trong file' : 'Danh sách cũ'}</option>${SOURCES.filter(s => imp.map.source >= 0 || s !== 'Danh sách cũ').map(s => `<option ${imp.src === s ? 'selected' : ''}>${s}</option>`).join('')}</select></div>
+            <div class="f"><label for="khgrp">Nhóm khách khi file để trống</label><select id="khgrp" onchange="KH.opt('grp',this.value)">${GROUPS.map(g => `<option ${imp.grp === g ? 'selected' : ''}>${g}</option>`).join('')}</select></div>
+          </div>
+          <div class="kh-actions kh-m">${back}</div>
+          <div class="kh-scroll"><table class="tbl"><thead><tr><th class="num">Dòng</th><th>Họ tên</th><th>Số điện thoại</th><th>Nhóm</th><th>Kết quả</th></tr></thead><tbody>
+          ${V.slice(0, 300).map(o => `<tr><td class="num">${o.line}</td><td><b>${esc(o.name) || '<span class="sub">trống</span>'}</b>${o.email ? `<span class="sub">${esc(o.email)}</span>` : ''}</td><td style="white-space:nowrap">${esc(o.phone)}${o.fix ? `<span class="kh-fix">${esc(o.fix)}</span>` : ''}</td><td>${esc(o.group || imp.grp)}</td><td>${res(o)}</td></tr>`).join('')}
+          </tbody></table></div>
+          ${V.length > 300 ? `<p class="kh-note">Đang hiện 300 trên ${n0(V.length)} dòng.</p>` : ''}
+          <div class="kh-actions kh-bar"><span class="kh-dk">${back}</span><span style="flex:1"></span>
+            <button class="btn" onclick="KH.commit()" ${nNew + nFill ? '' : 'disabled'}>Nhập ${n0(nNew)} khách mới${nFill ? `, bổ sung ${n0(nFill)}` : ''}</button></div>`;
+      } else {
+        const b = imp.result;
+        body = `<div class="kh-done"><h2>Đã nhập xong lô ${b.id}</h2>
+          <p>Thêm <b>${n0(b.added.length)}</b> khách mới, bổ sung ${b.filled.length}, bỏ qua ${b.skipped} dòng trùng, ${b.errors} dòng lỗi không nhập.</p>
+          <div class="kh-actions"><button class="btn ghost" onclick="KH.undo(${b.id});KH.close()">Hoàn tác lô này</button><button class="btn" onclick="KH.close()">Xem danh sách khách</button></div>
+          <p class="kh-note">Mockup: chưa lưu vào database. Bản thật sẽ sao lưu trước khi ghi và giữ lịch sử từng lô để hoàn tác.</p></div>`;
+      }
+      return `<div class="shade" onclick="KH.close()"></div><aside class="drawer kh-wide kh-d" role="dialog" aria-modal="true" aria-label="Nhập danh sách khách hàng" ondragover="event.preventDefault()" ondrop="event.preventDefault()">${head}${body}</aside>`;
+    }
+  };
+  return api;
+})();
+
+// Thêm mục Khách hàng vào menu, sau Đơn hàng
+PAGES.splice(PAGES.findIndex(p => p[0] === 'orders') + 1, 0, ['customers', 'Khách hàng']);
+
+// Tổng quan: thêm một việc cần làm về khách hàng
+const overviewBase = overview;
+overview = function () {
+  const n = KH.count();
+  const row = n ? `<div class="todo"><span><b>${n.toLocaleString('vi-VN')} khách hàng</b> trong danh sách, sẵn để chăm sóc và mời mua lại.</span><a class="btn ghost" href="#/customers">Xem khách hàng</a></div>`
+    : `<div class="todo"><span><b>Chưa có khách hàng nào.</b> Nhập danh sách khách cũ từ file Excel để chăm sóc và mời mua lại.</span><a class="btn ghost" href="#/customers">Nhập danh sách</a></div>`;
+  return overviewBase().replace('Thêm đại sứ</a></div></div>', 'Thêm đại sứ</a></div>' + row + '</div>');
+};
+
+// Trang Khách hàng: vẽ giống các trang khác, giữ chỗ cuộn và ô đang chọn khi vẽ lại
+const renderBase = render;
+let khLast = '';
+render = function (keepFocus) {
+  const k = location.hash.replace(/^#\/?/, '');
+  if (k !== 'customers') { khLast = ''; return renderBase(keepFocus); }
+  nav(k);
+  const a = document.activeElement, sel = a && a !== document.body ? (a.id ? '#' + a.id : a.getAttribute('aria-label') ? `[aria-label="${a.getAttribute('aria-label')}"]` : '') : '', pos = a && a.selectionStart;
+  const key = KH.key(), sameDrawer = key && key.split('|')[0] === khLast.split('|')[0], sameTable = key && key === khLast; khLast = key;
+  const d = document.querySelector('.drawer'), ds = d ? d.scrollTop : 0, t = document.querySelector('.kh-scroll'), ts = t ? t.scrollTop : 0;
+  $('#main').innerHTML = KH.page() + KH.drawer();
+  if (sameDrawer) { const d2 = document.querySelector('.drawer'); if (d2) d2.scrollTop = ds; }
+  if (sameTable) { const t2 = document.querySelector('.kh-scroll'); if (t2) t2.scrollTop = ts; }
+  if (sel && (keepFocus || sameDrawer)) { const el = document.querySelector(sel); if (el) { el.focus({ preventScroll: true }); if (keepFocus) try { el.setSelectionRange(pos, pos); } catch {} } }
+};
+addEventListener('hashchange', () => { if (location.hash !== '#/customers') KH.reset(); });
+addEventListener('keydown', e => { if (e.key === 'Escape' && KH.isOpen()) KH.close(); });
+render();
+</script>
+</body></html>

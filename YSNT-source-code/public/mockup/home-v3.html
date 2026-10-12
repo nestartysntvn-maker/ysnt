@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Mockup trang chủ mới · Yến Sào Nha Trang</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+:root{--cave:#0F1D20;--cave2:#16292D;--ivory:#F3EAD6;--ivory2:#E6D8B8;--mist:#9FB3B2;--sea:#0B4F55;--red:#B3121B;--ink:#1F2B2E;--ink2:#5A686B;--line:#DCE3E2;--paper:#FBFAF6;--serif:Fraunces,Lora,Georgia,serif}
+*{box-sizing:border-box}html,body{margin:0}body{font-family:"Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);background:var(--paper);font-size:16px;line-height:1.55;overflow-x:hidden}
+a{color:inherit}button{font:inherit;cursor:pointer}:focus-visible{outline:3px solid #7FD1C7;outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.tmp{position:absolute;z-index:3;font:600 11px/1 "Be Vietnam Pro";letter-spacing:.02em;background:rgba(255,255,255,.14);color:var(--ivory);border:1px dashed rgba(243,234,214,.5);padding:5px 8px;border-radius:6px}
+/* header on dark */
+.hd{position:absolute;inset:0 0 auto 0;z-index:10}.hd .wrap{display:flex;align-items:center;gap:28px;height:84px;color:var(--ivory)}
+.seal{width:40px;height:40px;border-radius:9px;background:var(--red);color:#fff;display:grid;place-items:center;font-family:var(--serif);font-weight:600;transform:rotate(-4deg)}
+.logo{display:flex;gap:10px;align-items:center;text-decoration:none}.logo b{font-size:17px}.logo small{display:block;font-size:12px;opacity:.7}
+.hd nav{display:flex;gap:22px;font-size:15px}.hd nav a{text-decoration:none;opacity:.85}.hd nav a:hover{opacity:1}
+.hd .tools{margin-left:auto;display:flex;gap:10px}.hd .tools a{border:1px solid rgba(243,234,214,.35);border-radius:11px;padding:8px 14px;text-decoration:none;font-weight:600;font-size:14px}
+/* hero cave */
+.hero{position:relative;min-height:min(100vh,940px);background:radial-gradient(120% 90% at 70% 40%,#21393D 0%,var(--cave2) 38%,var(--cave) 75%);color:var(--ivory);overflow:hidden;display:flex;align-items:center}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:160px;background:linear-gradient(180deg,transparent,var(--cave))}
+.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:40px;align-items:center;padding-top:110px;padding-bottom:80px}
+.kicker{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mist);margin:0 0 18px}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5.6vw,76px);line-height:1.02;letter-spacing:-.025em;margin:0 0 26px}
+.hero h1 em{font-style:italic;font-weight:400;color:var(--ivory2)}
+.say{font-family:var(--serif);font-size:clamp(22px,2.3vw,30px);line-height:1.35;margin:0;font-weight:300}
+.say button{font:inherit;color:var(--ivory);background:none;border:0;border-bottom:2px solid #7FD1C7;padding:0 2px;font-weight:500}
+.say button[aria-expanded=true]{background:rgba(127,209,199,.14)}
+.sheet{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.sheet button{background:rgba(243,234,214,.08);color:var(--ivory);border:1px solid rgba(243,234,214,.25);border-radius:999px;padding:8px 14px;font-size:14px}
+.sheet button[aria-pressed=true]{background:var(--ivory);color:var(--cave)}
+.open{margin-top:26px;display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;border:0;border-radius:14px;padding:15px 22px;font-weight:600;font-size:16px;box-shadow:0 10px 30px rgba(179,18,27,.35)}
+.open:hover{background:#C8171F}
+.nestbox{position:relative;aspect-ratio:1;max-width:520px;justify-self:center;width:100%}
+.nestbox svg{width:100%;height:100%;display:block}
+.strand{fill:none;stroke:var(--ivory);stroke-linecap:round;opacity:.55}
+.draw .strand{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 3.2s cubic-bezier(.4,0,.2,1) forwards;animation-delay:var(--d)}
+@keyframes draw{to{stroke-dashoffset:0}}
+.bird{position:absolute;z-index:1;width:34px;height:14px;opacity:.75;animation:fly var(--t) linear infinite;animation-delay:var(--delay)}
+.bird path{fill:none;stroke:var(--ivory);stroke-width:2;stroke-linecap:round;animation:flap .5s ease-in-out infinite alternate}
+@keyframes flap{to{d:path("M1 8 Q9 12 17 8 Q25 12 33 8")}}
+@keyframes fly{0%{transform:translate(-10vw,var(--y)) scale(var(--s))}100%{transform:translate(110vw,calc(var(--y) - 12vh)) scale(var(--s))}}
+.scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:3;font-size:12px;letter-spacing:.12em;color:var(--mist);text-transform:uppercase}
+@media (prefers-reduced-motion:reduce){.bird{display:none}.draw .strand{animation:none;stroke-dashoffset:0}}
+</style>
+<style>
+/* gift reveal */
+.gift{background:var(--cave);color:var(--ivory);padding:0;position:relative}.gift:has(.gift-stage.on){padding:30px 0 90px}
+.gift .wrap{position:relative}
+.gift-stage{display:none;padding-top:10px}.gift-stage.on{display:block}
+.box{width:170px;height:120px;margin:0 auto 26px;position:relative}
+.box .base{position:absolute;inset:34px 10px 0 10px;background:linear-gradient(180deg,#C0161F,#8E0F16);border-radius:6px}
+.box .lid{position:absolute;inset:14px 0 auto 0;height:32px;background:linear-gradient(180deg,#D11D26,#A51119);border-radius:6px;transform-origin:18% 100%;transition:transform .7s cubic-bezier(.3,1.4,.5,1)}
+.box .rib{position:absolute;left:50%;top:14px;bottom:0;width:18px;margin-left:-9px;background:#E9C66A}
+.box .stamp{position:absolute;left:50%;top:56px;transform:translateX(-50%) rotate(-6deg);background:var(--ivory);color:var(--red);font-family:var(--serif);font-weight:600;font-size:15px;padding:4px 8px;border-radius:5px}
+.gift-stage.on .lid{transform:translateY(-26px) rotate(-18deg)}
+.gift h2{font-family:var(--serif);font-weight:300;font-size:clamp(26px,3vw,38px);text-align:center;margin:0 0 6px;letter-spacing:-.015em}
+.gift .sub{text-align:center;color:var(--mist);margin:0 0 30px}
+.fan{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;perspective:900px}
+.gcard{background:var(--ivory);color:var(--ink);border-radius:18px;overflow:hidden;text-decoration:none;opacity:0;transform:translateY(40px) rotateX(18deg);transition:transform .7s cubic-bezier(.2,.9,.3,1.2),opacity .5s}
+.gift-stage.on .gcard{opacity:1;transform:none}
+.gift-stage.on .gcard:nth-child(2){transition-delay:.12s}.gift-stage.on .gcard:nth-child(3){transition-delay:.24s}
+.gcard .ph{aspect-ratio:4/3;overflow:hidden;background:#EFE3C4}.gcard img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transform-origin:50% 62%}
+.gcard .bd{padding:14px 16px 18px}.gcard .why{font-size:13px;color:var(--sea);font-weight:600}.gcard b{display:block;font-size:17px;line-height:1.3;margin:4px 0}
+.gcard .vn{font-size:14px;color:var(--ink2)}.gcard .pr{font-size:20px;font-weight:700;color:var(--red);margin-top:6px}
+/* chapters */
+.story{background:var(--cave);color:var(--ivory);padding:40px 0 110px;border-top:1px solid rgba(243,234,214,.08)}
+.story h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.6vw,50px);letter-spacing:-.02em;margin:0 0 50px;max-width:16ch}
+.chap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.ch .img{position:relative;aspect-ratio:3/4;border-radius:20px;overflow:hidden;background:linear-gradient(160deg,#274247,#13262A)}
+.ch .img .glyph{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--serif);font-size:120px;color:rgba(243,234,214,.08)}
+.ch .n{font-family:var(--serif);font-size:15px;color:#7FD1C7;margin:18px 0 4px}.ch h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0 0 6px}.ch p{color:var(--mist);margin:0;font-size:15px}
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}.reveal.in{opacity:1;transform:none}
+/* compare */
+.cmp{padding:100px 0;background:var(--paper)}
+.cmp h2{font-family:var(--serif);font-weight:400;font-size:clamp(28px,3.2vw,44px);letter-spacing:-.02em;margin:0 0 8px}
+.cmp .lead{color:var(--ink2);margin:0 0 36px;max-width:60ch}
+.rail{position:relative;display:grid;grid-template-columns:repeat(4,1fr);margin-bottom:26px}
+.rail::before{content:"";position:absolute;left:12.5%;right:12.5%;top:21px;height:2px;background:var(--line)}
+.stop{position:relative;background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--ink2);font-weight:600}
+.stop i{width:44px;height:44px;border-radius:50%;background:var(--paper);border:2px solid var(--line);display:grid;place-items:center;font-style:normal;font-family:var(--serif);transition:.2s}
+.stop[aria-pressed=true]{color:var(--ink)}.stop[aria-pressed=true] i{background:var(--sea);border-color:var(--sea);color:#fff;transform:scale(1.12)}
+.card-c{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:0;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:#fff}
+.card-c .ph{background:#EFE3C4;min-height:320px;overflow:hidden}.card-c .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transform-origin:50% 62%}
+.card-c .bd{padding:30px 32px}.card-c h3{font-family:var(--serif);font-weight:500;font-size:30px;margin:0 0 6px}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:22px 0}
+.facts div{background:var(--paper);border-radius:14px;padding:12px 14px}.facts span{display:block;font-size:12px;color:var(--ink2)}.facts b{font-size:16px}
+.btn{display:inline-flex;gap:8px;align-items:center;border-radius:12px;padding:12px 18px;font-weight:600;text-decoration:none}
+.btn-sea{background:var(--sea);color:#fff}.btn-line{border:1.5px solid var(--sea);color:var(--sea)}
+/* shelf */
+.shelf{padding:0 0 100px;background:var(--paper)}.shelf h2{font-family:var(--serif);font-weight:400;font-size:36px;margin:0 0 22px;letter-spacing:-.015em}
+.row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.p{text-decoration:none}.p .ph{aspect-ratio:1;border-radius:18px;overflow:hidden;background:#EFE3C4}.p img{width:100%;height:100%;object-fit:cover;transform:scale(1.14);transform-origin:50% 62%;transition:transform .4s}.p:hover img{transform:scale(1.2)}
+.p b{display:block;margin:12px 0 2px;font-weight:600}.p span{color:var(--red);font-weight:700}
+/* visit */
+.visit{background:var(--sea);color:#fff;padding:90px 0}.visit .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:48px;align-items:center}
+.visit h2{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.4vw,48px);margin:0 0 14px;letter-spacing:-.02em}.visit p{opacity:.9;margin:0 0 22px}
+.visit .img{position:relative;aspect-ratio:4/3;border-radius:22px;background:linear-gradient(140deg,#0E6A71,#083A3F);overflow:hidden}
+.ft{background:var(--cave);color:var(--mist);padding:40px 0;font-size:14px}
+.mockbar{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:50;background:#fff;color:var(--ink);border-radius:999px;padding:8px 16px;font-size:13px;box-shadow:0 6px 24px rgba(0,0,0,.25)}
+@media (max-width:900px){
+  .hd nav,.hd .tools a.hide-m{display:none}.hero .wrap{grid-template-columns:1fr;padding-top:100px}.nestbox{max-width:300px;order:-1;margin-bottom:-10px}
+  .fan,.chap,.row{grid-template-columns:1fr 1fr}.fan .gcard:nth-child(3){display:none}
+  .card-c,.visit .wrap{grid-template-columns:1fr}.card-c .ph{min-height:220px}.facts{grid-template-columns:1fr 1fr 1fr}
+  .rail span{font-size:12px}.chap{grid-template-columns:1fr}.ch .img{aspect-ratio:16/9}
+}
+</style>
+</head><body>
+<header class="hd"><div class="wrap">
+  <a class="logo" href="#"><span class="seal">Yến</span><span><b>Yến Sào Nha Trang</b><small>Từ nhà yến Khánh Hòa</small></span></a>
+  <nav><a href="#">Sản phẩm</a><a href="#">Quà biếu</a><a href="#">Tham quan nhà yến</a><a href="#">Giới thiệu</a></nav>
+  <div class="tools"><a class="hide-m" href="#">Tra cứu đơn</a><a href="#">Giỏ 0</a></div>
+</div></header>
+
+<section class="hero" aria-label="Giới thiệu">
+  <span class="tmp" style="right:24px;top:96px">Nền tạm · sẽ thay bằng video nhà yến thật</span>
+  <div id="birds" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <p class="kicker">Nhà yến 01 Nguyễn Thiện Thuật · Nha Trang</p>
+      <h1>Tổ yến từ nhà yến <em>giữa lòng</em> Nha Trang</h1>
+      <p class="say" id="say"></p>
+      <div class="sheet" id="sheet" role="group"></div>
+      <button class="open" id="openBtn">Mở hộp quà gợi ý <span aria-hidden="true">↓</span></button>
+    </div>
+    <div class="nestbox" aria-hidden="true"><svg id="nest" viewBox="0 0 400 400"></svg></div>
+  </div>
+  <div class="scrollcue">Cuộn để xem</div>
+</section>
+
+<section class="gift" id="gift">
+  <div class="wrap">
+    <div class="gift-stage" id="stage">
+      <div class="box" aria-hidden="true"><div class="base"></div><div class="rib"></div><div class="lid"></div><div class="stamp">Yến</div></div>
+      <h2 id="giftTitle"></h2>
+      <p class="sub">Chọn lại người nhận hoặc mức giá ở phía trên, hộp quà sẽ đổi theo.</p>
+      <div class="fan" id="fan"></div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="wrap">
+    <h2 class="reveal">Từ tổ yến trong nhà yến tới hộp quà trong tay bạn</h2>
+    <div class="chap">
+      <div class="ch reveal"><div class="img"><span class="tmp" style="left:12px;top:12px">Ảnh tạm: chim yến trong nhà yến</span><div class="glyph">01</div></div>
+        <p class="n">Chương 01</p><h3>Chim yến làm tổ</h3><p>Nhà yến của công ty được xây theo tiêu chuẩn để chim yến sống khỏe và làm tổ tự nhiên.</p></div>
+      <div class="ch reveal"><div class="img"><span class="tmp" style="left:12px;top:12px">Ảnh tạm: công đoạn nhặt lông</span><div class="glyph">02</div></div>
+        <p class="n">Chương 02</p><h3>Làm sạch tại nhà máy</h3><p>Nhà máy 2,2 ha tại Khánh Hòa, đạt FDA, USDA, FSSC 22000, ISO 22000 và HACCP.</p></div>
+      <div class="ch reveal"><div class="img"><span class="tmp" style="left:12px;top:12px">Ảnh tạm: hộp quà, showroom</span><div class="glyph">03</div></div>
+        <p class="n">Chương 03</p><h3>Thành quà trong tay</h3><p>Từ tổ yến nguyên tổ đến yến ăn liền, chưng sẵn, đóng hộp quà để biếu gia đình và đối tác.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="cmp">
+  <div class="wrap">
+    <h2 class="reveal">Hiểu yến trong 10 giây</h2>
+    <p class="lead reveal">Chưa biết chọn loại nào? Chạm từng loại để thấy khác nhau ở cách dùng và giá.</p>
+    <div class="rail" id="rail" role="group" aria-label="Chọn loại yến"></div>
+    <div class="card-c" id="cmpCard"></div>
+  </div>
+</section>
+
+<section class="shelf">
+  <div class="wrap">
+    <h2 class="reveal">Được mua nhiều</h2>
+    <div class="row" id="best"></div>
+  </div>
+</section>
+
+<section class="visit">
+  <div class="wrap">
+    <div><h2 class="reveal">Ghé nhà yến ngay trung tâm thành phố</h2>
+      <p>01 Nguyễn Thiện Thuật, Nha Trang. Xem chim yến làm tổ, thử yến chưng và mua quà mang về trong ngày.</p>
+      <a class="btn" style="background:#fff;color:var(--sea)" href="#">Xem thông tin tham quan</a></div>
+    <div class="img"><span class="tmp" style="left:14px;top:14px">Ảnh tạm: mặt tiền 01 Nguyễn Thiện Thuật</span></div>
+  </div>
+</section>
+<footer class="ft"><div class="wrap">Công ty Cổ phần Yến Sào Nha Trang · Hotline 1800 64 68 80</div></footer>
+<div class="mockbar">Mockup trang chủ mới · dữ liệu sản phẩm thật · ô viền đứt là ảnh, video tạm</div>
+<script>
+const DATA = [{"name": "Bộ Phúc Lộc An Khang", "cat": "Bộ quà tặng", "slug": "bo-phuc-loc-an-khang", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__4__5bc864efc18047e088c8cc97f485bc4d.png", "v": [{"n": "Tiêu chuẩn", "p": 950000, "ok": false}]}, {"name": "Bộ Quà Tặng An Khang", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-khang", "img": "https://cdn.hstatic.net/products/200000968607/an_khang__2__9738fa2ea0a14b32a5bcdabe61f9ce8e.png", "v": [{"n": "Hộp", "p": 3350000, "ok": true}]}, {"name": "Bộ Quà Tặng An Phúc", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-phuc", "img": "https://cdn.hstatic.net/products/200000968607/an_ph_c__1__517615e75409421b860fbffe3cf20a91.png", "v": [{"n": "Hộp", "p": 1500000, "ok": true}]}, {"name": "Bộ Quà Tặng An Viên", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-vien", "img": "https://cdn.hstatic.net/products/200000968607/an_vi_n_9e8480421cab46f69b9e3aaf56d5240c.png", "v": [{"n": "Hộp", "p": 1350000, "ok": true}]}, {"name": "Bộ Quà Tặng Thịnh Vượng An Gia", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-thinh-vuong-an-gia", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__3__ec1958df96284501a0b9163e2384db74.png", "v": [{"n": "Hộp", "p": 750000, "ok": true}]}, {"name": "Bộ Thượng Hạng An Nhiên (YSNT 50g)", "cat": "Bộ quà tặng", "slug": "bo-thuong-hang-an-nhien-ysnt-50g", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__2__902585266c6b4a1ba51ca62ea5cae3af.png", "v": [{"n": "Tiêu chuẩn", "p": 3650000, "ok": false}]}, {"name": "Khay Mứt Tết - Xuân Như Ý", "cat": "Bộ quà tặng", "slug": "khay-mut-tet-xuan-nhu-y", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_0ec1686eda074370b0e28dbf5598ab97.png", "v": [{"n": "Tiêu chuẩn", "p": 750000, "ok": true}]}, {"name": "Bột Tổ Yến", "cat": "Bột tổ yến", "slug": "bot-to-yen", "img": "https://cdn.hstatic.net/products/200000968607/b_t_g_o_l_t_234cc987aeaf4743b0a04f462d47e9dd.png", "v": [{"n": "Gạo Lứt", "p": 140000, "ok": true}, {"n": "Mè Đen", "p": 140000, "ok": true}, {"n": "Ngũ Cốc", "p": 140000, "ok": true}]}, {"name": "Chè Tổ Yến", "cat": "Chè tổ yến", "slug": "che-to-yen", "img": "https://cdn.hstatic.net/products/200000968607/che_to_yen_-_duong_nhan_d94089247f73477baaaf9138b5bf0e27.png", "v": [{"n": "Dưỡng Nhan", "p": 69000, "ok": true}, {"n": "Sâm Bổ Lượng", "p": 69000, "ok": true}]}, {"name": "Combo Bột Tổ Yến & Cà Phê Tổ Yến | Combo 4 hộp - CTCP Yến Sào Nha Trang", "cat": "Combo", "slug": "combo-bot-to-yen-ca-phe-to-yen-combo-4-hop-ctcp-yen-sao-nha-trang", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_1_779b5da837a240e3bcf1d5c8b3a785b6.png", "v": [{"n": "Tiêu chuẩn", "p": 540000, "ok": true}]}, {"name": "Combo Dưỡng Lành Bồi Bổ Sức Khoẻ - Phục Hồi Năng Lượng", "cat": "Combo", "slug": "combo-duong-lanh-boi-bo-suc-khoe-phuc-hoi-nang-luong", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_l_nh__1__99b5f756b08c4e8b9c183493fd13dd00.png", "v": [{"n": "Tiêu chuẩn", "p": 849000, "ok": true}]}, {"name": "Combo Siêu Tiện Lợi - Dành cho người bận rộn", "cat": "Combo", "slug": "combo-sieu-tien-loi-danh-cho-nguoi-ban-ron", "img": "https://cdn.hstatic.net/products/200000968607/si_u_ti_n_l_i_f731c692ccd447fa97cde407668dc8ec.png", "v": [{"n": "Tiêu chuẩn", "p": 159000, "ok": false}]}, {"name": "Combo Tổ Yến Tinh Chế & Súp Tổ Yến | Combo 7 Sản Phẩm - CTCP Yến Sào Nha Trang", "cat": "Combo", "slug": "combo-to-yen-tinh-che-sup-to-yen-combo-7-san-pham-ctcp-yen-sao-nha-trang", "img": "https://cdn.hstatic.net/products/200000968607/_ws__combo_6_59ef7b4588b84c8a9dbe7ba87231fb54.png", "v": [{"n": "Tiêu chuẩn", "p": 1564000, "ok": true}]}, {"name": "Combo Độc Quyền | Tổ Yến Ăn Liền - Cà Phê Tổ Yến - Súp Tổ Yến - Sữa Chua Khô", "cat": "Combo", "slug": "combo-doc-quyen-to-yen-an-lien-ca-phe-to-yen-sup-to-yen-sua-chua-kho", "img": "https://cdn.hstatic.net/products/200000968607/2__1__89078eb2b83f498fae0bbc32cdb4ba58.png", "v": [{"n": "Combo", "p": 747000, "ok": true}]}, {"name": "Cà Phê Tổ Yến", "cat": "Cà phê tổ yến", "slug": "ca-phe-to-yen", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t_6ee59f9ee1ba4bd28941a58538312c72.png", "v": [{"n": "2 in 1", "p": 120000, "ok": true}, {"n": "4 in 1", "p": 120000, "ok": true}]}, {"name": "Hydra Dew Cream - Kem Dưỡng Ẩm", "cat": "Khác", "slug": "hydra-dew-cream-kem-duong-am", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng_b10bafd1e15e46aea5cedd156a5aa20b.png", "v": [{"n": "Tiêu chuẩn", "p": 495000, "ok": true}]}, {"name": "Mặt Nạ Sinh Học Bio-Cellulose", "cat": "Mặt nạ yến", "slug": "mat-na-sinh-hoc-bio-cellulose", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__59cbbcdf035c4ed3ba22602d7406a6a4.png", "v": [{"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "p": 345000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Euromax", "cat": "Nước uống đóng chai", "slug": "nuoc-uong-dong-chai-euromax", "img": "https://cdn.hstatic.net/products/200000968607/euromax_1098ad657d5b44f19ce81dfb00a97555.png", "v": [{"n": "Thùng", "p": 100000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Nest Art Life (Tính kiềm)", "cat": "Nước uống đóng chai", "slug": "nuoc-uong-dong-chai-nest-art-life-tinh-kiem", "img": "https://cdn.hstatic.net/products/200000968607/nest_art_life_1ea51ff39032483cb5984fc50c03d66f.png", "v": [{"n": "Thùng", "p": 130000, "ok": true}]}, {"name": "Nước Yến Thật", "cat": "Nước yến thật", "slug": "nuoc-yen-that", "img": "https://cdn.hstatic.net/products/200000968607/n__c_y_n_lon__h_p_06__a954442f34a54b1e842427eda4995b8e.png", "v": [{"n": "Mật Ong – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Nấm Linh Chi – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Xáo Tam Phân – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Mật Ong – Thùng 30 lon", "p": 299000, "ok": true}, {"n": "Nấm Linh Chi – Thùng 30 lon", "p": 299000, "ok": true}, {"n": "Xáo Tam Phân – Thùng 30 lon", "p": 299000, "ok": true}]}, {"name": "Súp Tổ Yến", "cat": "Súp tổ yến", "slug": "sup-to-yen", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__6__22d275f681ee405483cac14f7bf4c5b0.png", "v": [{"n": "Cá Hồi", "p": 69000, "ok": true}, {"n": "Gà Hầm Táo Đỏ", "p": 69000, "ok": true}, {"n": "Hải Sản", "p": 69000, "ok": true}, {"n": "Nấm Rau Củ (Súp Chay)", "p": 69000, "ok": true}, {"n": "Thịt Bò", "p": 69000, "ok": true}, {"n": "Tôm Cua", "p": 69000, "ok": true}]}, {"name": "Sữa Chua Tổ Yến Sấy Khô", "cat": "Sữa chua sấy khô", "slug": "sua-chua-to-yen-say-kho", "img": "https://cdn.hstatic.net/products/200000968607/ch__t__y_n_-_s_m_b__l__ng__3__6588d7afe5ab43c1bdeb105b83f121ad.png", "v": [{"n": "Chanh Dây – 16g", "p": 55000, "ok": true}, {"n": "Dưa Lưới – 16g", "p": 55000, "ok": true}, {"n": "Nguyên Vị – 16g", "p": 55000, "ok": true}, {"n": "Phô Mai – 16g", "p": 55000, "ok": true}, {"n": "Việt Quất – 16g", "p": 55000, "ok": true}, {"n": "Ổi Hồng – 16g", "p": 55000, "ok": true}, {"n": "Chanh Dây – 96g", "p": 320000, "ok": true}, {"n": "Dưa Lưới – 96g", "p": 320000, "ok": true}, {"n": "Nguyên Vị – 96g", "p": 320000, "ok": true}, {"n": "Phô Mai – 96g", "p": 320000, "ok": true}, {"n": "Việt Quất – 96g", "p": 320000, "ok": true}, {"n": "Ổi Hồng – 96g", "p": 320000, "ok": true}]}, {"name": "Tinh Chất Yến", "cat": "Tinh chất yến", "slug": "tinh-chat-yen", "img": "https://cdn.hstatic.net/products/200000968607/collagen_fb66857373424c8fa7dba6289c0ccdd9.png", "v": [{"n": "Collagen (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Nấm Linh Chi (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Đông Trùng Hạ Thảo (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Hộp 30 gói", "p": 1950000, "ok": false}]}, {"name": "Tổ Yến Chưng Sẵn", "cat": "Tổ yến chưng sẵn", "slug": "to-yen-chung-san", "img": "https://cdn.hstatic.net/products/200000968607/tytcs_70ml_nhan_sam_aaf2b17a30954c11ba391b9b7fa8d4b0.png", "v": [{"n": "Nhân Sâm – 70ml", "p": 55000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 70ml", "p": 55000, "ok": true}, {"n": "Đường Isomalt – 70ml", "p": 55000, "ok": true}, {"n": "Đường Phèn – 70ml", "p": 55000, "ok": true}, {"n": "Nhân Sâm – 420ml", "p": 385000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 420ml", "p": 385000, "ok": true}, {"n": "Đường Isomalt – 420ml", "p": 385000, "ok": true}, {"n": "Đường Phèn – 420ml", "p": 385000, "ok": true}]}, {"name": "Tổ Yến Chưng Sẵn – Hộp 8", "cat": "Tổ yến chưng sẵn", "slug": "to-yen-chung-san-hop-8", "img": "https://cdn.hstatic.net/products/200000968607/d__ng_isomalt__2__00403cc7a27e4a20b8f5108566bb5117.png", "v": [{"n": "Đường Isomalt", "p": 880000, "ok": true}, {"n": "Đường Organic", "p": 880000, "ok": true}, {"n": "Dừa Ninh Đa", "p": 990000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ", "cat": "Tổ yến nguyên tổ", "slug": "to-yen-nguyen-to", "img": "https://cdn.hstatic.net/products/200000968607/na_nguy_n_t__0cf993a1b4af4693b8205dbb96e474b8.png", "v": [{"n": "Hộp 100g", "p": 7250000, "ok": true}, {"n": "Hộp 500g", "p": 36250000, "ok": true}, {"n": "Hộp 1000g", "p": 72500000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ Hồng Huyết", "cat": "Tổ yến nguyên tổ", "slug": "to-yen-nguyen-to-hong-huyet", "img": "https://cdn.hstatic.net/products/200000968607/na_h_ng_huy_t_782e1a7b23824eadbad323e6b8b48233.png", "v": [{"n": "Hộp 100g", "p": 9700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế - Limited", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-limited", "img": "https://cdn.hstatic.net/products/200000968607/y_n_nguy_t__5__9c6373080ec84fbc9cfaeb6893841562.png", "v": [{"n": "Tiêu chuẩn", "p": 9200000, "ok": false}]}, {"name": "Tổ Yến Tinh Chế Nest Art", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-nest-art", "img": "https://cdn.hstatic.net/products/200000968607/na_truy_n_th_ng__50g__100g__a3bca5896fe54d228e0a961d812f5ae7.png", "v": [{"n": "Hộp 50g", "p": 3400000, "ok": true}, {"n": "Hộp 100g", "p": 6700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Rút Lông Định Hình 100g", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-rut-long-dinh-hinh-100g", "img": "https://cdn.hstatic.net/products/200000968607/na_rldh_ebaa019e446740068ab8b70636270226.jpg", "v": [{"n": "Hộp", "p": 7250000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Yến Sào Nha Trang", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-yen-sao-nha-trang", "img": "https://cdn.hstatic.net/products/200000968607/ysnt_10g_cbbbd68a847e4712a95c839096e0fab8.png", "v": [{"n": "Hộp 10g", "p": 580000, "ok": true}, {"n": "Hộp 15g", "p": 860000, "ok": true}, {"n": "Hộp 20g", "p": 1150000, "ok": true}, {"n": "Hộp 30g", "p": 1700000, "ok": true}, {"n": "Hộp 50g", "p": 2750000, "ok": true}, {"n": "Hộp 100g", "p": 5450000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien", "img": "https://cdn.hstatic.net/products/200000968607/65__fucoidan_343fb1e4a20f4673bf54aec8138fe2e9.png", "v": [{"n": "Fucoidan – 11g", "p": 255000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 11g", "p": 255000, "ok": true}, {"n": "Lá Dứa & Collagen – 11g", "p": 255000, "ok": true}, {"n": "Nhân Sâm – 11g", "p": 255000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 11g", "p": 255000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 11g", "p": 255000, "ok": true}, {"n": "Nguyên Chất – 11g", "p": 265000, "ok": true}, {"n": "Fucoidan – 110g", "p": 2550000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 110g", "p": 2550000, "ok": true}, {"n": "Lá Dứa & Collagen – 110g", "p": 2550000, "ok": true}, {"n": "Nhân Sâm – 110g", "p": 2550000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 110g", "p": 2550000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 110g", "p": 2550000, "ok": true}, {"n": "Nguyên Chất – 110g", "p": 2650000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền Platinum", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien-platinum", "img": "https://cdn.hstatic.net/products/200000968607/85__fucoidan_b0c35142c72a409b985b7093f3299ecd.png", "v": [{"n": "Fucoidan – 9g", "p": 285000, "ok": true}, {"n": "Lá Dứa – 9g", "p": 285000, "ok": true}, {"n": "Nguyên Vị – 9g", "p": 285000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền – Bánh Rau Củ", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien-banh-rau-cu", "img": "https://cdn.hstatic.net/products/200000968607/brc__h_p_5__0001ef652ac04eb18dcc493902f2334f.png", "v": [{"n": "Hộp 5 gói", "p": 70000, "ok": true}, {"n": "Hộp 30 gói", "p": 385000, "ok": true}]}];
+const $ = s => document.querySelector(s);
+const vnd = n => Math.round(n).toLocaleString('vi-VN') + 'đ';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const P = Object.fromEntries(DATA.map(p => [p.slug, p]));
+
+/* nest: many ivory strands woven into a bowl, drawn in on load */
+(function nest() {
+  const svg = $('#nest'); let rnd = 7, html = '';
+  const r = () => (rnd = (rnd * 9301 + 49297) % 233280) / 233280;
+  const cx = 200, cy = 205, rx = 158, ry = 118;
+  const pt = (t, k) => [cx + rx * k * Math.cos(t), cy + ry * k * Math.sin(t) * 0.92 + (1 - k) * 18];
+  for (let i = 0; i < 190; i++) {
+    const k = i < 40 ? 0.96 + r() * 0.08 : 0.35 + r() * 0.65;             // outer rim first, then inner layers
+    const span = 0.5 + r() * 1.9, t1 = -0.05 + r() * (Math.PI + 0.1 - span), t2 = t1 + span;
+    const [x1, y1] = pt(t1, k), [x2, y2] = pt(t2, k), tm = (t1 + t2) / 2;
+    const [mx, my] = pt(tm, Math.min(1.08, k + 0.08 + r() * 0.1));
+    const d = `M${x1.toFixed(1)} ${y1.toFixed(1)} Q ${(2 * mx - (x1 + x2) / 2).toFixed(1)} ${(2 * my - (y1 + y2) / 2).toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}`;
+    html += `<path class="strand" d="${d}" style="--len:600;--d:${(r() * 1.6).toFixed(2)}s;stroke-width:${(.5 + r() * 1.3).toFixed(2)};opacity:${(.35 + r() * .45).toFixed(2)}"/>`;
+  }
+  svg.innerHTML = `<defs><radialGradient id="glow" cx="50%" cy="62%" r="45%"><stop offset="0" stop-color="#F3EAD6" stop-opacity=".22"/><stop offset="1" stop-color="#F3EAD6" stop-opacity="0"/></radialGradient></defs><ellipse cx="200" cy="250" rx="185" ry="120" fill="url(#glow)"/>` + html;
+  requestAnimationFrame(() => svg.classList.add('draw'));
+})();
+/* swiftlets crossing the cave */
+(function birds() {
+  const box = $('#birds'); let h = '';
+  [[18, 22, 0, 1], [30, 28, -6, .8], [12, 34, -14, .65], [40, 26, -3, .9], [24, 40, -20, .7]].forEach(([y, t, d, s]) => {
+    h += `<svg class="bird" viewBox="0 0 34 14" style="--y:${y}vh;--t:${t}s;--delay:${d}s;--s:${s}"><path d="M1 8 Q9 1 17 8 Q25 1 33 8"/></svg>`;
+  });
+  box.innerHTML = h;
+})();
+
+/* sentence builder + gift box */
+const WHO = [
+  { k: 'bome', t: 'bố mẹ', cats: ['Tổ yến tinh chế', 'Tổ yến chưng sẵn', 'Tổ yến ăn liền', 'Bộ quà tặng'] },
+  { k: 'mebau', t: 'mẹ bầu', cats: ['Tổ yến chưng sẵn', 'Tổ yến tinh chế', 'Tổ yến ăn liền'] },
+  { k: 'be', t: 'bé nhà mình', cats: ['Sữa chua sấy khô', 'Tổ yến ăn liền', 'Tổ yến chưng sẵn'] },
+  { k: 'doitac', t: 'đối tác, sếp', cats: ['Bộ quà tặng', 'Tổ yến tinh chế', 'Tổ yến nguyên tổ'] },
+  { k: 'minh', t: 'chính mình', cats: ['Tổ yến ăn liền', 'Súp tổ yến', 'Nước yến thật', 'Tổ yến chưng sẵn'] },
+  { k: 'dulich', t: 'làm quà du lịch', cats: ['Bộ quà tặng', 'Sữa chua sấy khô', 'Tổ yến chưng sẵn', 'Tổ yến ăn liền'] },
+];
+const BUD = [
+  { k: 'nho', t: 'dưới 300 nghìn', lo: 0, hi: 300000, at: 250000 },
+  { k: 'tr1', t: 'khoảng 1 triệu', lo: 500000, hi: 1500000, at: 1000000 },
+  { k: 'tr3', t: '2 đến 5 triệu', lo: 2000000, hi: 5000000, at: 3000000 },
+  { k: 'lon', t: 'trên 5 triệu', lo: 5000000, hi: 1e12, at: 7000000 },
+];
+const WHY = { 'Tổ yến tinh chế': 'Đã làm sạch, chỉ việc chưng', 'Tổ yến nguyên tổ': 'Tổ nguyên, hộp sang để biếu', 'Tổ yến ăn liền': 'Không phải chưng, dùng liền', 'Tổ yến chưng sẵn': 'Mở nắp là dùng được', 'Sữa chua sấy khô': 'Viên nhỏ, bé cầm ăn được', 'Súp tổ yến': 'Bữa sáng nhanh', 'Nước yến thật': 'Uống liền, mang theo tiện', 'Bộ quà tặng': 'Đóng hộp sẵn, hợp để biếu' };
+let who = 'bome', bud = 'tr1', openP = '', opened = false;
+function pick() {
+  const W = WHO.find(x => x.k === who), B = BUD.find(x => x.k === bud), out = [];
+  W.cats.forEach((c, rank) => DATA.filter(p => p.cat === c).forEach(p => {
+    const v = p.v.filter(v => v.ok && v.p >= B.lo && v.p <= B.hi).sort((a, b) => Math.abs(a.p - B.at) - Math.abs(b.p - B.at))[0];
+    if (v) out.push({ p, v, rank });
+  }));
+  out.sort((a, b) => a.rank - b.rank || Math.abs(a.v.p - B.at) - Math.abs(b.v.p - B.at));
+  const seen = new Set(); return out.filter(x => seen.has(x.p.cat) ? false : (seen.add(x.p.cat), true)).slice(0, 3);
+}
+function paint() {
+  const W = WHO.find(x => x.k === who), B = BUD.find(x => x.k === bud);
+  $('#say').innerHTML = `Tôi muốn mua yến cho <button data-o="who" aria-expanded="${openP === 'who'}">${W.t}</button>, <button data-o="bud" aria-expanded="${openP === 'bud'}">${B.t}</button>.`;
+  $('#sheet').innerHTML = openP === 'who' ? WHO.map(x => `<button data-w="${x.k}" aria-pressed="${x.k === who}">${x.t}</button>`).join('')
+    : openP === 'bud' ? BUD.map(x => `<button data-b="${x.k}" aria-pressed="${x.k === bud}">${x.t}</button>`).join('') : '';
+  const L = pick();
+  $('#giftTitle').textContent = `Hộp quà cho ${W.t}, ${B.t}`;
+  $('#fan').innerHTML = L.length ? L.map(({ p, v }) => `<a class="gcard" href="#"><div class="ph">${p.img ? `<img src="${esc(p.img)}" alt="">` : ''}</div><div class="bd"><span class="why">${esc(WHY[p.cat] || '')}</span><b>${esc(p.name)}</b><span class="vn">${esc(v.n === 'Tiêu chuẩn' ? p.cat : v.n)}</span><div class="pr">${vnd(v.p)}</div></div></a>`).join('')
+    : `<p style="grid-column:1/-1;text-align:center;color:var(--mist)">Chưa có món cho lựa chọn này. Chạm vào mức giá để đổi.</p>`;
+  if (opened) { const s = $('#stage'); s.classList.remove('on'); void s.offsetWidth; s.classList.add('on'); }
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.o) { openP = openP === b.dataset.o ? '' : b.dataset.o; paint(); }
+  if (b.dataset.w) { who = b.dataset.w; openP = ''; paint(); }
+  if (b.dataset.b) { bud = b.dataset.b; openP = ''; paint(); }
+});
+$('#openBtn').addEventListener('click', () => { opened = true; $('#stage').classList.add('on'); paint(); $('#gift').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+paint();
+</script>
+<script>
+/* compare 4 kinds */
+const KINDS = [
+  { k: 'Tổ yến nguyên tổ', slug: 'to-yen-nguyen-to', short: 'Nguyên tổ', use: 'Ngâm nở, nhặt sạch lông rồi mới chưng', time: 'Tốn công nhất', fit: 'Biếu tặng, người đã quen dùng yến', gram: true },
+  { k: 'Tổ yến tinh chế', slug: 'to-yen-tinh-che-yen-sao-nha-trang', short: 'Tinh chế', use: 'Đã làm sạch, chỉ việc ngâm rồi chưng', time: 'Vừa phải', fit: 'Dùng hằng ngày cho cả nhà', gram: true },
+  { k: 'Tổ yến ăn liền', slug: 'to-yen-an-lien', short: 'Ăn liền', use: 'Không phải chưng, dùng liền', time: 'Nhanh', fit: 'Người bận rộn, dân văn phòng', gram: false },
+  { k: 'Tổ yến chưng sẵn', slug: 'to-yen-chung-san', short: 'Chưng sẵn', use: 'Mở nắp là dùng', time: 'Tức thì', fit: 'Mang theo, làm quà nhỏ', gram: false },
+];
+let kSel = 1;
+function paintCmp() {
+  $('#rail').innerHTML = KINDS.map((x, i) => `<button class="stop" data-k="${i}" aria-pressed="${i === kSel}"><i>${i + 1}</i><span>${x.short}</span></button>`).join('');
+  const x = KINDS[kSel], p = P[x.slug] || DATA.find(q => q.cat === x.k);
+  const vs = DATA.filter(q => q.cat === x.k).flatMap(q => q.v).filter(v => v.ok);
+  const min = Math.min(...vs.map(v => v.p));
+  const per = x.gram ? Math.min(...vs.map(v => { const m = v.n.match(/(\d+)\s*g\b/i); return m ? v.p / +m[1] : Infinity; })) : null;
+  $('#cmpCard').innerHTML = `<div class="ph">${p?.img ? `<img src="${esc(p.img)}" alt="">` : ''}</div>
+    <div class="bd"><h3>${esc(x.k)}</h3><p style="color:var(--ink2);margin:0">${esc(x.use)}.</p>
+      <div class="facts"><div><span>Chuẩn bị</span><b>${esc(x.time)}</b></div><div><span>Giá từ</span><b>${vnd(min)}</b></div><div><span>${per ? 'Giá mỗi gram từ' : 'Hợp với'}</span><b>${per ? vnd(per) : esc(x.fit)}</b></div></div>
+      ${per ? `<p style="margin:0 0 18px;color:var(--ink2)">Hợp với: ${esc(x.fit)}.</p>` : ''}
+      <a class="btn btn-sea" href="#">Xem ${esc(x.short.toLowerCase())}</a></div>`;
+}
+$('#rail').addEventListener('click', e => { const b = e.target.closest('[data-k]'); if (b) { kSel = +b.dataset.k; paintCmp(); } });
+paintCmp();
+/* best sellers */
+$('#best').innerHTML = ['to-yen-an-lien', 'to-yen-tinh-che-yen-sao-nha-trang', 'to-yen-chung-san', 'sua-chua-to-yen-say-kho'].map(s => P[s]).filter(Boolean)
+  .map(p => { const m = Math.min(...p.v.filter(v => v.ok).map(v => v.p)); return `<a class="p reveal" href="#"><div class="ph">${p.img ? `<img src="${esc(p.img)}" alt="" loading="lazy">` : ''}</div><b>${esc(p.name)}</b><span>từ ${vnd(m)}</span></a>`; }).join('');
+/* reveal on scroll */
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .15 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body></html>

@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="vi"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Nest Art · Concept trang chủ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+/* Concept: Nest Art = a gallery. Every product is an artwork on a plinth with a museum placard. */
+:root{--wall:#EFEBE3;--wall2:#E5DFD3;--ink:#17201F;--ink2:#5E6563;--gold:#B08A3E;--gold2:#D9BD7A;--glass:#CFE0DD;--ivory:#F8F3E8;--red:#9E1B22;--serif:Fraunces,Lora,Georgia,serif}
+*{box-sizing:border-box}html,body{margin:0}
+body{font-family:"Be Vietnam Pro",system-ui,sans-serif;font-weight:400;color:var(--ink);background:var(--wall);font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:inherit}button,input,textarea{font:inherit;color:inherit}button{cursor:pointer}:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:500}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.02em;margin:0}
+h2{font-size:clamp(32px,4vw,56px);line-height:1.05}h2 em,h1 em{font-style:italic;color:var(--gold)}
+/* header */
+.hd{position:relative;z-index:5}.hd .wrap{display:flex;align-items:center;height:88px;gap:34px}
+.mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+.mark svg{width:38px;height:38px}.mark b{font-family:var(--serif);font-weight:400;font-size:22px;letter-spacing:.18em}
+.hd nav{display:flex;gap:28px;font-size:14px;letter-spacing:.04em}.hd nav a{text-decoration:none;color:var(--ink2)}.hd nav a:hover{color:var(--ink)}
+.hd .r{margin-left:auto;display:flex;gap:18px;font-size:14px}.hd .r a{text-decoration:none}
+/* hero gallery wall */
+.hero{position:relative;min-height:min(92vh,860px);overflow:hidden;background:radial-gradient(60% 70% at 66% 30%,#FBF8F2 0%,var(--wall) 55%,var(--wall2) 100%)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:center;min-height:min(80vh,760px)}
+.hero h1{font-size:clamp(46px,6.4vw,96px);line-height:.98;margin:18px 0 26px}
+.hero p.lede{font-size:18px;color:var(--ink2);max-width:36ch;margin:0 0 34px;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:10px;border-radius:999px;padding:14px 26px;text-decoration:none;font-size:15px;font-weight:500;border:1px solid var(--ink);background:var(--ink);color:var(--ivory)}
+.btn.line{background:transparent;color:var(--ink)}
+.stage{position:relative;height:640px}
+.spot{position:absolute;left:50%;top:-80px;width:520px;height:720px;transform:translateX(-50%);background:radial-gradient(50% 60% at 50% 0%,rgba(255,252,240,.95),rgba(255,252,240,0) 70%);clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);opacity:.9}
+.plinth{position:absolute;left:50%;bottom:40px;transform:translateX(-50%);width:360px;height:170px}
+.plinth .top{position:absolute;inset:0 0 auto 0;height:26px;background:#FBF8F1;border-radius:3px;box-shadow:0 1px 0 #fff inset}
+.plinth .body{position:absolute;inset:26px 14px 0 14px;background:linear-gradient(90deg,#E9E3D7,#F6F2EA 45%,#E3DCCD)}
+.piece{position:absolute;left:50%;bottom:196px;transform:translateX(-50%);width:440px}
+.piece svg{width:100%;display:block;filter:drop-shadow(0 24px 22px rgba(60,45,20,.18))}
+.placard{position:absolute;right:0;bottom:70px;background:#fff;padding:14px 16px;width:210px;box-shadow:0 8px 24px rgba(0,0,0,.06);font-size:12px;line-height:1.45}
+.placard b{display:block;font-family:var(--serif);font-weight:400;font-size:16px;margin-bottom:2px}.placard span{color:var(--ink2)}
+.bird{position:absolute;z-index:2;width:30px;animation:fly var(--t) linear infinite;animation-delay:var(--dl);opacity:.7}
+.bird path{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-linecap:round;transform-origin:50% 60%;animation:flap .42s ease-in-out infinite alternate}
+@keyframes flap{to{transform:scaleY(.3)}}
+@keyframes fly{0%{transform:translate(-8vw,var(--y))}100%{transform:translate(108vw,calc(var(--y) - 14vh))}}
+.draw path.s{stroke-dasharray:var(--l);stroke-dashoffset:var(--l);animation:dr 2.8s cubic-bezier(.4,0,.2,1) forwards;animation-delay:var(--d)}
+@keyframes dr{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.bird{display:none}.draw path.s{animation:none;stroke-dashoffset:0}}
+</style>
+<style>
+section{position:relative}.pad{padding:120px 0}
+.head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:46px}.head p{max-width:42ch;color:var(--ink2);margin:0;font-weight:300}
+/* gift finder as gallery rooms */
+.say{font-family:var(--serif);font-weight:300;font-size:clamp(26px,2.8vw,40px);line-height:1.3;margin:0 0 10px}
+.say button{font:inherit;background:none;border:0;padding:0 2px;font-style:italic;color:var(--gold);border-bottom:1px solid var(--gold)}
+.sheet{display:flex;flex-wrap:wrap;gap:8px;min-height:44px;margin-bottom:30px}
+.sheet button{border:1px solid rgba(23,32,31,.2);background:transparent;border-radius:999px;padding:8px 16px;font-size:14px}
+.sheet button[aria-pressed=true]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.room{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:30px}
+.art{text-decoration:none;display:block;animation:rise .7s cubic-bezier(.2,.8,.2,1) both}.art:nth-child(2){animation-delay:.08s}.art:nth-child(3){animation-delay:.16s}
+@keyframes rise{from{opacity:0;transform:translateY(30px)}}
+.frame{position:relative;aspect-ratio:4/5;background:linear-gradient(180deg,#F7F3EB,#ECE6DA);display:grid;place-items:end center;padding-bottom:16%;overflow:hidden}
+.frame::after{content:"";position:absolute;left:18%;right:18%;bottom:11%;height:14px;border-radius:50%;background:radial-gradient(closest-side,rgba(60,45,20,.22),transparent)}
+.frame svg{width:82%;position:relative;z-index:1;transition:transform .5s cubic-bezier(.2,.8,.2,1)}.art:hover .frame svg{transform:translateY(-8px) scale(1.03)}
+.lab{padding:16px 2px 0;display:grid;grid-template-columns:1fr auto;gap:2px 14px;align-items:baseline}
+.lab b{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.25}.lab .pr{font-family:var(--serif);font-size:18px}
+.lab small{grid-column:1/-1;color:var(--ink2);font-size:13px}.lab .why{grid-column:1/-1;color:var(--gold);font-size:13px;font-weight:500;letter-spacing:.02em}
+/* card composer */
+.card-sec{background:var(--ink);color:var(--ivory)}
+.card-sec .wrap{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:60px;align-items:center}
+.card-sec h2 em{color:var(--gold2)}.card-sec p{color:#B9BFBC;font-weight:300}
+.card-sec label{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold2);margin:22px 0 8px}
+.card-sec textarea,.card-sec input{width:100%;background:transparent;border:0;border-bottom:1px solid rgba(248,243,232,.3);padding:8px 0;color:var(--ivory);font-family:var(--serif);font-size:20px;resize:none;outline:none}
+.card-sec textarea:focus,.card-sec input:focus{border-color:var(--gold2)}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}.chips button{background:transparent;border:1px solid rgba(248,243,232,.25);color:var(--ivory);border-radius:999px;padding:6px 12px;font-size:13px}
+.giftscene{position:relative;aspect-ratio:1;max-width:540px;justify-self:center;width:100%}
+.giftscene svg.box{position:absolute;left:4%;bottom:8%;width:70%}
+.note{position:absolute;right:2%;top:10%;width:56%;background:var(--ivory);color:var(--ink);padding:26px 26px 22px;transform:rotate(4deg);box-shadow:0 30px 50px rgba(0,0,0,.35)}
+.note::before{content:"";position:absolute;left:50%;top:-10px;width:14px;height:14px;border-radius:50%;background:var(--gold);transform:translateX(-50%);box-shadow:0 0 0 4px rgba(176,138,62,.25)}
+.note .to{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.note .msg{font-family:var(--serif);font-style:italic;font-weight:300;font-size:22px;line-height:1.35;margin:10px 0 16px;min-height:90px;white-space:pre-wrap;word-break:break-word}
+.note .from{font-size:14px;color:var(--ink2);text-align:right}
+/* ritual */
+.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:26px;counter-reset:s}
+.step svg{width:100%;aspect-ratio:1;background:var(--ivory);border-radius:50%;padding:18%}
+.step svg *{fill:none;stroke:var(--ink);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.step h3{font-size:22px;margin:18px 0 4px}.step h3::before{counter-increment:s;content:"0" counter(s) "  ";color:var(--gold);font-size:15px;font-style:italic}
+.step p{color:var(--ink2);font-size:15px;margin:0;font-weight:300}
+/* collection rail */
+.rail{display:flex;gap:26px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:16px;scrollbar-width:thin}
+.rail .art{flex:0 0 280px;scroll-snap-align:start;animation:none}
+.visit{background:var(--wall2)}.visit .wrap{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.ft{background:var(--ink);color:#9AA19F;padding:46px 0;font-size:14px}
+.concept{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:50;background:var(--ink);color:var(--ivory);border-radius:999px;padding:8px 18px;font-size:12px;letter-spacing:.04em}
+@media (max-width:900px){.hd nav{display:none}.hero .wrap,.card-sec .wrap,.visit .wrap{grid-template-columns:1fr}.stage{height:460px;order:-1}
+.piece{width:240px;bottom:160px}.plinth{width:230px;height:140px}.placard{display:none}.room{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.head{display:block}.head p{margin-top:12px}.pad{padding:80px 0}}
+</style><style>
+/* ---------- views ---------- */
+.view{display:none}.view.on{display:block}
+.crumb{font-size:13px;color:var(--ink2);padding:18px 0 0}.crumb a{text-decoration:none}.crumb a:hover{color:var(--ink)}
+/* collection */
+.filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:26px 0 40px}
+.filters button{border:1px solid rgba(23,32,31,.18);background:transparent;border-radius:999px;padding:8px 16px;font-size:14px}
+.filters button[aria-pressed=true]{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.filters select{margin-left:auto;border:1px solid rgba(23,32,31,.18);background:transparent;border-radius:999px;padding:8px 14px}
+.gridc{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px 30px}
+/* product */
+.pdp{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:60px;padding:30px 0 80px}
+.pstage{position:sticky;top:20px;align-self:start;height:620px;background:radial-gradient(60% 60% at 50% 25%,#FBF8F2,var(--wall) 60%,var(--wall2));overflow:hidden}
+.pstage .piece{bottom:190px;width:auto}.pstage .piece svg{height:min(360px,52vw);width:auto;max-width:100%;margin:0 auto;display:block}.pstage .plinth{width:min(360px,70%)}
+.ptag{position:absolute;left:24px;top:24px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.pinfo h1{font-size:clamp(34px,3.6vw,52px);line-height:1.05;margin:10px 0 14px}
+.pinfo .price{font-family:var(--serif);font-size:34px;margin:6px 0 4px}
+.pinfo .per{color:var(--ink2);font-size:14px;margin:0 0 20px}
+.spec{border-top:1px solid rgba(23,32,31,.12);margin:24px 0}.spec div{display:flex;justify-content:space-between;gap:16px;padding:11px 0;border-bottom:1px solid rgba(23,32,31,.12);font-size:14px}.spec span{color:var(--ink2)}
+.opt h4{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);margin:22px 0 10px;font-weight:500}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.o{border:1px solid rgba(23,32,31,.2);background:transparent;padding:10px 14px;font-size:14px;text-align:left;line-height:1.25;border-radius:2px}
+.o small{display:block;color:var(--ink2);font-size:12px}.o[aria-pressed=true]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.o:disabled{opacity:.4;text-decoration:line-through}
+.qty{display:inline-flex;border:1px solid rgba(23,32,31,.2)}.qty button{width:42px;height:44px;background:none;border:0;font-size:18px}.qty span{width:40px;display:grid;place-items:center}
+.wrapopt{display:flex;gap:12px;align-items:flex-start;margin-top:22px;padding:16px;background:var(--ivory)}
+.wrapopt input{margin-top:4px;accent-color:var(--ink)}.wrapopt small{display:block;color:var(--ink2)}
+.buyrow{display:flex;gap:10px;margin-top:22px}.buyrow .btn{flex:1;justify-content:center}
+.trust{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:22px;font-size:12px;color:var(--ink2);text-align:center}
+.trust div{border:1px solid rgba(23,32,31,.1);padding:12px 8px}.trust b{display:block;color:var(--ink);font-size:13px;font-weight:500}
+.tabs{display:flex;gap:30px;border-bottom:1px solid rgba(23,32,31,.12);margin-bottom:34px}
+.tabs button{background:none;border:0;padding:14px 0;font-size:15px;color:var(--ink2);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected=true]{color:var(--ink);border-color:var(--ink)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:50px}.story p{color:var(--ink2);font-weight:300;font-size:17px}
+/* reviews */
+.rv-top{display:grid;grid-template-columns:260px 1fr;gap:50px;margin-bottom:36px}
+.rv-score{font-family:var(--serif);font-size:64px;line-height:1}.stars{color:var(--gold);letter-spacing:2px}
+.bars div{display:grid;grid-template-columns:40px 1fr 30px;gap:10px;align-items:center;font-size:13px;color:var(--ink2);margin:4px 0}
+.bars i{height:6px;background:rgba(23,32,31,.08);display:block}.bars i b{display:block;height:100%;background:var(--gold)}
+.rv{display:grid;grid-template-columns:180px 1fr;gap:30px;padding:26px 0;border-top:1px solid rgba(23,32,31,.12)}
+.rv .who b{display:block}.rv .who small{color:var(--ink2)}.badge{display:inline-block;font-size:11px;color:#2C6E5A;border:1px solid #9BC4B5;padding:2px 8px;border-radius:999px;margin-top:6px}
+.rv p{margin:6px 0 0;font-family:var(--serif);font-weight:300;font-size:19px;line-height:1.45}
+.sample{font-size:12px;color:var(--red);border:1px dashed var(--red);padding:3px 8px;display:inline-block;margin-bottom:16px}
+.rvform{background:var(--ivory);padding:26px;margin-top:30px;display:grid;gap:12px}
+.rvform .pick button{background:none;border:0;font-size:26px;color:rgba(23,32,31,.2);padding:0 2px}.rvform .pick button.on{color:var(--gold)}
+.rvform textarea,.fld input,.fld textarea,.fld select{width:100%;border:0;border-bottom:1px solid rgba(23,32,31,.25);background:transparent;padding:10px 0;font-size:16px;outline:none;resize:vertical}
+.fld{margin-bottom:18px}.fld label{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink2)}
+.fld.bad input{border-color:var(--red)}.fld .err{display:none;color:var(--red);font-size:13px}.fld.bad .err{display:block}
+/* cart drawer */
+.shade{position:fixed;inset:0;background:rgba(23,32,31,.35);opacity:0;pointer-events:none;transition:opacity .3s;z-index:60}
+.drawer{position:fixed;top:0;right:0;height:100%;width:min(440px,100%);background:var(--wall);z-index:61;transform:translateX(100%);transition:transform .45s cubic-bezier(.2,.8,.2,1);display:flex;flex-direction:column}
+.cart-open .shade{opacity:1;pointer-events:auto}.cart-open .drawer{transform:none}
+.drawer header{display:flex;justify-content:space-between;align-items:center;padding:22px 26px;border-bottom:1px solid rgba(23,32,31,.12)}
+.drawer .items{flex:1;overflow:auto;padding:6px 26px}
+.ci{display:grid;grid-template-columns:84px 1fr auto;gap:14px;padding:16px 0;border-bottom:1px solid rgba(23,32,31,.08);align-items:center}
+.ci .th{background:var(--ivory);aspect-ratio:1;display:grid;place-items:center}.ci .th svg{width:80%}
+.ci b{font-family:var(--serif);font-weight:400}.ci small{display:block;color:var(--ink2)}
+.drawer footer{padding:20px 26px;border-top:1px solid rgba(23,32,31,.12)}
+.row2{display:flex;justify-content:space-between;margin:4px 0}
+/* checkout */
+.co{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:60px;padding:30px 0 90px}
+.stepper{display:flex;gap:24px;margin:10px 0 34px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.stepper span.on{color:var(--ink)}.stepper span b{font-family:var(--serif);font-style:italic;color:var(--gold);margin-right:6px}
+.wraps{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.wraps button{background:var(--ivory);border:1px solid transparent;padding:14px;text-align:center}.wraps button[aria-pressed=true]{border-color:var(--ink)}
+.wraps svg{width:70%;margin:0 auto 8px;display:block}
+.pays{display:grid;gap:10px}.pays label{display:flex;gap:12px;align-items:flex-start;padding:16px;background:var(--ivory);border:1px solid transparent;cursor:pointer}
+.pays label:has(input:checked){border-color:var(--ink)}.pays input{accent-color:var(--ink);margin-top:4px}.pays small{display:block;color:var(--ink2)}
+.summary{background:var(--ivory);padding:28px;position:sticky;top:20px;align-self:start}
+.summary .tot{font-family:var(--serif);font-size:26px;border-top:1px solid rgba(23,32,31,.12);padding-top:14px;margin-top:10px}
+.done{text-align:center;padding:60px 0 100px}.done h1{font-size:clamp(36px,4.5vw,64px);line-height:1.05;margin:16px 0}
+.timeline{display:flex;justify-content:center;gap:0;margin:40px auto;max-width:720px}
+.timeline div{flex:1;font-size:13px;color:var(--ink2);position:relative;padding-top:26px}
+.timeline div::before{content:"";position:absolute;top:6px;left:0;right:0;height:1px;background:rgba(23,32,31,.2)}
+.timeline div::after{content:"";position:absolute;top:1px;left:50%;width:11px;height:11px;border-radius:50%;background:var(--wall);border:1px solid var(--ink);transform:translateX(-50%)}
+.timeline div.on::after{background:var(--gold);border-color:var(--gold)}
+.toast{position:fixed;left:50%;top:22px;transform:translateX(-50%);background:var(--ink);color:var(--ivory);padding:12px 20px;z-index:80;font-size:14px}
+@media (max-width:900px){.gridc{grid-template-columns:1fr 1fr;gap:28px 14px}.pdp,.co,.story,.rv-top{grid-template-columns:1fr;gap:30px}.pstage{position:relative;height:440px}.rv{grid-template-columns:1fr;gap:8px}.wraps{grid-template-columns:1fr 1fr 1fr}.filters select{margin-left:0}}
+</style>
+</head><body><header class="hd"><div class="wrap">
+  <a class="mark" href="#" aria-label="Nest Art"><svg viewBox="0 0 40 40" aria-hidden="true"><g fill="none" stroke="#17201F" stroke-width="1.2" stroke-linecap="round"><path d="M6 22 Q20 38 34 22"/><path d="M8 21 Q20 34 32 21"/><path d="M10 20 Q20 30 30 20"/><path d="M13 13 Q16.5 9 20 13 Q23.5 9 27 13" stroke="#B08A3E"/></g></svg><b>NEST ART</b></a>
+  <nav><a href="#">Bộ sưu tập</a><a href="#">Quà tặng</a><a href="#">Nghi thức</a><a href="#">Nhà yến</a></nav>
+  <div class="r"><a href="#">Tìm</a><a href="#">Giỏ (0)</a></div>
+</div></header><main class="view on" id="v-home"><section class="hero">
+  <div id="birds" aria-hidden="true"></div>
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Phòng trưng bày tổ yến · Nha Trang</span>
+      <h1>Nghệ thuật của <em>một tổ yến</em></h1>
+      <p class="lede">Mỗi tổ yến là một tác phẩm chim yến dệt bằng cả mùa. Chúng tôi chỉ việc giữ nguyên vẻ đẹp đó, từ nhà yến tới tay bạn.</p>
+      <a class="btn" href="#/tang">Chọn một món quà</a> <a class="btn line" href="#suu-tap">Xem bộ sưu tập</a>
+    </div>
+    <div class="stage" aria-hidden="true">
+      <div class="spot"></div>
+      <div class="piece" id="heroPiece"></div>
+      <div class="plinth"><div class="top"></div><div class="body"></div></div>
+      <div class="placard"><b>Tổ yến tinh chế</b><span>Hộp pha lê bát giác · 100g<br>Nhà yến Khánh Hòa</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="pad" id="tang"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Phòng quà tặng</span><h2>Bạn đang chọn quà <em>cho ai?</em></h2></div><p>Chạm vào chữ nghiêng để đổi. Phòng trưng bày sẽ tự sắp lại những món hợp nhất.</p></div>
+  <p class="say" id="say"></p><div class="sheet" id="sheet" role="group"></div>
+  <div class="room" id="room"></div>
+</div></section>
+
+<section class="pad card-sec"><div class="wrap">
+  <div>
+    <span class="eyebrow" style="color:var(--gold2)">Viết tay lên hộp quà</span>
+    <h2 style="margin:12px 0 16px">Một lời nhắn <em>đi kèm</em> món quà</h2>
+    <p>Gõ lời nhắn, chúng tôi viết tay lên thiệp và buộc vào nơ hộp quà trước khi giao.</p>
+    <label for="to">Gửi tới</label><input id="to" value="Bố Mẹ" maxlength="40">
+    <label for="msg">Lời nhắn</label><textarea id="msg" rows="3" maxlength="160">Con chúc bố mẹ luôn khỏe, năm nào cũng được cùng nhau đón Tết.</textarea>
+    <div class="chips" id="tpl"><button>Chúc sức khỏe</button><button>Cảm ơn đối tác</button><button>Mừng bé ra đời</button><button>Quà Nha Trang</button></div>
+    <label for="from">Từ</label><input id="from" value="Con, Minh Anh" maxlength="40">
+  </div>
+  <div class="giftscene" aria-label="Xem trước thiệp trên hộp quà"><div id="giftBox"></div>
+    <div class="note"><div class="to" id="nTo"></div><div class="msg" id="nMsg"></div><div class="from" id="nFrom"></div></div></div>
+</div></section>
+
+<section class="pad"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Nghi thức</span><h2>Chưng yến <em>đúng cách</em> trong 4 bước</h2></div><p>Dành cho người lần đầu dùng tổ yến tinh chế. Thời gian có thể khác nhau tùy loại yến và độ nở.</p></div>
+  <div class="steps">
+    <div class="step"><svg viewBox="0 0 100 100"><path d="M18 52 H82 Q80 82 50 84 Q20 82 18 52Z"/><path d="M26 60 Q38 56 50 60 Q62 64 74 60"/><path d="M40 40 Q44 30 40 22 M56 40 Q60 30 56 22"/></svg><h3>Ngâm nở</h3><p>Ngâm yến trong nước sạch tới khi sợi mềm và nở đều.</p></div>
+    <div class="step"><svg viewBox="0 0 100 100"><path d="M20 70 Q50 82 80 70"/><path d="M24 64 Q50 74 76 64"/><path d="M30 58 Q50 66 70 58"/><path d="M36 20 L50 50 M46 18 L54 48"/></svg><h3>Tách sợi</h3><p>Xé nhẹ thành sợi nhỏ, để ráo nước.</p></div>
+    <div class="step"><svg viewBox="0 0 100 100"><path d="M22 46 H78 V78 Q78 84 72 84 H28 Q22 84 22 78Z"/><path d="M34 46 V40 H66 V46"/><path d="M38 30 Q34 24 38 18 M50 30 Q46 24 50 18 M62 30 Q58 24 62 18"/></svg><h3>Chưng cách thủy</h3><p>Chưng nhỏ lửa, thêm đường phèn, táo đỏ hoặc hạt sen tùy khẩu vị.</p></div>
+    <div class="step"><svg viewBox="0 0 100 100"><path d="M24 44 H76 Q74 74 50 76 Q26 74 24 44Z"/><path d="M38 84 H62"/><path d="M50 76 V84"/><path d="M76 50 Q88 52 84 62 Q80 68 72 64"/></svg><h3>Thưởng thức</h3><p>Dùng ấm, tốt nhất vào buổi sáng hoặc trước khi ngủ.</p></div>
+  </div>
+</div></section>
+
+<section class="pad" id="suu-tap" style="padding-top:0"><div class="wrap">
+  <div class="head"><div><span class="eyebrow">Bộ sưu tập</span><h2>Cả phòng trưng bày</h2></div><p>Kéo ngang để xem. Mỗi tác phẩm có thẻ ghi rõ chất liệu, quy cách và giá.</p></div>
+  <div class="rail" id="rail"></div>
+</div></section>
+
+<section class="pad visit"><div class="wrap">
+  <div><span class="eyebrow">Ghé phòng trưng bày thật</span><h2 style="margin:12px 0 16px">01 Nguyễn Thiện Thuật, <em>Nha Trang</em></h2>
+    <p style="color:var(--ink2);font-weight:300;max-width:44ch">Xem chim yến làm tổ, thử yến chưng ấm và chọn quà mang về ngay giữa trung tâm thành phố.</p>
+    <a class="btn" href="#">Đặt lịch tham quan</a></div>
+  <div id="visitArt" aria-hidden="true"></div>
+</div></section>
+</main><main class="view" id="v-collection"><div class="wrap">
+  <div class="crumb"><a href="#/">Phòng trưng bày</a> / Bộ sưu tập</div>
+  <div style="margin-top:26px"><span class="eyebrow">Bộ sưu tập</span><h2 style="margin-top:10px" id="colTitle">Tất cả tác phẩm</h2></div>
+  <div class="filters" id="filters"></div>
+  <div class="gridc" id="colGrid"></div>
+</div></main>
+
+<main class="view" id="v-product"><div class="wrap">
+  <div class="crumb" id="pCrumb"></div>
+  <div class="pdp">
+    <div class="pstage" aria-hidden="true"><span class="ptag" id="pTag"></span><div class="spot"></div><div class="piece" id="pArt"></div><div class="plinth"><div class="top"></div><div class="body"></div></div></div>
+    <div class="pinfo" id="pInfo"></div>
+  </div>
+  <div class="tabs" role="tablist"><button role="tab" data-tab="story" aria-selected="true">Câu chuyện</button><button role="tab" data-tab="ritual" aria-selected="false">Cách dùng</button><button role="tab" data-tab="reviews" aria-selected="false" id="rvTab">Đánh giá</button></div>
+  <div id="tabBody" style="padding-bottom:100px"></div>
+  <div class="head" style="margin-top:20px"><div><span class="eyebrow">Cùng phòng trưng bày</span><h2 style="font-size:36px">Có thể bạn cũng thích</h2></div></div>
+  <div class="gridc" id="pRelated" style="padding-bottom:110px"></div>
+</div></main>
+
+<main class="view" id="v-checkout"><div class="wrap">
+  <div class="crumb"><a href="#/">Phòng trưng bày</a> / Thanh toán</div>
+  <div class="co">
+    <form id="coForm" novalidate>
+      <div class="stepper"><span class="on"><b>01</b>Người nhận</span><span class="on"><b>02</b>Gói quà</span><span class="on"><b>03</b>Thanh toán</span></div>
+      <h2 style="font-size:32px;margin-bottom:22px">Người nhận</h2>
+      <div class="fld"><label for="cName">Họ tên người nhận</label><input id="cName" autocomplete="name"><span class="err">Nhập họ tên người nhận.</span></div>
+      <div class="fld"><label for="cPhone">Số điện thoại</label><input id="cPhone" inputmode="tel" autocomplete="tel"><span class="err">Số điện thoại gồm 10 chữ số, bắt đầu bằng 0.</span></div>
+      <div class="fld"><label for="cAddr">Địa chỉ nhận hàng</label><input id="cAddr" autocomplete="street-address"><span class="err">Nhập địa chỉ đầy đủ.</span></div>
+      <label style="display:flex;gap:10px;align-items:center;margin:4px 0 30px;font-size:15px"><input type="checkbox" id="cGift" style="accent-color:var(--ink)"> Đây là quà tặng, không ghi giá trên hóa đơn gửi kèm</label>
+      <h2 style="font-size:32px;margin-bottom:18px">Gói quà</h2>
+      <div class="wraps" id="wraps"></div>
+      <div class="fld" style="margin-top:22px"><label for="cMsg">Lời nhắn trên thiệp (không bắt buộc)</label><textarea id="cMsg" rows="2" maxlength="160" placeholder="Ví dụ: Chúc bố mẹ luôn khỏe"></textarea></div>
+      <h2 style="font-size:32px;margin:30px 0 18px">Thanh toán</h2>
+      <div class="pays">
+        <label><input type="radio" name="pay" value="cod" checked><span>Trả tiền khi nhận hàng<small>Kiểm tra quà rồi mới thanh toán</small></span></label>
+        <label><input type="radio" name="pay" value="qr"><span>Chuyển khoản bằng mã QR<small>Mã QR hiện ngay sau khi đặt</small></span></label>
+        <label><input type="radio" name="pay" value="wallet"><span>VNPay, MoMo, thẻ<small>Thẻ ATM, Visa, Mastercard, ví điện tử</small></span></label>
+      </div>
+      <button class="btn" style="width:100%;justify-content:center;margin-top:30px;padding:18px" type="submit">Đặt quà</button>
+    </form>
+    <aside class="summary" id="coSum"></aside>
+  </div>
+</div></main>
+
+<main class="view" id="v-done"><div class="wrap done" id="doneBody"></div></main>
+
+<div class="shade" id="shade"></div>
+<aside class="drawer" id="drawer" aria-label="Giỏ quà"><header><b style="font-family:var(--serif);font-weight:400;font-size:22px">Giỏ quà</b><button id="closeCart" style="background:none;border:0;font-size:24px" aria-label="Đóng">×</button></header>
+  <div class="items" id="cartItems"></div><footer id="cartFoot"></footer></aside>
+<footer class="ft"><div class="wrap">Nest Art · Concept nhận diện và trang chủ, bản trình bày ý tưởng. Hình sản phẩm là bản vẽ đề xuất, không phải ảnh chụp.</div></footer>
+<div class="concept">Concept Nest Art · bấm thử mua hàng tới thanh toán · không tạo đơn thật</div>
+<script>
+const DATA = [{"name": "Bộ Phúc Lộc An Khang", "cat": "Bộ quà tặng", "slug": "bo-phuc-loc-an-khang", "v": [{"n": "Tiêu chuẩn", "p": 950000, "ok": false}]}, {"name": "Bộ Quà Tặng An Khang", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-khang", "v": [{"n": "Hộp", "p": 3350000, "ok": true}]}, {"name": "Bộ Quà Tặng An Phúc", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-phuc", "v": [{"n": "Hộp", "p": 1500000, "ok": true}]}, {"name": "Bộ Quà Tặng An Viên", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-an-vien", "v": [{"n": "Hộp", "p": 1350000, "ok": true}]}, {"name": "Bộ Quà Tặng Thịnh Vượng An Gia", "cat": "Bộ quà tặng", "slug": "bo-qua-tang-thinh-vuong-an-gia", "v": [{"n": "Hộp", "p": 750000, "ok": true}]}, {"name": "Bộ Thượng Hạng An Nhiên (YSNT 50g)", "cat": "Bộ quà tặng", "slug": "bo-thuong-hang-an-nhien-ysnt-50g", "v": [{"n": "Tiêu chuẩn", "p": 3650000, "ok": false}]}, {"name": "Khay Mứt Tết - Xuân Như Ý", "cat": "Bộ quà tặng", "slug": "khay-mut-tet-xuan-nhu-y", "v": [{"n": "Tiêu chuẩn", "p": 750000, "ok": true}]}, {"name": "Bột Tổ Yến", "cat": "Bột tổ yến", "slug": "bot-to-yen", "v": [{"n": "Gạo Lứt", "p": 140000, "ok": true}, {"n": "Mè Đen", "p": 140000, "ok": true}, {"n": "Ngũ Cốc", "p": 140000, "ok": true}]}, {"name": "Chè Tổ Yến", "cat": "Chè tổ yến", "slug": "che-to-yen", "v": [{"n": "Dưỡng Nhan", "p": 69000, "ok": true}, {"n": "Sâm Bổ Lượng", "p": 69000, "ok": true}]}, {"name": "Combo Bột Tổ Yến & Cà Phê Tổ Yến | Combo 4 hộp - CTCP Yến Sào Nha Trang", "cat": "Combo", "slug": "combo-bot-to-yen-ca-phe-to-yen-combo-4-hop-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "p": 540000, "ok": true}]}, {"name": "Combo Dưỡng Lành Bồi Bổ Sức Khoẻ - Phục Hồi Năng Lượng", "cat": "Combo", "slug": "combo-duong-lanh-boi-bo-suc-khoe-phuc-hoi-nang-luong", "v": [{"n": "Tiêu chuẩn", "p": 849000, "ok": true}]}, {"name": "Combo Siêu Tiện Lợi - Dành cho người bận rộn", "cat": "Combo", "slug": "combo-sieu-tien-loi-danh-cho-nguoi-ban-ron", "v": [{"n": "Tiêu chuẩn", "p": 159000, "ok": false}]}, {"name": "Combo Tổ Yến Tinh Chế & Súp Tổ Yến | Combo 7 Sản Phẩm - CTCP Yến Sào Nha Trang", "cat": "Combo", "slug": "combo-to-yen-tinh-che-sup-to-yen-combo-7-san-pham-ctcp-yen-sao-nha-trang", "v": [{"n": "Tiêu chuẩn", "p": 1564000, "ok": true}]}, {"name": "Combo Độc Quyền | Tổ Yến Ăn Liền - Cà Phê Tổ Yến - Súp Tổ Yến - Sữa Chua Khô", "cat": "Combo", "slug": "combo-doc-quyen-to-yen-an-lien-ca-phe-to-yen-sup-to-yen-sua-chua-kho", "v": [{"n": "Combo", "p": 747000, "ok": true}]}, {"name": "Cà Phê Tổ Yến", "cat": "Cà phê tổ yến", "slug": "ca-phe-to-yen", "v": [{"n": "2 in 1", "p": 120000, "ok": true}, {"n": "4 in 1", "p": 120000, "ok": true}]}, {"name": "Hydra Dew Cream - Kem Dưỡng Ẩm", "cat": "Khác", "slug": "hydra-dew-cream-kem-duong-am", "v": [{"n": "Tiêu chuẩn", "p": 495000, "ok": true}]}, {"name": "Mặt Nạ Sinh Học Bio-Cellulose", "cat": "Mặt nạ yến", "slug": "mat-na-sinh-hoc-bio-cellulose", "v": [{"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Miếng 30g", "p": 79000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & căng bóng da – Hộp 5 miếng (150g)", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học cấp ẩm & làm sáng da – Hộp 5 miếng (150g)", "p": 345000, "ok": true}, {"n": "Mặt nạ sinh học làm dịu da dành cho da mụn – Hộp 5 miếng (150g)", "p": 345000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Euromax", "cat": "Nước uống đóng chai", "slug": "nuoc-uong-dong-chai-euromax", "v": [{"n": "Thùng", "p": 100000, "ok": true}]}, {"name": "Nước Uống Đóng Chai - Nest Art Life (Tính kiềm)", "cat": "Nước uống đóng chai", "slug": "nuoc-uong-dong-chai-nest-art-life-tinh-kiem", "v": [{"n": "Thùng", "p": 130000, "ok": true}]}, {"name": "Nước Yến Thật", "cat": "Nước yến thật", "slug": "nuoc-yen-that", "v": [{"n": "Mật Ong – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Nấm Linh Chi – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Xáo Tam Phân – Lốc 6 lon", "p": 75000, "ok": true}, {"n": "Mật Ong – Thùng 30 lon", "p": 299000, "ok": true}, {"n": "Nấm Linh Chi – Thùng 30 lon", "p": 299000, "ok": true}, {"n": "Xáo Tam Phân – Thùng 30 lon", "p": 299000, "ok": true}]}, {"name": "Súp Tổ Yến", "cat": "Súp tổ yến", "slug": "sup-to-yen", "v": [{"n": "Cá Hồi", "p": 69000, "ok": true}, {"n": "Gà Hầm Táo Đỏ", "p": 69000, "ok": true}, {"n": "Hải Sản", "p": 69000, "ok": true}, {"n": "Nấm Rau Củ (Súp Chay)", "p": 69000, "ok": true}, {"n": "Thịt Bò", "p": 69000, "ok": true}, {"n": "Tôm Cua", "p": 69000, "ok": true}]}, {"name": "Sữa Chua Tổ Yến Sấy Khô", "cat": "Sữa chua sấy khô", "slug": "sua-chua-to-yen-say-kho", "v": [{"n": "Chanh Dây – 16g", "p": 55000, "ok": true}, {"n": "Dưa Lưới – 16g", "p": 55000, "ok": true}, {"n": "Nguyên Vị – 16g", "p": 55000, "ok": true}, {"n": "Phô Mai – 16g", "p": 55000, "ok": true}, {"n": "Việt Quất – 16g", "p": 55000, "ok": true}, {"n": "Ổi Hồng – 16g", "p": 55000, "ok": true}, {"n": "Chanh Dây – 96g", "p": 320000, "ok": true}, {"n": "Dưa Lưới – 96g", "p": 320000, "ok": true}, {"n": "Nguyên Vị – 96g", "p": 320000, "ok": true}, {"n": "Phô Mai – 96g", "p": 320000, "ok": true}, {"n": "Việt Quất – 96g", "p": 320000, "ok": true}, {"n": "Ổi Hồng – 96g", "p": 320000, "ok": true}]}, {"name": "Tinh Chất Yến", "cat": "Tinh chất yến", "slug": "tinh-chat-yen", "v": [{"n": "Collagen (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Nấm Linh Chi (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Đông Trùng Hạ Thảo (Hộp 10 gói)", "p": 690000, "ok": false}, {"n": "Hộp 30 gói", "p": 1950000, "ok": false}]}, {"name": "Tổ Yến Chưng Sẵn", "cat": "Tổ yến chưng sẵn", "slug": "to-yen-chung-san", "v": [{"n": "Nhân Sâm – 70ml", "p": 55000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 70ml", "p": 55000, "ok": true}, {"n": "Đường Isomalt – 70ml", "p": 55000, "ok": true}, {"n": "Đường Phèn – 70ml", "p": 55000, "ok": true}, {"n": "Nhân Sâm – 420ml", "p": 385000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 420ml", "p": 385000, "ok": true}, {"n": "Đường Isomalt – 420ml", "p": 385000, "ok": true}, {"n": "Đường Phèn – 420ml", "p": 385000, "ok": true}]}, {"name": "Tổ Yến Chưng Sẵn – Hộp 8", "cat": "Tổ yến chưng sẵn", "slug": "to-yen-chung-san-hop-8", "v": [{"n": "Đường Isomalt", "p": 880000, "ok": true}, {"n": "Đường Organic", "p": 880000, "ok": true}, {"n": "Dừa Ninh Đa", "p": 990000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ", "cat": "Tổ yến nguyên tổ", "slug": "to-yen-nguyen-to", "v": [{"n": "Hộp 100g", "p": 7250000, "ok": true}, {"n": "Hộp 500g", "p": 36250000, "ok": true}, {"n": "Hộp 1000g", "p": 72500000, "ok": true}]}, {"name": "Tổ Yến Nguyên Tổ Hồng Huyết", "cat": "Tổ yến nguyên tổ", "slug": "to-yen-nguyen-to-hong-huyet", "v": [{"n": "Hộp 100g", "p": 9700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế - Limited", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-limited", "v": [{"n": "Tiêu chuẩn", "p": 9200000, "ok": false}]}, {"name": "Tổ Yến Tinh Chế Nest Art", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-nest-art", "v": [{"n": "Hộp 50g", "p": 3400000, "ok": true}, {"n": "Hộp 100g", "p": 6700000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Rút Lông Định Hình 100g", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-rut-long-dinh-hinh-100g", "v": [{"n": "Hộp", "p": 7250000, "ok": true}]}, {"name": "Tổ Yến Tinh Chế Yến Sào Nha Trang", "cat": "Tổ yến tinh chế", "slug": "to-yen-tinh-che-yen-sao-nha-trang", "v": [{"n": "Hộp 10g", "p": 580000, "ok": true}, {"n": "Hộp 15g", "p": 860000, "ok": true}, {"n": "Hộp 20g", "p": 1150000, "ok": true}, {"n": "Hộp 30g", "p": 1700000, "ok": true}, {"n": "Hộp 50g", "p": 2750000, "ok": true}, {"n": "Hộp 100g", "p": 5450000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien", "v": [{"n": "Fucoidan – 11g", "p": 255000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 11g", "p": 255000, "ok": true}, {"n": "Lá Dứa & Collagen – 11g", "p": 255000, "ok": true}, {"n": "Nhân Sâm – 11g", "p": 255000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 11g", "p": 255000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 11g", "p": 255000, "ok": true}, {"n": "Nguyên Chất – 11g", "p": 265000, "ok": true}, {"n": "Fucoidan – 110g", "p": 2550000, "ok": true}, {"n": "Hạt Sen & Đường Isomalt – 110g", "p": 2550000, "ok": true}, {"n": "Lá Dứa & Collagen – 110g", "p": 2550000, "ok": true}, {"n": "Nhân Sâm – 110g", "p": 2550000, "ok": true}, {"n": "Nhụy Hoa Nghệ Tây – 110g", "p": 2550000, "ok": true}, {"n": "Đông Trùng Hạ Thảo – 110g", "p": 2550000, "ok": true}, {"n": "Nguyên Chất – 110g", "p": 2650000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền Platinum", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien-platinum", "v": [{"n": "Fucoidan – 9g", "p": 285000, "ok": true}, {"n": "Lá Dứa – 9g", "p": 285000, "ok": true}, {"n": "Nguyên Vị – 9g", "p": 285000, "ok": true}]}, {"name": "Tổ Yến Ăn Liền – Bánh Rau Củ", "cat": "Tổ yến ăn liền", "slug": "to-yen-an-lien-banh-rau-cu", "v": [{"n": "Hộp 5 gói", "p": 70000, "ok": true}, {"n": "Hộp 30 gói", "p": 385000, "ok": true}]}];
+const $ = s => document.querySelector(s);
+const vnd = n => Math.round(n).toLocaleString('vi-VN') + 'đ';
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+let uid = 0;
+const rnd = seed => () => (seed = (seed * 9301 + 49297) % 233280) / 233280;
+
+/* ---------- drawn product "artworks" (concept packaging, not photos) ---------- */
+function strands(cx, cy, rx, ry, n, seed, cls = '') {
+  const r = rnd(seed); let h = '';
+  for (let i = 0; i < n; i++) {
+    const a = r() * Math.PI, sp = .5 + r() * 1.6, k = .3 + r() * .7;
+    const p = t => [cx + rx * k * Math.cos(t), cy + ry * k * Math.sin(t) * .8 - (1 - k) * ry * .25];
+    const [x1, y1] = p(a), [x2, y2] = p(Math.min(Math.PI, a + sp)), [mx, my] = p(a + sp / 2);
+    h += `<path class="s ${cls}" d="M${x1.toFixed(1)} ${y1.toFixed(1)} Q ${(2 * mx - (x1 + x2) / 2).toFixed(1)} ${(2 * my - (y1 + y2) / 2 + 4).toFixed(1)} ${x2.toFixed(1)} ${y2.toFixed(1)}" style="--l:300;--d:${(r() * 1.4).toFixed(2)}s" fill="none" stroke="#F4ECD8" stroke-width="${(.6 + r() * 1.2).toFixed(2)}" stroke-linecap="round" opacity="${(.55 + r() * .4).toFixed(2)}"/>`;
+  }
+  return h;
+}
+function crystal(seed, seal = '#B08A3E') {
+  const id = 'c' + (++uid), cx = 160, cy = 120, rx = 128, ry = 50, H = 82;
+  const oct = (y) => Array.from({ length: 8 }, (_, i) => { const t = Math.PI / 8 + i * Math.PI / 4; return [cx + rx * Math.cos(t), y + ry * Math.sin(t)]; });
+  const top = oct(cy), bot = oct(cy + H), P = a => a.map(p => p.map(v => v.toFixed(1)).join(',')).join(' ');
+  const walls = [0, 1, 2, 3].map(i => `<polygon points="${P([top[i], top[i + 1] || top[0], bot[i + 1] || bot[0], bot[i]])}" fill="url(#${id}w)" stroke="rgba(255,255,255,.7)" stroke-width="1"/>`).join('');
+  return `<svg viewBox="0 0 320 270" xmlns="http://www.w3.org/2000/svg"><defs>
+    <linearGradient id="${id}w" x1="0" x2="1"><stop offset="0" stop-color="#E7F0EE" stop-opacity=".75"/><stop offset=".5" stop-color="#FFFFFF" stop-opacity=".35"/><stop offset="1" stop-color="#D3E3E0" stop-opacity=".8"/></linearGradient>
+    <linearGradient id="${id}t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".85"/><stop offset="1" stop-color="#DCE9E6" stop-opacity=".45"/></linearGradient>
+    <radialGradient id="${id}n" cx=".5" cy=".55" r=".6"><stop offset="0" stop-color="#D8C38E"/><stop offset="1" stop-color="#A88A4E"/></radialGradient></defs>
+    <polygon points="${P(bot)}" fill="#D9E6E3" opacity=".7"/>
+    <ellipse cx="${cx}" cy="${cy + H - 18}" rx="${rx * .74}" ry="${ry * .62}" fill="url(#${id}n)"/>
+    <g>${strands(cx, cy + H - 30, rx * .78, ry * 1.1, 70, seed)}</g>
+    ${walls}
+    <polygon points="${P(top)}" fill="url(#${id}t)" stroke="rgba(255,255,255,.95)" stroke-width="1.2"/>
+    <circle cx="${cx}" cy="${cy}" r="17" fill="${seal}"/><circle cx="${cx}" cy="${cy}" r="13" fill="none" stroke="#F3E2B4" stroke-width=".8"/>
+    <text x="${cx}" y="${cy + 4}" text-anchor="middle" font-family="Fraunces,serif" font-size="11" fill="#FFF8E6" letter-spacing="1">NA</text></svg>`;
+}
+function jar(seed, lid = '#B08A3E') {
+  const id = 'j' + (++uid);
+  return `<svg viewBox="0 0 200 270"><defs><linearGradient id="${id}g" x1="0" x2="1"><stop offset="0" stop-color="#E4EEEC" stop-opacity=".9"/><stop offset=".45" stop-color="#FFFFFF" stop-opacity=".4"/><stop offset="1" stop-color="#D1E1DE" stop-opacity=".9"/></linearGradient>
+    <linearGradient id="${id}l" x1="0" x2="1"><stop offset="0" stop-color="${lid}"/><stop offset=".5" stop-color="#E6CB8A"/><stop offset="1" stop-color="${lid}"/></linearGradient></defs>
+    <rect x="34" y="78" width="132" height="176" rx="26" fill="#EFE3C7"/>
+    <g>${strands(100, 150, 60, 70, 40, seed)}</g>
+    <rect x="34" y="70" width="132" height="184" rx="26" fill="url(#${id}g)" stroke="rgba(255,255,255,.9)"/>
+    <rect x="44" y="160" width="112" height="46" fill="#17201F"/><text x="100" y="181" text-anchor="middle" font-family="Fraunces,serif" font-size="13" fill="#E6CB8A" letter-spacing="2">NEST ART</text>
+    <text x="100" y="197" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-size="8" fill="#C9CFCC" letter-spacing="1.5">YẾN CHƯNG SẴN</text>
+    <rect x="40" y="28" width="120" height="48" rx="8" fill="url(#${id}l)"/><rect x="40" y="62" width="120" height="8" fill="rgba(0,0,0,.12)"/></svg>`;
+}
+function tallBox(c1, c2, label) {
+  return `<svg viewBox="0 0 220 300"><polygon points="40,40 150,40 180,20 70,20" fill="${c2}"/><polygon points="150,40 180,20 180,260 150,280" fill="${c2}" opacity=".85"/>
+    <rect x="40" y="40" width="110" height="240" fill="${c1}"/><rect x="40" y="176" width="110" height="3" fill="#C9A659"/>
+    <g fill="none" stroke="#C9A659" stroke-width="1.2" stroke-linecap="round"><path d="M64 120 Q95 146 126 120"/><path d="M68 116 Q95 138 122 116"/><path d="M84 96 Q90 90 95 96 Q100 90 106 96"/></g>
+    <text x="95" y="206" text-anchor="middle" font-family="Fraunces,serif" font-size="13" fill="#E6CB8A" letter-spacing="2">NEST ART</text>
+    <text x="95" y="222" text-anchor="middle" font-family="Be Vietnam Pro,sans-serif" font-size="8" fill="#D6D2C6" letter-spacing="1.5">${label}</text></svg>`;
+}
+function giftBox(c1, c2, seed) {
+  return `<svg viewBox="0 0 320 270"><polygon points="40,110 230,110 290,80 100,80" fill="${c2}"/><polygon points="230,110 290,80 290,220 230,250" fill="${c2}" opacity=".8"/>
+    <rect x="40" y="110" width="190" height="140" fill="${c1}"/><rect x="128" y="110" width="16" height="140" fill="#C9A659"/>
+    <polygon points="128,110 144,110 204,80 188,80" fill="#E2C67F"/>
+    <path d="M166 95 Q130 50 120 76 Q128 96 166 95 Q196 52 214 74 Q206 94 166 95Z" fill="#D7B867" stroke="#B08A3E"/>
+    <text x="85" y="200" text-anchor="middle" font-family="Fraunces,serif" font-size="12" fill="#F1DFAE" letter-spacing="2">NEST ART</text></svg>`;
+}
+function can(c1) {
+  return `<svg viewBox="0 0 160 270"><rect x="30" y="40" width="100" height="210" rx="10" fill="${c1}"/><ellipse cx="80" cy="40" rx="50" ry="12" fill="#D9D4C8"/><ellipse cx="80" cy="40" rx="40" ry="8" fill="#BDB6A6"/>
+    <rect x="30" y="120" width="100" height="2" fill="#C9A659"/><g fill="none" stroke="#C9A659" stroke-width="1.2"><path d="M52 160 Q80 182 108 160"/><path d="M68 140 Q74 134 80 140 Q86 134 92 140"/></g>
+    <text x="80" y="214" text-anchor="middle" font-family="Fraunces,serif" font-size="11" fill="#E6CB8A" letter-spacing="2">NEST ART</text></svg>`;
+}
+function pouch(c1) {
+  return `<svg viewBox="0 0 220 270"><path d="M40 50 Q110 36 180 50 L190 240 Q110 256 30 240Z" fill="${c1}"/><path d="M40 50 Q110 36 180 50 L178 70 Q110 58 42 70Z" fill="rgba(255,255,255,.25)"/>
+    <circle cx="110" cy="150" r="40" fill="#F8F3E8"/><g fill="#EADFC8">${[0, 1, 2, 3, 4].map(i => `<circle cx="${90 + (i % 3) * 20}" cy="${140 + Math.floor(i / 3) * 20}" r="8"/>`).join('')}</g>
+    <text x="110" y="222" text-anchor="middle" font-family="Fraunces,serif" font-size="12" fill="#17201F" letter-spacing="2">NEST ART</text></svg>`;
+}
+const PALETTE = { ink: ['#17201F', '#2A3634'], teal: ['#1F4A47', '#2C5C58'], plum: ['#4B2233', '#5E2D41'], red: ['#8E1B22', '#A4262E'], sage: ['#9DB4A0', '#B5C8B6'], blush: ['#E9C7C0', '#F2D8D2'] };
+function art(p) {
+  const seed = [...p.slug].reduce((a, c) => a + c.charCodeAt(0), 0);
+  switch (p.cat) {
+    case 'Tổ yến tinh chế': return crystal(seed, p.slug.includes('nest-art') ? '#B08A3E' : '#9E1B22');
+    case 'Tổ yến nguyên tổ': return crystal(seed, '#17201F');
+    case 'Tổ yến chưng sẵn': return p.slug.includes('hop-8') ? giftBox(...PALETTE.teal, seed) : jar(seed);
+    case 'Tổ yến ăn liền': return tallBox(...PALETTE.ink, 'TỔ YẾN ĂN LIỀN');
+    case 'Bộ quà tặng': case 'Combo': return giftBox(...(seed % 2 ? PALETTE.red : PALETTE.plum), seed);
+    case 'Nước yến thật': return can(PALETTE.teal[0]);
+    case 'Sữa chua sấy khô': return pouch(PALETTE.blush[0]);
+    default: return tallBox(...PALETTE.plum, (p.cat || '').toUpperCase());
+  }
+}
+</script>
+<script>
+const P = Object.fromEntries(DATA.map(p => [p.slug, p]));
+$('#heroPiece').innerHTML = crystal(42); requestAnimationFrame(() => $('#heroPiece svg').classList.add('draw'));
+$('#birds').innerHTML = [[14, 24, 0], [22, 30, -8], [10, 36, -17], [30, 27, -4]].map(([y, t, d]) =>
+  `<svg class="bird" viewBox="-15 -7 30 14" style="--y:${y}vh;--t:${t}s;--dl:${d}s"><path d="M-14 2 Q-7 -6 0 1 Q7 -6 14 2"/></svg>`).join('');
+
+const WHO = [
+  { k: 'bome', t: 'bố mẹ', cats: ['Tổ yến tinh chế', 'Tổ yến chưng sẵn', 'Tổ yến ăn liền', 'Bộ quà tặng'] },
+  { k: 'doitac', t: 'đối tác', cats: ['Bộ quà tặng', 'Tổ yến tinh chế', 'Tổ yến nguyên tổ'] },
+  { k: 'be', t: 'bé nhà mình', cats: ['Sữa chua sấy khô', 'Tổ yến ăn liền', 'Tổ yến chưng sẵn'] },
+  { k: 'minh', t: 'chính mình', cats: ['Tổ yến ăn liền', 'Nước yến thật', 'Tổ yến chưng sẵn'] },
+  { k: 'dulich', t: 'người thân ở xa', cats: ['Bộ quà tặng', 'Tổ yến chưng sẵn', 'Sữa chua sấy khô', 'Tổ yến ăn liền'] },
+];
+const BUD = [
+  { k: 'nho', t: 'dưới 300 nghìn', lo: 0, hi: 300000, at: 250000 }, { k: 'tr1', t: 'khoảng 1 triệu', lo: 500000, hi: 1500000, at: 1000000 },
+  { k: 'tr3', t: '2 đến 5 triệu', lo: 2000000, hi: 5000000, at: 3000000 }, { k: 'lon', t: 'trên 5 triệu', lo: 5000000, hi: 1e12, at: 7000000 },
+];
+const WHY = { 'Tổ yến tinh chế': 'Đã làm sạch, chỉ việc chưng', 'Tổ yến nguyên tổ': 'Tổ nguyên vẹn, quà biếu trang trọng', 'Tổ yến ăn liền': 'Không phải chưng, dùng liền', 'Tổ yến chưng sẵn': 'Mở nắp là dùng', 'Sữa chua sấy khô': 'Viên nhỏ, bé cầm ăn được', 'Nước yến thật': 'Uống liền, mang theo', 'Bộ quà tặng': 'Đóng hộp sẵn, kèm thiệp viết tay' };
+let who = 'bome', bud = 'tr1', sh = '';
+function card(p, v, why = true) {
+  return `<a class="art" href="#"><div class="frame">${art(p)}</div><div class="lab"><b>${esc(p.name)}</b><span class="pr">${vnd(v.p)}</span><small>${esc(v.n === 'Tiêu chuẩn' ? p.cat : v.n)}</small>${why && WHY[p.cat] ? `<span class="why">${esc(WHY[p.cat])}</span>` : ''}</div></a>`;
+}
+function paint() {
+  const W = WHO.find(x => x.k === who), B = BUD.find(x => x.k === bud);
+  $('#say').innerHTML = `Tôi muốn tặng <button data-o="who">${W.t}</button>, khoảng <button data-o="bud">${B.t.replace('khoảng ', '')}</button>.`;
+  $('#sheet').innerHTML = sh === 'who' ? WHO.map(x => `<button data-w="${x.k}" aria-pressed="${x.k === who}">${x.t}</button>`).join('')
+    : sh === 'bud' ? BUD.map(x => `<button data-b="${x.k}" aria-pressed="${x.k === bud}">${x.t}</button>`).join('') : '';
+  const out = [];
+  W.cats.forEach((c, rank) => DATA.filter(p => p.cat === c).forEach(p => { const v = p.v.filter(v => v.ok && v.p >= B.lo && v.p <= B.hi).sort((a, b) => Math.abs(a.p - B.at) - Math.abs(b.p - B.at))[0]; if (v) out.push({ p, v, rank }); }));
+  out.sort((a, b) => a.rank - b.rank || Math.abs(a.v.p - B.at) - Math.abs(b.v.p - B.at));
+  const seen = new Set(), L = out.filter(x => seen.has(x.p.cat) ? false : (seen.add(x.p.cat), true)).slice(0, 3);
+  $('#room').innerHTML = L.length ? L.map(x => card(x.p, x.v)).join('') : `<p style="color:var(--ink2)">Chưa có món ở mức này. Chạm vào mức giá để đổi.</p>`;
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.o) { sh = sh === b.dataset.o ? '' : b.dataset.o; paint(); }
+  if (b.dataset.w) { who = b.dataset.w; sh = ''; paint(); }
+  if (b.dataset.b) { bud = b.dataset.b; sh = ''; paint(); }
+});
+paint();
+
+/* card composer */
+$('#giftBox').innerHTML = giftBox(...PALETTE.red, 7).replace('<svg ', '<svg class="box" ');
+const TPL = { 'Chúc sức khỏe': ['Bố Mẹ', 'Con chúc bố mẹ luôn khỏe, năm nào cũng được cùng nhau đón Tết.'], 'Cảm ơn đối tác': ['Anh Chị', 'Cảm ơn anh chị đã đồng hành cùng chúng tôi suốt một năm qua.'], 'Mừng bé ra đời': ['Gia đình nhỏ', 'Chúc mẹ tròn con vuông, bé ngoan và khỏe mạnh.'], 'Quà Nha Trang': ['Cả nhà', 'Một chút quà từ biển Nha Trang gửi về nhà mình.'] };
+const syncNote = () => { $('#nTo').textContent = 'Gửi ' + ($('#to').value || '…'); $('#nMsg').textContent = $('#msg').value || 'Lời nhắn của bạn sẽ hiện ở đây.'; $('#nFrom').textContent = $('#from').value ? '— ' + $('#from').value : ''; };
+['to', 'msg', 'from'].forEach(id => $('#' + id).addEventListener('input', syncNote));
+$('#tpl').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const [to, m] = TPL[b.textContent]; $('#to').value = to; $('#msg').value = m; syncNote(); });
+syncNote();
+
+/* collection rail */
+const pick = ['to-yen-tinh-che-nest-art', 'to-yen-tinh-che-yen-sao-nha-trang', 'to-yen-nguyen-to', 'to-yen-an-lien', 'to-yen-chung-san', 'to-yen-chung-san-hop-8', 'sua-chua-to-yen-say-kho', 'nuoc-yen-that', 'bo-qua-tang-an-khang', 'bo-qua-tang-thinh-vuong-an-gia'];
+$('#rail').innerHTML = pick.map(s => P[s]).filter(Boolean).map(p => { const v = p.v.filter(v => v.ok).sort((a, b) => a.p - b.p)[0] || p.v[0]; return card(p, v, false); }).join('');
+$('#visitArt').innerHTML = `<div class="frame" style="aspect-ratio:5/4">${crystal(9)}</div>`;
+</script>
+<script>
+/* ================= concept shop: routing, collection, product, reviews, cart, checkout ================= */
+const S = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d } catch { return d } }, set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)) } catch {} } };
+let cart = S.get('na_cart', []);           // [{s: slug, i: variantIndex, q}]
+const STORY = {
+  'Tổ yến tinh chế': 'Tổ yến được làm sạch lông bằng tay, giữ nguyên sợi dài và độ dai tự nhiên. Chỉ cần ngâm và chưng, phần còn lại là thời gian dành cho người bạn thương.',
+  'Tổ yến nguyên tổ': 'Nguyên hình chiếc tổ như lúc chim yến dệt xong. Món quà dành cho những dịp cần sự trang trọng nhất.',
+  'Tổ yến ăn liền': 'Tổ yến sấy, đóng gói từng phần nhỏ. Không cần chưng, phù hợp với nhịp sống bận rộn.',
+  'Tổ yến chưng sẵn': 'Yến đã chưng sẵn trong hũ thủy tinh. Mở nắp là thưởng thức, mát lạnh hay hâm ấm đều ngon.',
+  'Sữa chua sấy khô': 'Những viên sữa chua nhỏ có tổ yến thật, tan ngay trong miệng. Món ăn vặt bé tự cầm được.',
+  'Nước yến thật': 'Nước yến có sợi yến thật, uống liền, mang theo đi làm, đi chơi.',
+  'Bộ quà tặng': 'Hộp quà đã phối sẵn nhiều món, buộc nơ và kèm thiệp viết tay. Chỉ việc trao.',
+};
+const GRAM = ['Tổ yến tinh chế', 'Tổ yến nguyên tổ'];
+const DIM = { 'Tổ yến ăn liền': 'Vị', 'Tổ yến chưng sẵn': 'Vị', 'Sữa chua sấy khô': 'Vị', 'Nước yến thật': 'Vị' };
+const toast = t => { const d = document.createElement('div'); d.className = 'toast'; d.textContent = t; d.setAttribute('role', 'status'); document.body.appendChild(d); setTimeout(() => d.remove(), 1800); };
+const lowest = p => (p.v.filter(v => v.ok).sort((a, b) => a.p - b.p)[0] || p.v[0]);
+
+/* home cards now open the product page */
+card = function (p, v, why = true) {
+  return `<a class="art" href="#/p/${p.slug}/${p.v.indexOf(v)}"><div class="frame">${art(p)}</div><div class="lab"><b>${esc(p.name)}</b><span class="pr">${p.v.length > 1 && !why ? 'từ ' : ''}${vnd(v.p)}</span><small>${esc(v.n === 'Tiêu chuẩn' ? p.cat : v.n)}</small>${why && WHY[p.cat] ? `<span class="why">${esc(WHY[p.cat])}</span>` : ''}</div></a>`;
+};
+paint();
+$('#rail').innerHTML = pick.map(s => P[s]).filter(Boolean).map(p => card(p, lowest(p), false)).join('');
+document.querySelectorAll('.hd nav a')[0].href = '#/suu-tap';
+document.querySelectorAll('.hd nav a')[1].href = '#/suu-tap/qua';
+document.querySelectorAll('.hd .r a')[1].href = '#cart';
+document.querySelectorAll('.hd .r a')[1].id = 'cartLink';
+document.querySelectorAll('a.btn[href="#suu-tap"]').forEach(a => a.href = '#/suu-tap');
+document.querySelector('.mark').href = '#/';
+
+/* collection */
+const ROOMS = [['all', 'Tất cả'], ['tinh', 'Tinh chế, nguyên tổ'], ['lien', 'Ăn liền, chưng sẵn'], ['qua', 'Quà tặng'], ['nhe', 'Món nhẹ']];
+const inRoom = (p, r) => r === 'all' ? true : r === 'tinh' ? GRAM.includes(p.cat) : r === 'lien' ? ['Tổ yến ăn liền', 'Tổ yến chưng sẵn'].includes(p.cat)
+  : r === 'qua' ? ['Bộ quà tặng', 'Combo'].includes(p.cat) : ['Sữa chua sấy khô', 'Nước yến thật', 'Súp tổ yến', 'Bột tổ yến', 'Chè tổ yến', 'Cà phê tổ yến'].includes(p.cat);
+let sortBy = 'feat';
+function renderCollection(room) {
+  room = room || 'all';
+  $('#colTitle').textContent = ROOMS.find(r => r[0] === room)?.[1] === 'Tất cả' ? 'Tất cả tác phẩm' : ROOMS.find(r => r[0] === room)?.[1] || 'Tất cả tác phẩm';
+  $('#filters').innerHTML = ROOMS.map(([k, t]) => `<button aria-pressed="${k === room}" onclick="location.hash='#/suu-tap/${k}'">${t}</button>`).join('') +
+    `<select aria-label="Sắp xếp" onchange="sortBy=this.value;renderCollection('${room}')"><option value="feat" ${sortBy === 'feat' ? 'selected' : ''}>Nổi bật</option><option value="asc" ${sortBy === 'asc' ? 'selected' : ''}>Giá thấp đến cao</option><option value="desc" ${sortBy === 'desc' ? 'selected' : ''}>Giá cao đến thấp</option></select>`;
+  let L = DATA.filter(p => inRoom(p, room) && p.v.some(v => v.ok) && !['Khác', 'Mặt nạ yến', 'Nước uống đóng chai'].includes(p.cat));
+  if (sortBy !== 'feat') L = L.sort((a, b) => (lowest(a).p - lowest(b).p) * (sortBy === 'asc' ? 1 : -1));
+  $('#colGrid').innerHTML = L.map(p => card(p, lowest(p), false)).join('');
+}
+</script>
+<script>
+let cur = { slug: null, i: 0, q: 1, wrap: true, tab: 'story' };
+const SAMPLE_RV = [
+  { n: 'Thu H.', c: 'Hà Nội', s: 5, t: 'Mua làm quà cho mẹ, hộp mở ra như một món đồ trang sức. Thiệp viết tay là điểm cộng lớn nhất.' },
+  { n: 'Minh K.', c: 'TP.HCM', s: 5, t: 'Giao nhanh, đóng gói kỹ. Sợi yến dài, chưng lên nở đều.' },
+  { n: 'Lan P.', c: 'Đà Nẵng', s: 4, t: 'Hộp đẹp, sang. Mong có thêm cỡ nhỏ hơn để biếu nhiều người.' },
+];
+function renderProduct(slug, vi) {
+  const p = P[slug]; if (!p) { location.hash = '#/suu-tap'; return; }
+  if (cur.slug !== slug) cur = { slug, i: Math.max(0, p.v.findIndex(v => v.ok)), q: 1, wrap: true, tab: 'story' };
+  if (vi != null && p.v[vi]) cur.i = vi;
+  const v = p.v[cur.i], parts = p.v.map(x => x.n.split(' – ')), two = p.v.length > 1 && parts.every(x => x.length === 2), cp = parts[cur.i];
+  $('#pCrumb').innerHTML = `<a href="#/">Phòng trưng bày</a> / <a href="#/suu-tap">Bộ sưu tập</a> / ${esc(p.name)}`;
+  $('#pTag').textContent = p.cat;
+  $('#pArt').innerHTML = art(p); requestAnimationFrame(() => $('#pArt svg')?.classList.add('draw'));
+  const g = GRAM.includes(p.cat) ? (v.n.match(/(\d+)\s*g\b/i) || [])[1] : null;
+  let opts = '';
+  if (two) {
+    const A = [...new Set(parts.map(x => x[0]))], B = [...new Set(parts.map(x => x[1]))], f = (a, b) => p.v.findIndex(x => x.n === a + ' – ' + b);
+    opts = `<div class="opt"><h4>${DIM[p.cat] || 'Loại'}</h4><div class="opts">${A.map(a => { let k = f(a, cp[1]); if (k < 0) k = parts.findIndex(x => x[0] === a); return `<button class="o" data-vi="${k}" aria-pressed="${a === cp[0]}">${esc(a)}</button>`; }).join('')}</div></div>
+      <div class="opt"><h4>Quy cách</h4><div class="opts">${B.map(b => { const k = f(cp[0], b), x = p.v[k]; return `<button class="o" data-vi="${k}" ${k < 0 || !x.ok ? 'disabled' : ''} aria-pressed="${b === cp[1]}">${esc(b)}<small>${k >= 0 ? vnd(x.p) : '—'}</small></button>`; }).join('')}</div></div>`;
+  } else if (p.v.length > 1) {
+    opts = `<div class="opt"><h4>${DIM[p.cat] || 'Quy cách'}</h4><div class="opts">${p.v.map((x, k) => `<button class="o" data-vi="${k}" ${x.ok ? '' : 'disabled'} aria-pressed="${k === cur.i}">${esc(x.n)}<small>${vnd(x.p)}</small></button>`).join('')}</div></div>`;
+  }
+  $('#pInfo').innerHTML = `<span class="eyebrow">${esc(p.cat)}</span><h1>${esc(p.name)}</h1>
+    <div class="price">${vnd(v.p * cur.q)}</div><p class="per">${g ? `Khoảng ${vnd(v.p / g)} mỗi gram yến` : esc(v.n === 'Tiêu chuẩn' ? '' : v.n)}</p>
+    ${opts}
+    <div class="opt"><h4>Số lượng</h4><div class="qty"><button data-q="-1" aria-label="Bớt">−</button><span>${cur.q}</span><button data-q="1" aria-label="Thêm">+</button></div></div>
+    <label class="wrapopt"><input type="checkbox" id="wrapChk" ${cur.wrap ? 'checked' : ''}><span><b>Gói quà và thiệp viết tay</b><small>Hộp quà Nest Art, nơ lụa, thiệp viết tay theo lời nhắn của bạn (đề xuất miễn phí)</small></span></label>
+    <div class="buyrow"><button class="btn line" data-add>Thêm vào giỏ quà</button><button class="btn" data-buy>Mua ngay</button></div>
+    <div class="trust"><div><b>Giao toàn quốc</b>Đóng gói chống sốc</div><div><b>Kiểm tra trước</b>Trả tiền khi nhận</div><div><b>Nhà máy chuẩn FDA</b>ISO 22000, HACCP</div></div>
+    <div class="spec"><div><span>Quy cách</span><b>${esc(v.n === 'Tiêu chuẩn' ? p.cat : v.n)}</b></div><div><span>Nguồn yến</span><b>Nhà yến Khánh Hòa</b></div><div><span>Bảo quản</span><b>Nơi khô ráo, thoáng mát</b></div></div>`;
+  renderTab(p);
+  const rel = DATA.filter(x => x !== p && (x.cat === p.cat || inRoom(x, GRAM.includes(p.cat) ? 'qua' : 'tinh')) && x.v.some(y => y.ok)).slice(0, 3);
+  $('#pRelated').innerHTML = rel.map(x => card(x, lowest(x), false)).join('');
+}
+function renderTab(p) {
+  document.querySelectorAll('.tabs button').forEach(b => b.setAttribute('aria-selected', b.dataset.tab === cur.tab));
+  $('#rvTab').textContent = `Đánh giá (${SAMPLE_RV.length})`;
+  const steps = $('.steps').outerHTML;
+  if (cur.tab === 'story') $('#tabBody').innerHTML = `<div class="story"><div><h2 style="font-size:34px">Về tác phẩm này</h2></div><div><p>${esc(STORY[p.cat] || 'Một món quà từ nhà yến Khánh Hòa.')}</p><p>Mỗi hộp được kiểm tra tại nhà máy đạt FDA, USDA, ISO 22000 và HACCP trước khi tới tay bạn.</p></div></div>`;
+  if (cur.tab === 'ritual') $('#tabBody').innerHTML = GRAM.includes(p.cat) ? steps : `<div class="story"><div><h2 style="font-size:34px">Dùng thế nào?</h2></div><div><p>${p.cat === 'Tổ yến chưng sẵn' ? 'Lắc nhẹ, mở nắp và dùng ngay. Ngon nhất khi để mát.' : p.cat === 'Tổ yến ăn liền' ? 'Mở gói và dùng liền, không cần chưng.' : 'Dùng trực tiếp. Bảo quản nơi khô ráo, thoáng mát.'}</p></div></div>`;
+  if (cur.tab === 'reviews') {
+    const avg = SAMPLE_RV.reduce((a, r) => a + r.s, 0) / SAMPLE_RV.length, cnt = s => SAMPLE_RV.filter(r => r.s === s).length;
+    $('#tabBody').innerHTML = `<span class="sample">Đánh giá mẫu để minh họa giao diện, không phải đánh giá thật</span>
+      <div class="rv-top"><div><div class="rv-score">${avg.toFixed(1)}</div><div class="stars">${'★'.repeat(Math.round(avg))}${'☆'.repeat(5 - Math.round(avg))}</div><small style="color:var(--ink2)">${SAMPLE_RV.length} đánh giá từ người đã mua</small></div>
+        <div class="bars">${[5, 4, 3, 2, 1].map(s => `<div><span>${s} ★</span><i><b style="width:${cnt(s) / SAMPLE_RV.length * 100}%"></b></i><span>${cnt(s)}</span></div>`).join('')}</div></div>
+      ${SAMPLE_RV.map(r => `<div class="rv"><div class="who"><b>${esc(r.n)}</b><small>${esc(r.c)}</small><br><span class="badge">Đã mua hàng</span></div><div><div class="stars">${'★'.repeat(r.s)}${'☆'.repeat(5 - r.s)}</div><p>${esc(r.t)}</p></div></div>`).join('')}
+      <form class="rvform" onsubmit="event.preventDefault();toast('Concept: đánh giá sẽ chờ duyệt, chỉ người đã mua mới đánh giá được')"><b style="font-family:var(--serif);font-weight:400;font-size:22px">Viết đánh giá của bạn</b>
+        <div class="pick" id="pick">${[1, 2, 3, 4, 5].map(i => `<button type="button" data-st="${i}" aria-label="${i} sao">★</button>`).join('')}</div>
+        <textarea rows="3" placeholder="Món quà đến tay người nhận thế nào?"></textarea><button class="btn" style="justify-self:start">Gửi đánh giá</button></form>`;
+  }
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('button'); if (!b) return;
+  if (b.dataset.tab) { cur.tab = b.dataset.tab; renderTab(P[cur.slug]); }
+  if (b.dataset.st) document.querySelectorAll('#pick button').forEach(x => x.classList.toggle('on', +x.dataset.st <= +b.dataset.st));
+  if (!document.getElementById('v-product').classList.contains('on')) return;
+  if (b.dataset.vi != null) { cur.i = +b.dataset.vi; renderProduct(cur.slug); }
+  if (b.dataset.q) { cur.q = Math.max(1, Math.min(20, cur.q + +b.dataset.q)); renderProduct(cur.slug); }
+  if (b.hasAttribute('data-add') || b.hasAttribute('data-buy')) { addCart(cur.slug, cur.i, cur.q, $('#wrapChk')?.checked); if (b.hasAttribute('data-buy')) location.hash = '#/thanh-toan'; else openCart(); }
+});
+</script>
+<script>
+/* cart */
+function addCart(s, i, q, wrap) {
+  const it = cart.find(x => x.s === s && x.i === i);
+  if (it) { it.q = Math.min(20, it.q + q); it.w = wrap; } else cart.push({ s, i, q, w: wrap });
+  S.set('na_cart', cart); paintCart(); toast('Đã thêm vào giỏ quà');
+}
+const lines = () => cart.map(x => ({ x, p: P[x.s], v: P[x.s]?.v[x.i] })).filter(l => l.p && l.v);
+const total = () => lines().reduce((a, l) => a + l.v.p * l.x.q, 0);
+function paintCart() {
+  const L = lines(), n = cart.reduce((a, x) => a + x.q, 0);
+  const link = $('#cartLink'); if (link) link.textContent = `Giỏ (${n})`;
+  $('#cartItems').innerHTML = L.length ? L.map((l, k) => `<div class="ci"><div class="th">${art(l.p)}</div><div><b>${esc(l.p.name)}</b><small>${esc(l.v.n === 'Tiêu chuẩn' ? l.p.cat : l.v.n)}${l.x.w ? ' · gói quà, thiệp' : ''}</small>
+      <div class="qty" style="margin-top:8px"><button data-cq="${k}" data-d="-1" aria-label="Bớt">−</button><span>${l.x.q}</span><button data-cq="${k}" data-d="1" aria-label="Thêm">+</button></div></div><b style="font-family:var(--serif);font-weight:400">${vnd(l.v.p * l.x.q)}</b></div>`).join('')
+    : `<p style="color:var(--ink2);padding:40px 0;text-align:center">Giỏ quà đang trống.<br><a href="#/suu-tap" style="color:var(--ink)">Xem bộ sưu tập</a></p>`;
+  $('#cartFoot').innerHTML = L.length ? `<div class="row2"><span>Tạm tính</span><b style="font-family:var(--serif);font-weight:400;font-size:22px">${vnd(total())}</b></div><p style="color:var(--ink2);font-size:13px;margin:4px 0 14px">Phí giao hàng tính khi xác nhận đơn.</p><a class="btn" style="width:100%;justify-content:center" href="#/thanh-toan">Thanh toán</a>` : '';
+}
+const openCart = () => document.body.classList.add('cart-open');
+const closeCart = () => document.body.classList.remove('cart-open');
+$('#shade').onclick = closeCart; $('#closeCart').onclick = closeCart;
+document.addEventListener('click', e => {
+  const a = e.target.closest('#cartLink'); if (a) { e.preventDefault(); openCart(); }
+  const b = e.target.closest('[data-cq]'); if (b) { const it = cart[+b.dataset.cq]; it.q += +b.dataset.d; if (it.q < 1) cart.splice(+b.dataset.cq, 1); S.set('na_cart', cart); paintCart(); if ($('#v-checkout').classList.contains('on')) renderCheckout(); }
+});
+addEventListener('keydown', e => { if (e.key === 'Escape') closeCart(); });
+
+/* checkout */
+const WRAPS = [['ink', 'Hộp mực đen', PALETTE.ink], ['red', 'Hộp đỏ son', PALETTE.red], ['none', 'Không gói quà', null]];
+let wrapSel = 'ink';
+function renderCheckout() {
+  if (!lines().length) { location.hash = '#/suu-tap'; return; }
+  $('#wraps').innerHTML = WRAPS.map(([k, t, c]) => `<button type="button" data-wr="${k}" aria-pressed="${k === wrapSel}">${c ? giftBox(...c, 3) : '<svg viewBox="0 0 320 270"><rect x="60" y="80" width="200" height="140" fill="none" stroke="#17201F" stroke-dasharray="6 6"/></svg>'}${t}</button>`).join('');
+  $('#coSum').innerHTML = `<b style="font-family:var(--serif);font-weight:400;font-size:22px">Món quà của bạn</b>` + lines().map(l => `<div class="ci" style="grid-template-columns:60px 1fr auto"><div class="th">${art(l.p)}</div><div><b>${esc(l.p.name)}</b><small>${esc(l.v.n === 'Tiêu chuẩn' ? l.p.cat : l.v.n)} × ${l.x.q}</small></div><span>${vnd(l.v.p * l.x.q)}</span></div>`).join('')
+    + `<div class="row2" style="margin-top:14px"><span>Tạm tính</span><span>${vnd(total())}</span></div><div class="row2"><span>Gói quà, thiệp</span><span>${wrapSel === 'none' ? 'Không' : 'Đề xuất miễn phí'}</span></div><div class="row2"><span>Giao hàng</span><span>Báo khi xác nhận</span></div><div class="row2 tot"><span>Tổng</span><span>${vnd(total())}</span></div>`;
+}
+document.addEventListener('click', e => { const b = e.target.closest('[data-wr]'); if (b) { wrapSel = b.dataset.wr; renderCheckout(); } });
+$('#coForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const rules = { cName: v => v.length >= 2, cPhone: v => /^0\d{9}$/.test(v.replace(/[\s.]/g, '')), cAddr: v => v.length >= 6 };
+  let first = null;
+  for (const [id, t] of Object.entries(rules)) { const el = $('#' + id), ok = t(el.value.trim()); el.closest('.fld').classList.toggle('bad', !ok); el.oninput = () => el.closest('.fld').classList.remove('bad'); if (!ok && !first) first = el; }
+  if (first) { first.focus(); return; }
+  const o = { code: 'NA' + Date.now().toString().slice(-6), name: $('#cName').value.trim(), total: total(), msg: $('#cMsg').value.trim(), wrap: wrapSel, pay: document.querySelector('[name=pay]:checked').value, first: lines()[0] };
+  S.set('na_last', { ...o, first: { s: o.first.p.slug } }); cart = []; S.set('na_cart', cart); paintCart(); location.hash = '#/xong';
+});
+
+/* done */
+function renderDone() {
+  const o = S.get('na_last', null); if (!o) { location.hash = '#/'; return; }
+  const p = P[o.first?.s];
+  $('#doneBody').innerHTML = `<span class="eyebrow">Đơn ${esc(o.code)}</span><h1>Món quà đang được <em>chuẩn bị</em></h1>
+    <p style="color:var(--ink2);max-width:52ch;margin:0 auto;font-weight:300">Cảm ơn ${esc(o.name)}. Chúng tôi sẽ gọi xác nhận, ${o.wrap === 'none' ? 'đóng gói cẩn thận' : 'gói quà, viết tay thiệp'} và giao trong thời gian sớm nhất.</p>
+    <div class="timeline"><div class="on">Đã nhận đơn</div><div>Gói quà, viết thiệp</div><div>Đang giao</div><div>Đã trao quà</div></div>
+    <div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:30px;max-width:760px;margin:0 auto;align-items:center">
+      <div class="frame" style="aspect-ratio:1">${p ? art(p) : ''}</div>
+      <div class="note" style="position:relative;right:auto;top:auto;width:auto;transform:rotate(-2deg);text-align:left"><div class="to">Lời nhắn trên thiệp</div><div class="msg">${esc(o.msg || 'Không có lời nhắn')}</div></div></div>
+    ${o.pay === 'qr' ? '<p style="margin-top:30px;color:var(--ink2)">Bản thật sẽ hiện mã QR chuyển khoản tại đây.</p>' : ''}
+    <p style="margin-top:36px"><a class="btn line" href="#/suu-tap">Tiếp tục xem bộ sưu tập</a></p>`;
+}
+
+/* router */
+function route() {
+  const h = location.hash.replace(/^#\/?/, '').split('/');
+  if (location.hash === '#cart') { openCart(); return; }
+  const show = id => { document.querySelectorAll('.view, #v-home').forEach(v => v.classList.toggle('on', v.id === id)); closeCart(); scrollTo(0, 0); };
+  if (h[0] === 'suu-tap') { show('v-collection'); renderCollection(h[1]); }
+  else if (h[0] === 'p') { show('v-product'); renderProduct(h[1], h[2] != null ? +h[2] : null); }
+  else if (h[0] === 'thanh-toan') { show('v-checkout'); renderCheckout(); }
+  else if (h[0] === 'xong') { show('v-done'); renderDone(); }
+  else if (h[0] === 'tang') { show('v-home'); setTimeout(() => document.getElementById('tang').scrollIntoView({ behavior: 'smooth' }), 30); }
+  else show('v-home');
+}
+addEventListener('hashchange', route); paintCart(); route();
+</script>
+</body></html>
